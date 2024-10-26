@@ -1,0 +1,116 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.top-nav {
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  color: #ebebeb;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.free-shipping {
+  font-weight: bold;
+  font-size: 13px;
+  display: contents;
+}
+
+#free-shipping {
+  background-color: #1a2430;
+  height: 30px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+
+#ttr_page {
+  margin-top: 0px !important;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  min-width: 100%;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+.header-nav {
+  background-color: #47596f;
+  padding: 10px;
+  height: 90px;
+  max-height: 90px !important;
+}
+
+.logo {
+  max-height: 70px;
+  height: 70px;
+}
+
+.nav-links li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px !important;
+  white-space: nowrap;
+  color: #fff !important;
+}
+
+.row {
+  display: inline-flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#search_widget {
+  width: 100%;
+}
+
+#_desktop_logo {
+  width: auto;
+}
+
+.hidden-sm-down {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  justify-content: flex-end
+}
+
