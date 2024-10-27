@@ -45,7 +45,7 @@
 {block name='header_nav'}
   <nav class="header-nav">
     <div class="container">
-      <div class="row">
+      <div class="row" id="delete_category">
         <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
           {if $shop.logo_details}
             {if $page.page_name == 'index'}
@@ -92,9 +92,10 @@
 {block name='header_top'}
   <div class="header-top">
     <div class="container">
-       <div class="row">
+       <div class="header-top-right col-md-10 col-sm-12 position-static">
+          {hook h='displayTop'}
+        </div>
     
-      </div>
       <div id="mobile_top_menu_wrapper" class="row hidden-md-up" style="display:none;">
         <div class="js-top-menu mobile" id="_mobile_top_menu"></div>
         <div class="js-top-menu-bottom">

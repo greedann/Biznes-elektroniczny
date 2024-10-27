@@ -25,6 +25,7 @@
 {extends file='page.tpl'}
 
     {block name='page_content_container'}
+    <h1>My custom content</h1>
       <section id="content" class="page-home">
         {block name='page_content_top'}{/block}
 
