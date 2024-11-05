@@ -13,6 +13,11 @@ You need to have docker and docker compose installed to run it. Check if they ar
 docker -v
 docker compose version
 ```
+Now let's create a custom container using.
+```sh
+sudo docker build -t prestashop-ssl:1 .
+```
+
 Next, you need to start the local server with the following command
 ```sh
 sudo docker compose up -d
