@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Czas generowania: 27 Paź 2024, 20:02
+-- Czas generowania: 05 Lis 2024, 11:40
 -- Wersja serwera: 11.5.2-MariaDB-ubu2404
 -- Wersja PHP: 7.4.20
 
@@ -999,7 +999,13 @@ INSERT INTO `ps_admin_filter` (`id`, `employee`, `shop`, `controller`, `action`,
 (9, 1, 1, 'ProductController', 'catalogAction', '{\"filter_category\":\"\",\"filter_column_id_product\":\"\",\"filter_column_name\":\"\",\"filter_column_reference\":\"\",\"filter_column_name_category\":\"\",\"filter_column_price\":\"\",\"filter_column_sav_quantity\":\"\",\"filter_column_active\":\"\",\"last_offset\":\"0\",\"last_limit\":\"20\",\"last_orderBy\":\"id_product\",\"last_sortOrder\":\"desc\"}', ''),
 (10, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"id_cms_category_parent\":1}}', 'cms_page_category'),
 (11, 1, 1, '', '', '{\"orderBy\":\"position\",\"sortOrder\":\"asc\",\"limit\":50,\"filters\":{\"id_cms_category_parent\":1}}', 'cms_page'),
-(12, 1, 1, 'contacts', 'index', '{\"limit\":10,\"orderBy\":\"id_contact\",\"sortOrder\":\"asc\",\"filters\":[]}', '');
+(12, 1, 1, 'contacts', 'index', '{\"limit\":10,\"orderBy\":\"id_contact\",\"sortOrder\":\"asc\",\"filters\":[]}', ''),
+(13, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"date_add\",\"sortOrder\":\"DESC\",\"filters\":[]}', 'customer'),
+(14, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_cart_rule\",\"sortOrder\":\"asc\",\"filters\":[]}', 'customer_discount'),
+(15, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_address\",\"sortOrder\":\"asc\",\"filters\":[]}', 'customer_address'),
+(16, 1, 1, 'email', 'index', '{\"limit\":50,\"orderBy\":\"id_mail\",\"sortOrder\":\"desc\",\"filters\":[]}', ''),
+(17, 1, 1, 'employee', 'index', '{\"limit\":50,\"orderBy\":\"id_employee\",\"sortOrder\":\"asc\",\"filters\":[]}', ''),
+(18, 1, 1, '', '', '{\"limit\":10,\"orderBy\":\"id_request_sql\",\"sortOrder\":\"desc\",\"filters\":[]}', 'sql_request');
 
 -- --------------------------------------------------------
 
@@ -1244,6 +1250,10 @@ INSERT INTO `ps_authorization_role` (`id_authorization_role`, `slug`) VALUES
 (584, 'ROLE_MOD_MODULE_PS_DATAPRIVACY_DELETE'),
 (582, 'ROLE_MOD_MODULE_PS_DATAPRIVACY_READ'),
 (583, 'ROLE_MOD_MODULE_PS_DATAPRIVACY_UPDATE'),
+(889, 'ROLE_MOD_MODULE_PS_EMAILALERTS_CREATE'),
+(892, 'ROLE_MOD_MODULE_PS_EMAILALERTS_DELETE'),
+(890, 'ROLE_MOD_MODULE_PS_EMAILALERTS_READ'),
+(891, 'ROLE_MOD_MODULE_PS_EMAILALERTS_UPDATE'),
 (585, 'ROLE_MOD_MODULE_PS_EMAILSUBSCRIPTION_CREATE'),
 (588, 'ROLE_MOD_MODULE_PS_EMAILSUBSCRIPTION_DELETE'),
 (586, 'ROLE_MOD_MODULE_PS_EMAILSUBSCRIPTION_READ'),
@@ -2874,8 +2884,8 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (141, NULL, NULL, 'PS_SHOW_NEW_MESSAGES', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (142, NULL, NULL, 'PS_FEATURE_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (143, NULL, NULL, 'PS_COMBINATION_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(144, NULL, NULL, 'PS_SPECIFIC_PRICE_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(145, NULL, NULL, 'PS_VIRTUAL_PROD_FEATURE_ACTIVE', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(144, NULL, NULL, 'PS_SPECIFIC_PRICE_FEATURE_ACTIVE', NULL, '0000-00-00 00:00:00', '2024-11-05 12:25:21'),
+(145, NULL, NULL, 'PS_VIRTUAL_PROD_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '2024-11-05 12:25:01'),
 (146, NULL, NULL, 'PS_CUSTOMIZATION_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (147, NULL, NULL, 'PS_CART_RULE_FEATURE_ACTIVE', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (148, NULL, NULL, 'PS_PACK_FEATURE_ACTIVE', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -2968,7 +2978,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (235, NULL, NULL, 'PS_SHOP_DOMAIN_SSL', 'localhost:8080', '0000-00-00 00:00:00', '2024-10-25 19:41:26'),
 (236, NULL, NULL, 'PS_SHOP_NAME', 'Dystryktzero.pl', '0000-00-00 00:00:00', '2024-10-27 17:12:47'),
 (237, NULL, NULL, 'PS_SHOP_EMAIL', 'pomoc@dystryktzero.pl', '0000-00-00 00:00:00', '2024-10-27 17:12:47'),
-(238, NULL, NULL, 'PS_MAIL_METHOD', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(238, NULL, NULL, 'PS_MAIL_METHOD', '2', '0000-00-00 00:00:00', '2024-11-05 12:06:19'),
 (239, NULL, NULL, 'PS_SHOP_ACTIVITY', '3', '0000-00-00 00:00:00', '2024-10-25 19:41:26'),
 (240, NULL, NULL, 'PS_LOGO', 'logo-1730042614.jpg', '0000-00-00 00:00:00', '2024-10-27 16:23:34'),
 (241, NULL, NULL, 'PS_FAVICON', 'favicon.ico', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -2976,11 +2986,11 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (243, NULL, NULL, 'PS_ROOT_CATEGORY', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (244, NULL, NULL, 'PS_HOME_CATEGORY', '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (245, NULL, NULL, 'PS_CONFIGURATION_AGREMENT', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(246, NULL, NULL, 'PS_MAIL_SERVER', 'smtp.', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(247, NULL, NULL, 'PS_MAIL_USER', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(248, NULL, NULL, 'PS_MAIL_PASSWD', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(249, NULL, NULL, 'PS_MAIL_SMTP_ENCRYPTION', 'off', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(250, NULL, NULL, 'PS_MAIL_SMTP_PORT', '25', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(246, NULL, NULL, 'PS_MAIL_SERVER', 'smtp.gmail.com', '0000-00-00 00:00:00', '2024-11-05 12:06:19'),
+(247, NULL, NULL, 'PS_MAIL_USER', 'noreply.dystryktzero@gmail.com', '0000-00-00 00:00:00', '2024-11-05 12:08:03'),
+(248, NULL, NULL, 'PS_MAIL_PASSWD', 'ybkg fjfo xevy zdxv', '0000-00-00 00:00:00', '2024-11-05 12:06:19'),
+(249, NULL, NULL, 'PS_MAIL_SMTP_ENCRYPTION', 'tls', '0000-00-00 00:00:00', '2024-11-05 12:06:19'),
+(250, NULL, NULL, 'PS_MAIL_SMTP_PORT', '587', '0000-00-00 00:00:00', '2024-11-05 12:06:19'),
 (251, NULL, NULL, 'PS_MAIL_COLOR', '#db3484', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (252, NULL, NULL, 'NW_SALT', 'pkt2s05vGTw0QXyv', '0000-00-00 00:00:00', '2024-10-25 19:41:29'),
 (253, NULL, NULL, 'PS_PAYMENT_LOGO_CMS_ID', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -3001,7 +3011,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (268, NULL, NULL, 'PS_DETECT_LANG', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (269, NULL, NULL, 'PS_DETECT_COUNTRY', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (270, NULL, NULL, 'PS_ROUND_TYPE', '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(271, NULL, NULL, 'PS_LOG_EMAILS', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(271, NULL, NULL, 'PS_LOG_EMAILS', '1', '0000-00-00 00:00:00', '2024-11-05 12:08:03'),
 (272, NULL, NULL, 'PS_CUSTOMER_OPTIN', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (273, NULL, NULL, 'PS_CUSTOMER_BIRTHDATE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (274, NULL, NULL, 'PS_PACK_STOCK_TYPE', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -3168,7 +3178,32 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (436, NULL, NULL, 'PS_SHOP_COUNTRY', 'Polska', '2024-10-27 17:12:48', '2024-10-27 17:12:48'),
 (437, NULL, NULL, 'PS_SHOP_PHONE', '535 883 874', '2024-10-27 17:12:48', '2024-10-27 17:12:48'),
 (438, NULL, NULL, 'PS_SHOP_FAX', NULL, '2024-10-27 17:12:48', '2024-10-27 17:12:48'),
-(439, NULL, NULL, 'PS_MAINTENANCE_IP', NULL, '2024-10-27 17:24:25', '2024-10-27 17:24:25');
+(439, NULL, NULL, 'PS_MAINTENANCE_IP', NULL, '2024-10-27 17:24:25', '2024-10-27 17:24:25'),
+(440, NULL, NULL, 'PS_ACCOUNTS_FIREBASE_REFRESH_TOKEN', NULL, '2024-11-05 11:32:59', '2024-11-05 12:24:23'),
+(441, NULL, NULL, 'PS_SAV_IMAP_URL', 'smtp.gmail.com', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
+(442, NULL, NULL, 'PS_SAV_IMAP_PORT', '587', '2024-11-05 11:46:32', '2024-11-05 11:49:21'),
+(443, NULL, NULL, 'PS_SAV_IMAP_USER', 'noreply.dystryktzero@gmail.com', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
+(444, NULL, NULL, 'PS_SAV_IMAP_PWD', 'Dystryktzero123!', '2024-11-05 11:46:32', '2024-11-05 11:49:21'),
+(445, NULL, NULL, 'PS_SAV_IMAP_DELETE_MSG', '0', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
+(446, NULL, NULL, 'PS_SAV_IMAP_CREATE_THREADS', '0', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
+(447, NULL, NULL, 'PS_SAV_IMAP_OPT_POP3', '0', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
+(448, NULL, NULL, 'PS_SAV_IMAP_OPT_NORSH', '0', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
+(449, NULL, NULL, 'PS_SAV_IMAP_OPT_SSL', '1', '2024-11-05 11:46:32', '2024-11-05 11:49:21'),
+(450, NULL, NULL, 'PS_SAV_IMAP_OPT_VALIDATE-CERT', '0', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
+(451, NULL, NULL, 'PS_SAV_IMAP_OPT_NOVALIDATE-CERT', '0', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
+(452, NULL, NULL, 'PS_SAV_IMAP_OPT_TLS', '1', '2024-11-05 11:46:32', '2024-11-05 11:49:21'),
+(453, NULL, NULL, 'PS_SAV_IMAP_OPT_NOTLS', '0', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
+(454, NULL, NULL, 'MA_MERCHANT_ORDER', '1', '2024-11-05 11:57:29', '2024-11-05 11:57:29'),
+(455, NULL, NULL, 'MA_MERCHANT_OOS', '1', '2024-11-05 11:57:29', '2024-11-05 11:57:29'),
+(456, NULL, NULL, 'MA_CUSTOMER_QTY', '1', '2024-11-05 11:57:29', '2024-11-05 11:57:29'),
+(457, NULL, NULL, 'MA_ORDER_EDIT', '1', '2024-11-05 11:57:29', '2024-11-05 11:57:29'),
+(458, NULL, NULL, 'MA_RETURN_SLIP', '1', '2024-11-05 11:57:29', '2024-11-05 11:57:29'),
+(459, NULL, NULL, 'MA_MERCHANT_MAILS', 'pomoc@dystryktzero.pl', '2024-11-05 11:57:29', '2024-11-05 11:57:29'),
+(460, NULL, NULL, 'MA_LAST_QTIES', '3', '2024-11-05 11:57:29', '2024-11-05 11:57:29'),
+(461, NULL, NULL, 'MA_MERCHANT_COVERAGE', '0', '2024-11-05 11:57:29', '2024-11-05 11:57:29'),
+(462, NULL, NULL, 'MA_PRODUCT_COVERAGE', '0', '2024-11-05 11:57:29', '2024-11-05 11:57:29'),
+(463, NULL, NULL, 'PS_MAIL_EMAIL_MESSAGE', '2', '2024-11-05 12:06:19', '2024-11-05 12:06:19'),
+(464, NULL, NULL, 'PS_MAIL_DOMAIN', NULL, '2024-11-05 12:06:19', '2024-11-05 12:06:19');
 
 -- --------------------------------------------------------
 
@@ -3234,7 +3269,21 @@ INSERT INTO `ps_configuration_kpi` (`id_configuration_kpi`, `id_shop_group`, `id
 (41, NULL, NULL, 'PRODUCTS_PER_CATEGORY', '0', '2024-10-27 16:34:37', '2024-10-27 16:34:37'),
 (42, NULL, NULL, 'PRODUCTS_PER_CATEGORY_EXPIRE', '1730046877', '2024-10-27 16:34:37', '2024-10-27 16:34:37'),
 (43, NULL, NULL, 'TOP_CATEGORY', NULL, '2024-10-27 16:34:37', '2024-10-27 16:34:37'),
-(44, NULL, NULL, 'TOP_CATEGORY_EXPIRE', NULL, '2024-10-27 16:34:37', '2024-10-27 16:34:37');
+(44, NULL, NULL, 'TOP_CATEGORY_EXPIRE', NULL, '2024-10-27 16:34:37', '2024-10-27 16:34:37'),
+(45, NULL, NULL, 'CUSTOMER_MAIN_GENDER', NULL, '2024-11-05 11:35:23', '2024-11-05 11:35:23'),
+(46, NULL, NULL, 'CUSTOMER_MAIN_GENDER_EXPIRE', NULL, '2024-11-05 11:35:23', '2024-11-05 11:35:23'),
+(47, NULL, NULL, 'AVG_CUSTOMER_AGE', NULL, '2024-11-05 11:35:23', '2024-11-05 11:35:23'),
+(48, NULL, NULL, 'AVG_CUSTOMER_AGE_EXPIRE', NULL, '2024-11-05 11:35:23', '2024-11-05 11:35:23'),
+(49, NULL, NULL, 'ORDERS_PER_CUSTOMER', '0', '2024-11-05 11:35:23', '2024-11-05 11:35:23'),
+(50, NULL, NULL, 'ORDERS_PER_CUSTOMER_EXPIRE', '1730889323', '2024-11-05 11:35:23', '2024-11-05 11:35:23'),
+(51, NULL, NULL, 'NEWSLETTER_REGISTRATIONS', '0', '2024-11-05 11:35:23', '2024-11-05 11:35:23'),
+(52, NULL, NULL, 'NEWSLETTER_REGISTRATIONS_EXPIRE', '1730824523', '2024-11-05 11:35:23', '2024-11-05 11:35:23'),
+(53, NULL, NULL, 'MESSAGES_PER_THREAD', '0', '2024-11-05 11:35:59', '2024-11-05 11:35:59'),
+(54, NULL, NULL, 'MESSAGES_PER_THREAD_EXPIRE', '1730846159', '2024-11-05 11:35:59', '2024-11-05 11:35:59'),
+(55, NULL, NULL, 'PENDING_MESSAGES', '0', '2024-11-05 11:35:59', '2024-11-05 11:35:59'),
+(56, NULL, NULL, 'PENDING_MESSAGES_EXPIRE', '1730803259', '2024-11-05 11:35:59', '2024-11-05 11:35:59'),
+(57, NULL, NULL, 'AVG_MSG_RESPONSE_TIME', '0 godzin', '2024-11-05 11:35:59', '2024-11-05 11:35:59'),
+(58, NULL, NULL, 'AVG_MSG_RESPONSE_TIME_EXPIRE', '1730817359', '2024-11-05 11:35:59', '2024-11-05 11:35:59');
 
 -- --------------------------------------------------------
 
@@ -3255,7 +3304,11 @@ CREATE TABLE `ps_configuration_kpi_lang` (
 
 INSERT INTO `ps_configuration_kpi_lang` (`id_configuration_kpi`, `id_lang`, `value`, `date_upd`) VALUES
 (43, 1, 'Brak kategorii', '2024-10-27 16:34:37'),
-(44, 1, '1730129677', '2024-10-27 16:34:37');
+(44, 1, '1730129677', '2024-10-27 16:34:37'),
+(45, 1, '100% Klientów Mężczyzn', '2024-11-05 11:35:23'),
+(46, 1, '1730889323', '2024-11-05 11:35:23'),
+(47, 1, '19 lat', '2024-11-05 11:35:23'),
+(48, 1, '1730889323', '2024-11-05 11:35:23');
 
 -- --------------------------------------------------------
 
@@ -3322,7 +3375,14 @@ INSERT INTO `ps_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_
 (3, 1, 1, 1, 1, 2887057409, '2024-10-27 16:56:57', ''),
 (4, 1, 1, 1, 1, 2887057409, '2024-10-27 19:50:56', ''),
 (5, 1, 1, 1, 2, 2887057409, '2024-10-27 20:21:06', ''),
-(6, 1, 1, 1, 2, 2887057409, '2024-10-27 20:52:01', '');
+(6, 1, 1, 1, 2, 2887057409, '2024-10-27 20:52:01', ''),
+(7, 1, 1, 1, 1, 2886991873, '2024-11-05 11:29:00', ''),
+(8, 1, 1, 1, 3, 2886991873, '2024-11-05 11:31:07', 'http://localhost:8080/my-account'),
+(9, 1, 1, 1, 3, 2886991873, '2024-11-05 11:31:22', 'http://localhost:8080/my-account'),
+(10, 1, 1, 4, 1, 2886991873, '2024-11-05 11:32:27', 'http://localhost:8080/'),
+(11, 1, 1, 4, 1, 2886991873, '2024-11-05 12:09:50', ''),
+(12, 1, 1, 5, 1, 2886991873, '2024-11-05 12:27:15', 'http://localhost:8080/my-account'),
+(13, 1, 1, 6, 1, 2886991873, '2024-11-05 12:39:02', 'http://localhost:8080/login?create_account=1');
 
 -- --------------------------------------------------------
 
@@ -3484,7 +3544,42 @@ INSERT INTO `ps_connections_source` (`id_connections_source`, `id_connections`, 
 (125, 4, 'http://localhost:8080/sitemap', 'localhost:8080/new-products', '', '2024-10-27 20:59:49'),
 (126, 4, 'http://localhost:8080/new-products', 'localhost:8080/7-breloki', '', '2024-10-27 20:59:53'),
 (127, 4, 'http://localhost:8080/7-breloki', 'localhost:8080/', '', '2024-10-27 20:59:54'),
-(128, 4, 'http://localhost:8080/7-breloki', 'localhost:8080/', '', '2024-10-27 21:00:50');
+(128, 4, 'http://localhost:8080/7-breloki', 'localhost:8080/', '', '2024-10-27 21:00:50'),
+(129, 7, 'http://localhost:8080/', 'localhost:8080/login?back=my-account', '', '2024-11-05 11:29:11'),
+(130, 7, 'http://localhost:8080/login?back=my-account', 'localhost:8080/login?create_account=1', '', '2024-11-05 11:29:17'),
+(131, 7, 'http://localhost:8080/login?create_account=1', 'localhost:8080/', '', '2024-11-05 11:29:56'),
+(132, 7, 'http://localhost:8080/', 'localhost:8080/my-account', '', '2024-11-05 11:30:01'),
+(133, 7, 'http://localhost:8080/my-account', 'localhost:8080/identity', '', '2024-11-05 11:30:02'),
+(134, 7, 'http://localhost:8080/', 'localhost:8080/my-account', '', '2024-11-05 11:30:06'),
+(135, 7, 'http://localhost:8080/my-account', 'localhost:8080/credit-slip', '', '2024-11-05 11:30:55'),
+(136, 7, 'http://localhost:8080/credit-slip', 'localhost:8080/my-account', '', '2024-11-05 11:30:59'),
+(137, 7, 'http://localhost:8080/my-account', 'localhost:8080/order-history', '', '2024-11-05 11:31:01'),
+(138, 7, 'http://localhost:8080/order-history', 'localhost:8080/my-account', '', '2024-11-05 11:31:02'),
+(139, 7, 'http://localhost:8080/my-account', 'localhost:8080/address', '', '2024-11-05 11:31:03'),
+(140, 7, 'http://localhost:8080/address', 'localhost:8080/my-account', '', '2024-11-05 11:31:05'),
+(141, 8, 'http://localhost:8080/my-account', 'localhost:8080/login?back=my-account', '', '2024-11-05 11:31:07'),
+(142, 8, 'http://localhost:8080/login?back=my-account', 'localhost:8080/login?back=my-account', '', '2024-11-05 11:31:13'),
+(143, 8, 'http://localhost:8080/login?back=my-account', 'localhost:8080/my-account', '', '2024-11-05 11:31:19'),
+(144, 9, 'http://localhost:8080/my-account', 'localhost:8080/login?back=my-account', '', '2024-11-05 11:31:22'),
+(145, 9, 'http://localhost:8080/login?back=my-account', 'localhost:8080/my-account', '', '2024-11-05 11:32:20'),
+(146, 9, 'http://localhost:8080/my-account', 'localhost:8080/', '', '2024-11-05 11:32:22'),
+(147, 10, 'http://localhost:8080/', 'localhost:8080/', '', '2024-11-05 11:32:27'),
+(148, 10, 'http://localhost:8080/', 'localhost:8080/login?back=my-account', '', '2024-11-05 11:32:27'),
+(149, 10, 'http://localhost:8080/login?back=my-account', 'localhost:8080/password-recovery', '', '2024-11-05 11:32:30'),
+(150, 10, 'http://localhost:8080/password-recovery', 'localhost:8080/password-recovery', '', '2024-11-05 11:32:33'),
+(151, 10, 'http://localhost:8080/password-recovery', 'localhost:8080/content/4-about-us', '', '2024-11-05 11:39:31'),
+(152, 11, 'http://localhost:8080/', 'localhost:8080/login?back=my-account', '', '2024-11-05 12:10:02'),
+(153, 11, 'http://localhost:8080/login?back=my-account', 'localhost:8080/password-recovery', '', '2024-11-05 12:10:04'),
+(154, 11, 'http://localhost:8080/password-recovery', 'localhost:8080/password-recovery', '', '2024-11-05 12:10:07'),
+(155, 11, 'http://localhost:8080/password-recovery?token=d4d99f7f7dd390033c07bb5166dd1c7b&id_customer=2&reset_token=63981d96896e255bc4a1e6ad638639caaaca72c8', 'localhost:8080/my-account', '', '2024-11-05 12:10:45'),
+(156, 11, 'http://localhost:8080/password-recovery', 'localhost:8080/my-account', '', '2024-11-05 12:22:12'),
+(157, 11, 'http://localhost:8080/my-account', 'localhost:8080/', '', '2024-11-05 12:22:15'),
+(158, 12, 'http://localhost:8080/my-account', 'localhost:8080/', '', '2024-11-05 12:27:15'),
+(159, 12, 'http://localhost:8080/', 'localhost:8080/login?back=my-account', '', '2024-11-05 12:27:16'),
+(160, 12, 'http://localhost:8080/login?back=my-account', 'localhost:8080/login?create_account=1', '', '2024-11-05 12:27:19'),
+(161, 12, 'http://localhost:8080/login?create_account=1', 'localhost:8080/', '', '2024-11-05 12:27:38'),
+(162, 12, 'http://localhost:8080/login?create_account=1', 'localhost:8080/', '', '2024-11-05 12:28:59'),
+(163, 13, 'http://localhost:8080/login?create_account=1', 'localhost:8080/', '', '2024-11-05 12:39:02');
 
 -- --------------------------------------------------------
 
@@ -4679,7 +4774,7 @@ CREATE TABLE `ps_employee` (
 --
 
 INSERT INTO `ps_employee` (`id_employee`, `id_profile`, `id_lang`, `lastname`, `firstname`, `email`, `passwd`, `last_passwd_gen`, `stats_date_from`, `stats_date_to`, `stats_compare_from`, `stats_compare_to`, `stats_compare_option`, `preselect_date_range`, `bo_color`, `bo_theme`, `bo_css`, `default_tab`, `bo_width`, `bo_menu`, `active`, `optin`, `id_last_order`, `id_last_customer_message`, `id_last_customer`, `last_connection_date`, `reset_password_token`, `reset_password_validity`, `has_enabled_gravatar`) VALUES
-(1, 1, 1, 'Admin', 'Admin', 'admin@prestashop.com', '$2y$10$flYfD2LxAna2JFPt.V90.uR0Eva7zp6z.d.dyjJ9mIWL5zpXeerrO', '2024-10-25 13:41:27', '2024-09-25', '2024-10-25', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 0, 0, 0, '2024-10-27', NULL, '0000-00-00 00:00:00', 0);
+(1, 1, 1, 'Admin', 'Admin', 'admin@prestashop.com', '$2y$10$flYfD2LxAna2JFPt.V90.uR0Eva7zp6z.d.dyjJ9mIWL5zpXeerrO', '2024-10-25 13:41:27', '2024-09-25', '2024-10-25', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 0, 0, 2, '2024-11-05', NULL, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -4714,7 +4809,7 @@ CREATE TABLE `ps_employee_session` (
 
 INSERT INTO `ps_employee_session` (`id_employee_session`, `id_employee`, `token`) VALUES
 (1, 1, 'f1b15c9e1ece2a89f6a3d3654e0cca1e9041d81e'),
-(2, 1, '26c051e8b92725399c3681114fcc7bd01937e8fb');
+(3, 1, '42f9622a95f15f4ec997f8847b64177190a5c2e2');
 
 -- --------------------------------------------------------
 
@@ -4752,7 +4847,10 @@ CREATE TABLE `ps_eventbus_deleted_objects` (
 --
 
 INSERT INTO `ps_eventbus_deleted_objects` (`type`, `id_object`, `id_shop`, `created_at`) VALUES
-('categories', 9, 1, '2024-10-27 20:41:33');
+('categories', 9, 1, '2024-10-27 20:41:33'),
+('customers', 2, 1, '2024-11-05 12:25:47'),
+('customers', 3, 1, '2024-11-05 12:38:45'),
+('products', 1, 1, '2024-11-05 12:25:21');
 
 -- --------------------------------------------------------
 
@@ -5072,7 +5170,10 @@ CREATE TABLE `ps_guest` (
 --
 
 INSERT INTO `ps_guest` (`id_guest`, `id_operating_system`, `id_web_browser`, `id_customer`, `javascript`, `screen_resolution_x`, `screen_resolution_y`, `screen_color`, `sun_java`, `adobe_flash`, `adobe_director`, `apple_quicktime`, `real_player`, `windows_media`, `accept_language`, `mobile_theme`) VALUES
-(1, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0);
+(1, 8, 11, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
+(4, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
+(5, 8, 11, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
+(6, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0);
 
 -- --------------------------------------------------------
 
@@ -5967,7 +6068,8 @@ INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `active`, `pos
 (806, 'actionObjectZoneAddAfter', 'actionObjectZoneAddAfter', '', 1, 1),
 (807, 'actionObjectZoneDeleteAfter', 'actionObjectZoneDeleteAfter', '', 1, 1),
 (808, 'actionObjectZoneUpdateAfter', 'actionObjectZoneUpdateAfter', '', 1, 1),
-(809, 'actionObjectEmployeeAddAfter', 'actionObjectEmployeeAddAfter', '', 1, 1);
+(809, 'actionObjectEmployeeAddAfter', 'actionObjectEmployeeAddAfter', '', 1, 1),
+(810, 'actionProductCoverage', 'actionProductCoverage', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -6277,6 +6379,12 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (64, 1, 807, 1),
 (64, 1, 808, 1),
 (64, 1, 809, 1),
+(65, 1, 1, 1),
+(65, 1, 8, 1),
+(65, 1, 57, 1),
+(65, 1, 65, 1),
+(65, 1, 116, 1),
+(65, 1, 810, 1),
 (3, 1, 682, 2),
 (4, 1, 688, 2),
 (5, 1, 689, 2),
@@ -6327,6 +6435,10 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (64, 1, 732, 2),
 (64, 1, 739, 2),
 (64, 1, 758, 2),
+(65, 1, 49, 2),
+(65, 1, 58, 2),
+(65, 1, 75, 2),
+(65, 1, 105, 2),
 (4, 1, 682, 3),
 (5, 1, 688, 3),
 (6, 1, 689, 3),
@@ -6347,6 +6459,9 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (59, 1, 47, 3),
 (59, 1, 71, 3),
 (60, 1, 46, 3),
+(65, 1, 28, 3),
+(65, 1, 694, 3),
+(65, 1, 695, 3),
 (1, 1, 41, 4),
 (5, 1, 682, 4),
 (6, 1, 688, 4),
@@ -6356,6 +6471,7 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (38, 1, 55, 4),
 (57, 1, 683, 4),
 (60, 1, 71, 4),
+(65, 1, 685, 4),
 (7, 1, 682, 5),
 (39, 1, 55, 5),
 (59, 1, 16, 5),
@@ -6367,11 +6483,13 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (61, 1, 683, 6),
 (41, 1, 55, 7),
 (57, 1, 682, 7),
+(65, 1, 683, 7),
 (42, 1, 55, 8),
 (58, 1, 682, 8),
 (43, 1, 55, 9),
 (63, 1, 682, 9),
 (45, 1, 55, 10),
+(65, 1, 682, 10),
 (46, 1, 55, 11),
 (47, 1, 55, 12),
 (48, 1, 55, 13),
@@ -6617,17 +6735,6 @@ CREATE TABLE `ps_layered_filter_block` (
   `data` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
 
---
--- Zrzut danych tabeli `ps_layered_filter_block`
---
-
-INSERT INTO `ps_layered_filter_block` (`hash`, `data`) VALUES
-('1a53abdd3ceb679028d32b737d3bcbdf', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('49fe8498c58dfc48a60ed6c25cb40b6e', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('d09c9a59a8c5442bf92fd6bfac2a47a1', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('d40da7ef44aaf6cc7547b00007e5a04b', 'a:1:{s:7:\"filters\";a:0:{}}'),
-('f2619c289a72ef0027dfb8d3c9ffa28a', 'a:1:{s:7:\"filters\";a:0:{}}');
-
 -- --------------------------------------------------------
 
 --
@@ -6727,6 +6834,13 @@ CREATE TABLE `ps_layered_price_index` (
   `price_max` decimal(20,6) NOT NULL,
   `id_country` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+
+--
+-- Zrzut danych tabeli `ps_layered_price_index`
+--
+
+INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `price_min`, `price_max`, `id_country`) VALUES
+(1, 1, 1, '0.000000', '0.000000', 14);
 
 -- --------------------------------------------------------
 
@@ -7088,7 +7202,12 @@ INSERT INTO `ps_log` (`id_log`, `severity`, `error_code`, `message`, `object_typ
 (230, 1, 0, 'Protect vendor folder in module ps_mbo', '', 0, 1, NULL, 1, 0, 1, '2024-10-27 16:36:10', '2024-10-27 16:36:10'),
 (231, 1, 0, 'Protect vendor folder in module ps_eventbus', '', 0, 1, NULL, 1, 0, 1, '2024-10-27 16:36:17', '2024-10-27 16:36:17'),
 (232, 1, 0, 'Protect vendor folder in module ps_banner', '', 0, 1, NULL, 1, 0, 1, '2024-10-27 17:03:00', '2024-10-27 17:03:00'),
-(233, 1, 0, 'Module ps_banner has no vendor folder', '', 0, 1, NULL, 1, 0, 1, '2024-10-27 17:03:00', '2024-10-27 17:03:00');
+(233, 1, 0, 'Module ps_banner has no vendor folder', '', 0, 1, NULL, 1, 0, 1, '2024-10-27 17:03:00', '2024-10-27 17:03:00'),
+(234, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', '', 0, 1, NULL, 1, 0, 0, '2024-11-05 11:29:56', '2024-11-05 11:29:56'),
+(235, 3, 0, 'Swift Error: Expected response code 220 but got an empty response', '', 0, 1, NULL, 1, 0, 0, '2024-11-05 11:32:33', '2024-11-05 11:32:33'),
+(236, 1, 0, 'Połączenie z panelem administracyjnym z 172.20.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-05 11:32:58', '2024-11-05 11:32:58'),
+(237, 1, 0, 'Protect vendor folder in module ps_emailalerts', '', 0, 1, NULL, 1, 0, 1, '2024-11-05 11:57:29', '2024-11-05 11:57:29'),
+(238, 1, 0, 'Product deleted: (1).', 'Product', 1, 1, NULL, 1, 0, 1, '2024-11-05 12:25:21', '2024-11-05 12:25:21');
 
 -- --------------------------------------------------------
 
@@ -7104,6 +7223,30 @@ CREATE TABLE `ps_mail` (
   `id_lang` int(11) UNSIGNED NOT NULL,
   `date_add` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
+--
+-- Zrzut danych tabeli `ps_mail`
+--
+
+INSERT INTO `ps_mail` (`id_mail`, `recipient`, `template`, `subject`, `id_lang`, `date_add`) VALUES
+(1, 'pavelgorelik25@gmail.com', 'password_query', '[Dystryktzero.pl] Potwierdzenie prośby o hasło', 1, '2024-11-05 12:10:07'),
+(2, 'pavelgorelik25@gmail.com', 'password', '[Dystryktzero.pl] Twoje nowe hasło', 1, '2024-11-05 12:10:45'),
+(3, 'pavelgorelik25@gmail.com', 'account', '[Dystryktzero.pl] Witaj !', 1, '2024-11-05 12:27:38');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `ps_mailalert_customer_oos`
+--
+
+CREATE TABLE `ps_mailalert_customer_oos` (
+  `id_customer` int(10) UNSIGNED NOT NULL,
+  `customer_email` varchar(128) NOT NULL,
+  `id_product` int(10) UNSIGNED NOT NULL,
+  `id_product_attribute` int(10) UNSIGNED NOT NULL,
+  `id_shop` int(10) UNSIGNED NOT NULL,
+  `id_lang` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- --------------------------------------------------------
 
@@ -7244,7 +7387,8 @@ INSERT INTO `ps_meta` (`id_meta`, `page`, `configurable`) VALUES
 (37, 'module-ps_emailsubscription-subscription', 1),
 (38, 'module-ps_shoppingcart-ajax', 1),
 (39, 'module-ps_wirepayment-payment', 1),
-(40, 'module-ps_wirepayment-validation', 1);
+(40, 'module-ps_wirepayment-validation', 1),
+(41, 'module-ps_emailalerts-account', 1);
 
 -- --------------------------------------------------------
 
@@ -7298,7 +7442,8 @@ INSERT INTO `ps_meta_lang` (`id_meta`, `id_shop`, `id_lang`, `title`, `descripti
 (37, 1, 1, '', '', '', ''),
 (38, 1, 1, '', '', '', ''),
 (39, 1, 1, '', '', '', ''),
-(40, 1, 1, '', '', '', '');
+(40, 1, 1, '', '', '', ''),
+(41, 1, 1, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -7380,7 +7525,8 @@ INSERT INTO `ps_module` (`id_module`, `name`, `active`, `version`) VALUES
 (61, 'blockreassurance', 1, '5.1.4'),
 (62, 'ps_accounts', 1, '7.0.8'),
 (63, 'ps_mbo', 1, '3.2.0'),
-(64, 'ps_eventbus', 1, '3.2.0');
+(64, 'ps_eventbus', 1, '3.2.0'),
+(65, 'ps_emailalerts', 1, '3.0.0');
 
 -- --------------------------------------------------------
 
@@ -7649,7 +7795,11 @@ INSERT INTO `ps_module_access` (`id_profile`, `id_authorization_role`) VALUES
 (1, 885),
 (1, 886),
 (1, 887),
-(1, 888);
+(1, 888),
+(1, 889),
+(1, 890),
+(1, 891),
+(1, 892);
 
 -- --------------------------------------------------------
 
@@ -8118,7 +8268,10 @@ INSERT INTO `ps_module_group` (`id_module`, `id_shop`, `id_group`) VALUES
 (63, 1, 3),
 (64, 1, 1),
 (64, 1, 2),
-(64, 1, 3);
+(64, 1, 3),
+(65, 1, 1),
+(65, 1, 2),
+(65, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -8143,7 +8296,8 @@ INSERT INTO `ps_module_history` (`id`, `id_employee`, `id_module`, `date_add`, `
 (2, 1, 12, '2024-10-27 16:44:58', '2024-10-27 16:44:58'),
 (3, 1, 25, '2024-10-27 17:09:37', '2024-10-27 17:09:37'),
 (4, 1, 13, '2024-10-27 20:07:49', '2024-10-27 20:07:49'),
-(5, 1, 21, '2024-10-27 20:15:47', '2024-10-27 20:15:47');
+(5, 1, 21, '2024-10-27 20:15:47', '2024-10-27 20:15:47'),
+(6, 1, 65, '2024-11-05 11:57:38', '2024-11-05 11:57:38');
 
 -- --------------------------------------------------------
 
@@ -8237,7 +8391,8 @@ INSERT INTO `ps_module_shop` (`id_module`, `id_shop`, `enable_device`) VALUES
 (61, 1, 7),
 (62, 1, 7),
 (63, 1, 7),
-(64, 1, 7);
+(64, 1, 7),
+(65, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -8769,7 +8924,8 @@ CREATE TABLE `ps_page` (
 
 INSERT INTO `ps_page` (`id_page`, `id_page_type`, `id_object`) VALUES
 (1, 1, NULL),
-(2, 2, NULL);
+(2, 2, NULL),
+(3, 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -8802,6 +8958,7 @@ CREATE TABLE `ps_page_type` (
 --
 
 INSERT INTO `ps_page_type` (`id_page_type`, `name`) VALUES
+(3, 'authentication'),
 (1, 'index'),
 (2, 'pagenotfound');
 
@@ -9388,6 +9545,14 @@ CREATE TABLE `ps_psgdpr_log` (
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+
+--
+-- Zrzut danych tabeli `ps_psgdpr_log`
+--
+
+INSERT INTO `ps_psgdpr_log` (`id_gdpr_log`, `id_customer`, `id_guest`, `client_name`, `id_module`, `request_type`, `date_add`, `date_upd`) VALUES
+(1, 2, 0, 'Pavel Harelik', 0, 1, '2024-11-05 11:29:56', '2024-11-05 11:29:56'),
+(2, 3, 0, 'Pavel Harelik', 0, 1, '2024-11-05 12:27:38', '2024-11-05 12:27:38');
 
 -- --------------------------------------------------------
 
@@ -12105,6 +12270,14 @@ CREATE TABLE `ps_wishlist` (
   `default` int(10) UNSIGNED DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
 
+--
+-- Zrzut danych tabeli `ps_wishlist`
+--
+
+INSERT INTO `ps_wishlist` (`id_wishlist`, `id_customer`, `id_shop`, `id_shop_group`, `token`, `name`, `counter`, `date_add`, `date_upd`, `default`) VALUES
+(1, 2, 1, 1, '3D4750AD3CF739DE', 'Moja lista życzeń', NULL, '2024-11-05 11:29:56', '2024-11-05 11:29:56', 1),
+(2, 3, 1, 1, '59455884C5EB7615', 'Moja lista życzeń', NULL, '2024-11-05 12:27:39', '2024-11-05 12:27:39', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -13149,6 +13322,12 @@ ALTER TABLE `ps_mail`
   ADD KEY `recipient` (`recipient`(10));
 
 --
+-- Indeksy dla tabeli `ps_mailalert_customer_oos`
+--
+ALTER TABLE `ps_mailalert_customer_oos`
+  ADD PRIMARY KEY (`id_customer`,`customer_email`,`id_product`,`id_product_attribute`,`id_shop`);
+
+--
 -- Indeksy dla tabeli `ps_manufacturer`
 --
 ALTER TABLE `ps_manufacturer`
@@ -14189,7 +14368,7 @@ ALTER TABLE `ps_address`
 -- AUTO_INCREMENT dla tabeli `ps_admin_filter`
 --
 ALTER TABLE `ps_admin_filter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_alias`
@@ -14231,7 +14410,7 @@ ALTER TABLE `ps_attribute_impact`
 -- AUTO_INCREMENT dla tabeli `ps_authorization_role`
 --
 ALTER TABLE `ps_authorization_role`
-  MODIFY `id_authorization_role` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=889;
+  MODIFY `id_authorization_role` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=893;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_blockwishlist_statistics`
@@ -14249,7 +14428,7 @@ ALTER TABLE `ps_carrier`
 -- AUTO_INCREMENT dla tabeli `ps_cart`
 --
 ALTER TABLE `ps_cart`
-  MODIFY `id_cart` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cart` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_cart_rule`
@@ -14303,25 +14482,25 @@ ALTER TABLE `ps_cms_role`
 -- AUTO_INCREMENT dla tabeli `ps_configuration`
 --
 ALTER TABLE `ps_configuration`
-  MODIFY `id_configuration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=440;
+  MODIFY `id_configuration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=465;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_configuration_kpi`
 --
 ALTER TABLE `ps_configuration_kpi`
-  MODIFY `id_configuration_kpi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_configuration_kpi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_connections`
 --
 ALTER TABLE `ps_connections`
-  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_connections_source`
 --
 ALTER TABLE `ps_connections_source`
-  MODIFY `id_connections_source` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id_connections_source` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_contact`
@@ -14345,7 +14524,7 @@ ALTER TABLE `ps_currency`
 -- AUTO_INCREMENT dla tabeli `ps_customer`
 --
 ALTER TABLE `ps_customer`
-  MODIFY `id_customer` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_customer` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_customer_message`
@@ -14357,7 +14536,7 @@ ALTER TABLE `ps_customer_message`
 -- AUTO_INCREMENT dla tabeli `ps_customer_session`
 --
 ALTER TABLE `ps_customer_session`
-  MODIFY `id_customer_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_customer_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_customer_thread`
@@ -14411,7 +14590,7 @@ ALTER TABLE `ps_employee_account`
 -- AUTO_INCREMENT dla tabeli `ps_employee_session`
 --
 ALTER TABLE `ps_employee_session`
-  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_feature`
@@ -14453,7 +14632,7 @@ ALTER TABLE `ps_group_reduction`
 -- AUTO_INCREMENT dla tabeli `ps_guest`
 --
 ALTER TABLE `ps_guest`
-  MODIFY `id_guest` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_guest` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_homeslider`
@@ -14471,7 +14650,7 @@ ALTER TABLE `ps_homeslider_slides`
 -- AUTO_INCREMENT dla tabeli `ps_hook`
 --
 ALTER TABLE `ps_hook`
-  MODIFY `id_hook` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=810;
+  MODIFY `id_hook` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=811;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_hook_alias`
@@ -14549,13 +14728,13 @@ ALTER TABLE `ps_link_block_shop`
 -- AUTO_INCREMENT dla tabeli `ps_log`
 --
 ALTER TABLE `ps_log`
-  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
+  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=239;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_mail`
 --
 ALTER TABLE `ps_mail`
-  MODIFY `id_mail` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mail` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_manufacturer`
@@ -14579,19 +14758,19 @@ ALTER TABLE `ps_message`
 -- AUTO_INCREMENT dla tabeli `ps_meta`
 --
 ALTER TABLE `ps_meta`
-  MODIFY `id_meta` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_meta` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_module`
 --
 ALTER TABLE `ps_module`
-  MODIFY `id_module` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id_module` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_module_history`
 --
 ALTER TABLE `ps_module_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_module_preference`
@@ -14681,7 +14860,7 @@ ALTER TABLE `ps_order_state`
 -- AUTO_INCREMENT dla tabeli `ps_page`
 --
 ALTER TABLE `ps_page`
-  MODIFY `id_page` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_page` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_pagenotfound`
@@ -14693,13 +14872,13 @@ ALTER TABLE `ps_pagenotfound`
 -- AUTO_INCREMENT dla tabeli `ps_page_type`
 --
 ALTER TABLE `ps_page_type`
-  MODIFY `id_page_type` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_page_type` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_product`
 --
 ALTER TABLE `ps_product`
-  MODIFY `id_product` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_product` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_product_attribute`
@@ -14765,7 +14944,7 @@ ALTER TABLE `ps_psgdpr_consent_lang`
 -- AUTO_INCREMENT dla tabeli `ps_psgdpr_log`
 --
 ALTER TABLE `ps_psgdpr_log`
-  MODIFY `id_gdpr_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_gdpr_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_psreassurance`
@@ -14903,7 +15082,7 @@ ALTER TABLE `ps_stock`
 -- AUTO_INCREMENT dla tabeli `ps_stock_available`
 --
 ALTER TABLE `ps_stock_available`
-  MODIFY `id_stock_available` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_stock_available` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_stock_mvt`
@@ -15041,7 +15220,7 @@ ALTER TABLE `ps_web_browser`
 -- AUTO_INCREMENT dla tabeli `ps_wishlist`
 --
 ALTER TABLE `ps_wishlist`
-  MODIFY `id_wishlist` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_wishlist` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_wishlist_product`
