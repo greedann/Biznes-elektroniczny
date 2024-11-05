@@ -1,36 +1,36 @@
 <?php
-/* Smarty version 3.1.48, created on 2024-11-05 12:09:50
+/* Smarty version 3.1.48, created on 2024-11-05 14:57:12
   from 'module:pscustomeraccountlinkspsc' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6729fcfedb4f86_15580027',
+  'unifunc' => 'content_672a24385cd232_74602725',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '42f9461127ce7396a601c2484841253ea5ba658f' => 
     array (
       0 => 'module:pscustomeraccountlinkspsc',
-      1 => 1702485415,
+      1 => 1730808588,
       2 => 'module',
     ),
   ),
   'cache_lifetime' => 31536000,
 ),true)) {
-function content_6729fcfedb4f86_15580027 (Smarty_Internal_Template $_smarty_tpl) {
+function content_672a24385cd232_74602725 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->smarty->ext->_tplFunction->registerTplFunctions($_smarty_tpl, array (
   'renderLogo' => 
   array (
     'compiled_filepath' => '/var/www/html/var/cache/dev/smarty/compile/classiclayouts_layout_full_width_tpl/d2/2d/85/d22d851f6d7c12eb35c1c34c8e84baa801a8cea2_2.file.helpers.tpl.php',
     'uid' => 'd22d851f6d7c12eb35c1c34c8e84baa801a8cea2',
-    'call_name' => 'smarty_template_function_renderLogo_11022512456729fcfecf7879_44096991',
+    'call_name' => 'smarty_template_function_renderLogo_1571043877672a243849fa95_98278513',
   ),
 ));
 ?><!-- begin /var/www/html/themes/classic/modules/ps_customeraccountlinks/ps_customeraccountlinks.tpl -->
 <div id="block_myaccount_infos" class="col-md-3 links wrapper">
   <p class="h3 myaccount-title hidden-sm-down">
-    <a class="text-uppercase" href="http://localhost:8080/my-account" rel="nofollow">
+    <a class="text-uppercase" href="http://localhost/my-account" rel="nofollow">
       Twoje konto
     </a>
   </p>
@@ -45,22 +45,22 @@ $_smarty_tpl->smarty->ext->_tplFunction->registerTplFunctions($_smarty_tpl, arra
   </div>
   <ul class="account-list collapse" id="footer_account_list">
             <li>
-          <a href="http://localhost:8080/identity" title="Dane osobowe" rel="nofollow">
+          <a href="http://localhost/identity" title="Dane osobowe" rel="nofollow">
             Dane osobowe
           </a>
         </li>
             <li>
-          <a href="http://localhost:8080/order-history" title="Zamówienia" rel="nofollow">
+          <a href="http://localhost/order-history" title="Zamówienia" rel="nofollow">
             Zamówienia
           </a>
         </li>
             <li>
-          <a href="http://localhost:8080/credit-slip" title="Moje pokwitowania - korekty płatności" rel="nofollow">
+          <a href="http://localhost/credit-slip" title="Moje pokwitowania - korekty płatności" rel="nofollow">
             Moje pokwitowania - korekty płatności
           </a>
         </li>
             <li>
-          <a href="http://localhost:8080/addresses" title="Adresy" rel="nofollow">
+          <a href="http://localhost/addresses" title="Adresy" rel="nofollow">
             Adresy
           </a>
         </li>
@@ -72,7 +72,7 @@ $_smarty_tpl->smarty->ext->_tplFunction->registerTplFunctions($_smarty_tpl, arra
 
 <!-- begin /var/www/html/themes/classic/modules/ps_emailalerts/views/templates/hook/my-account-footer.tpl -->
 <li>
-  <a href="//localhost:8080/module/ps_emailalerts/account" title="Moje powiadomienia">
+  <a href="//localhost/module/ps_emailalerts/account" title="Moje powiadomienia">
     Moje powiadomienia
   </a>
 </li>
