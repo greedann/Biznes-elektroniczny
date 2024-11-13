@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2024-11-05 14:57:07
+/* Smarty version 3.1.48, created on 2024-11-13 15:12:37
   from '/var/www/html/admin1337/themes/new-theme/template/components/layout/notifications_center.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_672a24335fb773_13798683',
+  'unifunc' => 'content_6734b3d5d435f9_64950100',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6d49be8e58023b8e6ae6ef66eda058b467954db0' => 
     array (
       0 => '/var/www/html/admin1337/themes/new-theme/template/components/layout/notifications_center.tpl',
-      1 => 1730808586,
+      1 => 1731504191,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_672a24335fb773_13798683 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6734b3d5d435f9_64950100 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="notif" class="notification-center dropdown dropdown-clickable">
   <button class="btn notification js-notification dropdown-toggle" data-toggle="dropdown">
     <i class="material-icons">notifications_none</i>

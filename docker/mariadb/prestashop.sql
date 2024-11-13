@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Czas generowania: 05 Lis 2024, 16:27
+-- Czas generowania: 13 Lis 2024, 14:14
 -- Wersja serwera: 11.5.2-MariaDB-ubu2404
 -- Wersja PHP: 7.4.20
 
@@ -2070,7 +2070,13 @@ CREATE TABLE `ps_carrier` (
 --
 
 INSERT INTO `ps_carrier` (`id_carrier`, `id_reference`, `id_tax_rules_group`, `name`, `url`, `active`, `deleted`, `shipping_handling`, `range_behavior`, `is_module`, `is_free`, `shipping_external`, `need_range`, `external_module_name`, `shipping_method`, `position`, `max_width`, `max_height`, `max_depth`, `max_weight`, `grade`) VALUES
-(1, 1, 0, '0', '', 1, 0, 0, 0, 0, 1, 0, 0, '', 0, 0, 0, 0, 0, '0.000000', 0);
+(1, 1, 0, '0', '', 1, 0, 0, 0, 0, 1, 0, 0, '', 0, 2, 0, 0, 0, '0.000000', 0),
+(2, 2, 0, 'Paczkomat InPost', '', 1, 1, 0, 1, 0, 0, 0, 0, '', 2, 0, 100, 100, 100, '50.000000', 0),
+(3, 2, 0, 'Paczkomat InPost', '', 1, 1, 0, 1, 0, 0, 0, 0, '', 1, 0, 100, 100, 100, '50.000000', 0),
+(4, 4, 0, 'Kurier DHL', '', 1, 1, 0, 1, 0, 0, 0, 0, '', 1, 1, 0, 0, 0, '0.000000', 0),
+(5, 2, 0, 'Paczkomat InPost', '', 1, 1, 0, 1, 0, 0, 0, 0, '', 1, 0, 0, 0, 0, '50.000000', 0),
+(6, 2, 0, 'Paczkomat InPost', '', 1, 0, 0, 1, 0, 0, 0, 0, '', 1, 1, 0, 0, 0, '50.000000', 0),
+(7, 4, 0, 'Kurier DHL', '', 1, 0, 0, 1, 0, 0, 0, 0, '', 1, 0, 0, 0, 0, '50.000000', 0);
 
 -- --------------------------------------------------------
 
@@ -2090,7 +2096,25 @@ CREATE TABLE `ps_carrier_group` (
 INSERT INTO `ps_carrier_group` (`id_carrier`, `id_group`) VALUES
 (1, 1),
 (1, 2),
-(1, 3);
+(1, 3),
+(2, 1),
+(2, 2),
+(2, 3),
+(3, 1),
+(3, 2),
+(3, 3),
+(4, 1),
+(4, 2),
+(4, 3),
+(5, 1),
+(5, 2),
+(5, 3),
+(6, 1),
+(6, 2),
+(6, 3),
+(7, 1),
+(7, 2),
+(7, 3);
 
 -- --------------------------------------------------------
 
@@ -2110,7 +2134,13 @@ CREATE TABLE `ps_carrier_lang` (
 --
 
 INSERT INTO `ps_carrier_lang` (`id_carrier`, `id_shop`, `id_lang`, `delay`) VALUES
-(1, 1, 1, 'Pick up in-store');
+(1, 1, 1, 'Pick up in-store'),
+(2, 1, 1, '2-5 dni'),
+(3, 1, 1, '2-5 dni'),
+(4, 1, 1, '2-5 dni'),
+(5, 1, 1, '2-5 dni'),
+(6, 1, 1, '2-5 dni'),
+(7, 1, 1, '2-5 dni');
 
 -- --------------------------------------------------------
 
@@ -2128,7 +2158,13 @@ CREATE TABLE `ps_carrier_shop` (
 --
 
 INSERT INTO `ps_carrier_shop` (`id_carrier`, `id_shop`) VALUES
-(1, 1);
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1),
+(6, 1),
+(7, 1);
 
 -- --------------------------------------------------------
 
@@ -2147,7 +2183,13 @@ CREATE TABLE `ps_carrier_tax_rules_group_shop` (
 --
 
 INSERT INTO `ps_carrier_tax_rules_group_shop` (`id_carrier`, `id_tax_rules_group`, `id_shop`) VALUES
-(1, 1, 1);
+(1, 1, 1),
+(2, 0, 1),
+(3, 0, 1),
+(4, 0, 1),
+(5, 0, 1),
+(6, 0, 1),
+(7, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -2165,7 +2207,13 @@ CREATE TABLE `ps_carrier_zone` (
 --
 
 INSERT INTO `ps_carrier_zone` (`id_carrier`, `id_zone`) VALUES
-(1, 1);
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1),
+(6, 1),
+(7, 1);
 
 -- --------------------------------------------------------
 
@@ -2764,7 +2812,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (20, NULL, NULL, 'PS_PRODUCTS_ORDER_BY', '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (21, NULL, NULL, 'PS_DISPLAY_QTIES', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (22, NULL, NULL, 'PS_SHIPPING_HANDLING', '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(23, NULL, NULL, 'PS_SHIPPING_FREE_PRICE', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(23, NULL, NULL, 'PS_SHIPPING_FREE_PRICE', '2000', '0000-00-00 00:00:00', '2024-11-13 14:46:27'),
 (24, NULL, NULL, 'PS_SHIPPING_FREE_WEIGHT', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (25, NULL, NULL, 'PS_SHIPPING_METHOD', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (26, NULL, NULL, 'PS_TAX', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -3011,7 +3059,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (267, NULL, NULL, 'PS_SMARTY_CLEAR_CACHE', 'everytime', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (268, NULL, NULL, 'PS_DETECT_LANG', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (269, NULL, NULL, 'PS_DETECT_COUNTRY', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(270, NULL, NULL, 'PS_ROUND_TYPE', '2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(270, NULL, NULL, 'PS_ROUND_TYPE', '1', '0000-00-00 00:00:00', '2024-11-13 14:32:20'),
 (271, NULL, NULL, 'PS_LOG_EMAILS', '1', '0000-00-00 00:00:00', '2024-11-05 12:08:03'),
 (272, NULL, NULL, 'PS_CUSTOMER_OPTIN', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (273, NULL, NULL, 'PS_CUSTOMER_BIRTHDATE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -3180,7 +3228,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (437, NULL, NULL, 'PS_SHOP_PHONE', '535 883 874', '2024-10-27 17:12:48', '2024-10-27 17:12:48'),
 (438, NULL, NULL, 'PS_SHOP_FAX', NULL, '2024-10-27 17:12:48', '2024-10-27 17:12:48'),
 (439, NULL, NULL, 'PS_MAINTENANCE_IP', NULL, '2024-10-27 17:24:25', '2024-10-27 17:24:25'),
-(440, NULL, NULL, 'PS_ACCOUNTS_FIREBASE_REFRESH_TOKEN', NULL, '2024-11-05 11:32:59', '2024-11-05 17:23:46'),
+(440, NULL, NULL, 'PS_ACCOUNTS_FIREBASE_REFRESH_TOKEN', NULL, '2024-11-05 11:32:59', '2024-11-13 15:11:33'),
 (441, NULL, NULL, 'PS_SAV_IMAP_URL', 'smtp.gmail.com', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
 (442, NULL, NULL, 'PS_SAV_IMAP_PORT', '587', '2024-11-05 11:46:32', '2024-11-05 11:49:21'),
 (443, NULL, NULL, 'PS_SAV_IMAP_USER', 'noreply.dystryktzero@gmail.com', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
@@ -3205,7 +3253,8 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (462, NULL, NULL, 'MA_PRODUCT_COVERAGE', '0', '2024-11-05 11:57:29', '2024-11-05 11:57:29'),
 (463, NULL, NULL, 'PS_MAIL_EMAIL_MESSAGE', '2', '2024-11-05 12:06:19', '2024-11-05 12:06:19'),
 (464, NULL, NULL, 'PS_MAIL_DOMAIN', NULL, '2024-11-05 12:06:19', '2024-11-05 12:06:19'),
-(465, NULL, NULL, 'PS_CCCJS_VERSION', '1', '2024-11-05 14:57:01', '2024-11-05 14:57:01'),
+(465, NULL, NULL, 'PS_CCCJS_VERSION', '1', '2024-11-05 14:57:01', '2024-11-05 14:57:01');
+INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, `name`, `value`, `date_add`, `date_upd`) VALUES
 (466, NULL, NULL, 'PS_CCCCSS_VERSION', '1', '2024-11-05 14:57:01', '2024-11-05 14:57:01');
 
 -- --------------------------------------------------------
@@ -3387,7 +3436,9 @@ INSERT INTO `ps_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_
 (12, 1, 1, 5, 1, 2886991873, '2024-11-05 12:27:15', 'http://localhost:8080/my-account'),
 (13, 1, 1, 6, 1, 2886991873, '2024-11-05 12:39:02', 'http://localhost:8080/login?create_account=1'),
 (14, 1, 1, 7, 1, 2887516161, '2024-11-05 14:57:12', ''),
-(15, 1, 1, 7, 1, 2887581697, '2024-11-05 17:23:23', '');
+(15, 1, 1, 7, 1, 2887581697, '2024-11-05 17:23:23', ''),
+(16, 1, 1, 7, 1, 2887188481, '2024-11-13 14:51:19', ''),
+(17, 1, 1, 8, 1, 2887254017, '2024-11-13 15:05:44', '');
 
 -- --------------------------------------------------------
 
@@ -4718,6 +4769,25 @@ CREATE TABLE `ps_delivery` (
   `price` decimal(20,6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
+--
+-- Zrzut danych tabeli `ps_delivery`
+--
+
+INSERT INTO `ps_delivery` (`id_delivery`, `id_shop`, `id_shop_group`, `id_carrier`, `id_range_price`, `id_range_weight`, `id_zone`, `price`) VALUES
+(2, NULL, NULL, 2, 1, NULL, 4, '0.000000'),
+(3, NULL, NULL, 2, 1, NULL, 3, '0.000000'),
+(4, NULL, NULL, 2, 1, NULL, 8, '0.000000'),
+(5, NULL, NULL, 2, 1, NULL, 1, '0.000000'),
+(6, NULL, NULL, 2, 1, NULL, 7, '0.000000'),
+(7, NULL, NULL, 2, 1, NULL, 2, '0.000000'),
+(8, NULL, NULL, 2, 1, NULL, 5, '0.000000'),
+(9, NULL, NULL, 2, 1, NULL, 6, '0.000000'),
+(11, NULL, NULL, 3, NULL, 1, 1, '15.000000'),
+(13, NULL, NULL, 4, NULL, 2, 1, '25.000000'),
+(15, NULL, NULL, 5, NULL, 3, 1, '15.000000'),
+(17, NULL, NULL, 6, NULL, 4, 1, '15.000000'),
+(19, NULL, NULL, 7, NULL, 5, 1, '25.000000');
+
 -- --------------------------------------------------------
 
 --
@@ -4779,7 +4849,7 @@ CREATE TABLE `ps_employee` (
 --
 
 INSERT INTO `ps_employee` (`id_employee`, `id_profile`, `id_lang`, `lastname`, `firstname`, `email`, `passwd`, `last_passwd_gen`, `stats_date_from`, `stats_date_to`, `stats_compare_from`, `stats_compare_to`, `stats_compare_option`, `preselect_date_range`, `bo_color`, `bo_theme`, `bo_css`, `default_tab`, `bo_width`, `bo_menu`, `active`, `optin`, `id_last_order`, `id_last_customer_message`, `id_last_customer`, `last_connection_date`, `reset_password_token`, `reset_password_validity`, `has_enabled_gravatar`) VALUES
-(1, 1, 1, 'Admin', 'Admin', 'admin@prestashop.com', '$2y$10$flYfD2LxAna2JFPt.V90.uR0Eva7zp6z.d.dyjJ9mIWL5zpXeerrO', '2024-10-25 13:41:27', '2024-09-25', '2024-10-25', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 0, 0, 2, '2024-11-05', NULL, '0000-00-00 00:00:00', 0);
+(1, 1, 1, 'Admin', 'Admin', 'admin@prestashop.com', '$2y$10$flYfD2LxAna2JFPt.V90.uR0Eva7zp6z.d.dyjJ9mIWL5zpXeerrO', '2024-10-25 13:41:27', '2024-09-25', '2024-10-25', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 0, 0, 2, '2024-11-13', NULL, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -4816,7 +4886,8 @@ INSERT INTO `ps_employee_session` (`id_employee_session`, `id_employee`, `token`
 (1, 1, 'f1b15c9e1ece2a89f6a3d3654e0cca1e9041d81e'),
 (3, 1, '42f9622a95f15f4ec997f8847b64177190a5c2e2'),
 (6, 1, 'e05ef3978ee84ce0d70cf726af74ce1082a4cf09'),
-(8, 1, '323d5ca893d272bb50751c0fd44da6b4e8f42fae');
+(8, 1, '323d5ca893d272bb50751c0fd44da6b4e8f42fae'),
+(10, 1, 'a31c9a8e7235de0247a72679bad76c94695958c4');
 
 -- --------------------------------------------------------
 
@@ -5180,7 +5251,9 @@ INSERT INTO `ps_guest` (`id_guest`, `id_operating_system`, `id_web_browser`, `id
 (1, 8, 11, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
 (4, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
 (5, 8, 11, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
-(6, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0);
+(6, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
+(7, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
+(8, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0);
 
 -- --------------------------------------------------------
 
@@ -7219,7 +7292,9 @@ INSERT INTO `ps_log` (`id_log`, `severity`, `error_code`, `message`, `object_typ
 (240, 1, 0, 'Połączenie z panelem administracyjnym z 172.29.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-05 15:01:27', '2024-11-05 15:01:27'),
 (241, 1, 0, 'Połączenie z panelem administracyjnym z 172.29.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-05 15:04:33', '2024-11-05 15:04:33'),
 (242, 1, 0, 'Połączenie z panelem administracyjnym z 172.29.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-05 15:07:27', '2024-11-05 15:07:27'),
-(243, 1, 0, 'Połączenie z panelem administracyjnym z 172.29.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-05 17:23:42', '2024-11-05 17:23:42');
+(243, 1, 0, 'Połączenie z panelem administracyjnym z 172.29.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-05 17:23:42', '2024-11-05 17:23:42'),
+(244, 1, 0, 'Połączenie z panelem administracyjnym z 172.23.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-13 14:29:04', '2024-11-13 14:29:04'),
+(245, 1, 0, 'Połączenie z panelem administracyjnym z 172.24.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-13 15:06:02', '2024-11-13 15:06:02');
 
 -- --------------------------------------------------------
 
@@ -7831,8 +7906,14 @@ CREATE TABLE `ps_module_carrier` (
 
 INSERT INTO `ps_module_carrier` (`id_module`, `id_shop`, `id_reference`) VALUES
 (14, 1, 1),
+(14, 1, 2),
+(14, 1, 4),
 (35, 1, 1),
-(57, 1, 1);
+(35, 1, 2),
+(35, 1, 4),
+(57, 1, 1),
+(57, 1, 2),
+(57, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -8309,7 +8390,10 @@ INSERT INTO `ps_module_history` (`id`, `id_employee`, `id_module`, `date_add`, `
 (3, 1, 25, '2024-10-27 17:09:37', '2024-10-27 17:09:37'),
 (4, 1, 13, '2024-10-27 20:07:49', '2024-10-27 20:07:49'),
 (5, 1, 21, '2024-10-27 20:15:47', '2024-10-27 20:15:47'),
-(6, 1, 65, '2024-11-05 11:57:38', '2024-11-05 11:57:38');
+(6, 1, 65, '2024-11-05 11:57:38', '2024-11-05 11:57:38'),
+(7, 1, 35, '2024-11-13 14:34:11', '2024-11-13 15:11:42'),
+(8, 1, 14, '2024-11-13 14:35:02', '2024-11-13 15:11:51'),
+(9, 1, 57, '2024-11-13 14:35:16', '2024-11-13 14:35:16');
 
 -- --------------------------------------------------------
 
@@ -8355,7 +8439,6 @@ INSERT INTO `ps_module_shop` (`id_module`, `id_shop`, `enable_device`) VALUES
 (11, 1, 7),
 (12, 1, 7),
 (13, 1, 7),
-(14, 1, 7),
 (15, 1, 7),
 (16, 1, 7),
 (17, 1, 7),
@@ -9677,6 +9760,13 @@ CREATE TABLE `ps_range_price` (
   `delimiter2` decimal(20,6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
+--
+-- Zrzut danych tabeli `ps_range_price`
+--
+
+INSERT INTO `ps_range_price` (`id_range_price`, `id_carrier`, `delimiter1`, `delimiter2`) VALUES
+(1, 2, '0.000000', '99999999999999.999999');
+
 -- --------------------------------------------------------
 
 --
@@ -9689,6 +9779,17 @@ CREATE TABLE `ps_range_weight` (
   `delimiter1` decimal(20,6) NOT NULL,
   `delimiter2` decimal(20,6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
+--
+-- Zrzut danych tabeli `ps_range_weight`
+--
+
+INSERT INTO `ps_range_weight` (`id_range_weight`, `id_carrier`, `delimiter1`, `delimiter2`) VALUES
+(1, 3, '0.000000', '50.000000'),
+(2, 4, '0.000000', '50.000000'),
+(3, 5, '0.000000', '50.000000'),
+(4, 6, '0.000000', '50.000000'),
+(5, 7, '0.000000', '50.000000');
 
 -- --------------------------------------------------------
 
@@ -14434,7 +14535,7 @@ ALTER TABLE `ps_blockwishlist_statistics`
 -- AUTO_INCREMENT dla tabeli `ps_carrier`
 --
 ALTER TABLE `ps_carrier`
-  MODIFY `id_carrier` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_carrier` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_cart`
@@ -14506,7 +14607,7 @@ ALTER TABLE `ps_configuration_kpi`
 -- AUTO_INCREMENT dla tabeli `ps_connections`
 --
 ALTER TABLE `ps_connections`
-  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_connections_source`
@@ -14578,7 +14679,7 @@ ALTER TABLE `ps_date_range`
 -- AUTO_INCREMENT dla tabeli `ps_delivery`
 --
 ALTER TABLE `ps_delivery`
-  MODIFY `id_delivery` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_delivery` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_emailsubscription`
@@ -14602,7 +14703,7 @@ ALTER TABLE `ps_employee_account`
 -- AUTO_INCREMENT dla tabeli `ps_employee_session`
 --
 ALTER TABLE `ps_employee_session`
-  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_feature`
@@ -14644,7 +14745,7 @@ ALTER TABLE `ps_group_reduction`
 -- AUTO_INCREMENT dla tabeli `ps_guest`
 --
 ALTER TABLE `ps_guest`
-  MODIFY `id_guest` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_guest` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_homeslider`
@@ -14740,7 +14841,7 @@ ALTER TABLE `ps_link_block_shop`
 -- AUTO_INCREMENT dla tabeli `ps_log`
 --
 ALTER TABLE `ps_log`
-  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=244;
+  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_mail`
@@ -14782,7 +14883,7 @@ ALTER TABLE `ps_module`
 -- AUTO_INCREMENT dla tabeli `ps_module_history`
 --
 ALTER TABLE `ps_module_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_module_preference`
@@ -14974,13 +15075,13 @@ ALTER TABLE `ps_quick_access`
 -- AUTO_INCREMENT dla tabeli `ps_range_price`
 --
 ALTER TABLE `ps_range_price`
-  MODIFY `id_range_price` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_range_price` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_range_weight`
 --
 ALTER TABLE `ps_range_weight`
-  MODIFY `id_range_weight` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_range_weight` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_referrer`

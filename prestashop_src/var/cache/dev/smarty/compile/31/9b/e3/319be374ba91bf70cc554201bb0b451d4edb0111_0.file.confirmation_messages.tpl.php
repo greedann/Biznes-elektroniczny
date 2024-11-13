@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2024-11-05 14:57:07
+/* Smarty version 3.1.48, created on 2024-11-13 15:12:37
   from '/var/www/html/admin1337/themes/new-theme/template/components/layout/confirmation_messages.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_672a243363a0b7_82593794',
+  'unifunc' => 'content_6734b3d5d8aec1_72056619',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '319be374ba91bf70cc554201bb0b451d4edb0111' => 
     array (
       0 => '/var/www/html/admin1337/themes/new-theme/template/components/layout/confirmation_messages.tpl',
-      1 => 1730808586,
+      1 => 1731504191,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_672a243363a0b7_82593794 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6734b3d5d8aec1_72056619 (Smarty_Internal_Template $_smarty_tpl) {
 if ((isset($_smarty_tpl->tpl_vars['confirmations']->value)) && count($_smarty_tpl->tpl_vars['confirmations']->value) && $_smarty_tpl->tpl_vars['confirmations']->value) {?>
   <div class="bootstrap">
     <div class="alert alert-success" style="display:block;">
