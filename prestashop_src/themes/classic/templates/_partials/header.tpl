@@ -35,7 +35,7 @@
         <li><a href="#">Aktywne promocje</a></li>
         <li><a href="#">Regulamin</a></li>
         <li><a href="#">Centrum pomocy</a></li>
-        <li>{hook h='displayNav1'}</li>
+        <li><a href="#">Kontakt</a></li>
       </ul>
     </nav>
   </div>
