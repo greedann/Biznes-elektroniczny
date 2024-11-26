@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Czas generowania: 14 Lis 2024, 15:01
+-- Czas generowania: 26 Lis 2024, 12:36
 -- Wersja serwera: 11.5.2-MariaDB-ubu2404
 -- Wersja PHP: 7.4.20
 
@@ -3229,7 +3229,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (437, NULL, NULL, 'PS_SHOP_PHONE', '535 883 874', '2024-10-27 17:12:48', '2024-10-27 17:12:48'),
 (438, NULL, NULL, 'PS_SHOP_FAX', NULL, '2024-10-27 17:12:48', '2024-10-27 17:12:48'),
 (439, NULL, NULL, 'PS_MAINTENANCE_IP', NULL, '2024-10-27 17:24:25', '2024-10-27 17:24:25'),
-(440, NULL, NULL, 'PS_ACCOUNTS_FIREBASE_REFRESH_TOKEN', NULL, '2024-11-05 11:32:59', '2024-11-14 16:00:17'),
+(440, NULL, NULL, 'PS_ACCOUNTS_FIREBASE_REFRESH_TOKEN', NULL, '2024-11-05 11:32:59', '2024-11-26 13:34:36'),
 (441, NULL, NULL, 'PS_SAV_IMAP_URL', 'smtp.gmail.com', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
 (442, NULL, NULL, 'PS_SAV_IMAP_PORT', '587', '2024-11-05 11:46:32', '2024-11-05 11:49:21'),
 (443, NULL, NULL, 'PS_SAV_IMAP_USER', 'noreply.dystryktzero@gmail.com', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
@@ -3440,7 +3440,8 @@ INSERT INTO `ps_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_
 (14, 1, 1, 7, 1, 2887516161, '2024-11-05 14:57:12', ''),
 (15, 1, 1, 7, 1, 2887581697, '2024-11-05 17:23:23', ''),
 (16, 1, 1, 7, 1, 2887188481, '2024-11-13 14:51:19', ''),
-(17, 1, 1, 8, 1, 2887254017, '2024-11-13 15:05:44', '');
+(17, 1, 1, 8, 1, 2887254017, '2024-11-13 15:05:44', ''),
+(18, 1, 1, 9, 1, 2887122945, '2024-11-26 13:34:07', '');
 
 -- --------------------------------------------------------
 
@@ -4851,7 +4852,7 @@ CREATE TABLE `ps_employee` (
 --
 
 INSERT INTO `ps_employee` (`id_employee`, `id_profile`, `id_lang`, `lastname`, `firstname`, `email`, `passwd`, `last_passwd_gen`, `stats_date_from`, `stats_date_to`, `stats_compare_from`, `stats_compare_to`, `stats_compare_option`, `preselect_date_range`, `bo_color`, `bo_theme`, `bo_css`, `default_tab`, `bo_width`, `bo_menu`, `active`, `optin`, `id_last_order`, `id_last_customer_message`, `id_last_customer`, `last_connection_date`, `reset_password_token`, `reset_password_validity`, `has_enabled_gravatar`) VALUES
-(1, 1, 1, 'Admin', 'Admin', 'admin@prestashop.com', '$2y$10$flYfD2LxAna2JFPt.V90.uR0Eva7zp6z.d.dyjJ9mIWL5zpXeerrO', '2024-10-25 13:41:27', '2024-09-25', '2024-10-25', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 0, 0, 2, '2024-11-14', NULL, '0000-00-00 00:00:00', 0);
+(1, 1, 1, 'Admin', 'Admin', 'admin@prestashop.com', '$2y$10$flYfD2LxAna2JFPt.V90.uR0Eva7zp6z.d.dyjJ9mIWL5zpXeerrO', '2024-10-25 13:41:27', '2024-09-25', '2024-10-25', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 0, 0, 2, '2024-11-26', NULL, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -4891,7 +4892,8 @@ INSERT INTO `ps_employee_session` (`id_employee_session`, `id_employee`, `token`
 (8, 1, '323d5ca893d272bb50751c0fd44da6b4e8f42fae'),
 (10, 1, 'a31c9a8e7235de0247a72679bad76c94695958c4'),
 (11, 1, '39475079db1df17554f9fe506169d42fa55f31ec'),
-(12, 1, 'bdb42be7fd8119b133ea16497bc052a3f90d43ca');
+(12, 1, 'bdb42be7fd8119b133ea16497bc052a3f90d43ca'),
+(13, 1, '9102390dcf3a8cc5faf3558765036043f03a68ee');
 
 -- --------------------------------------------------------
 
@@ -7308,7 +7310,8 @@ INSERT INTO `ps_log` (`id_log`, `severity`, `error_code`, `message`, `object_typ
 (245, 1, 0, 'Połączenie z panelem administracyjnym z 172.24.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-13 15:06:02', '2024-11-13 15:06:02'),
 (246, 1, 0, 'Połączenie z panelem administracyjnym z 172.27.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-14 15:13:45', '2024-11-14 15:13:45'),
 (247, 1, 0, 'Klucz API został stworzony: 6UKM427HMQ9ZPFLMPGZYJ9MLEWQBI9C3', 'WebserviceKey', 1, 1, NULL, 1, 0, 1, '2024-11-14 15:17:58', '2024-11-14 15:17:58'),
-(248, 1, 0, 'Połączenie z panelem administracyjnym z 172.29.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-14 16:00:17', '2024-11-14 16:00:17');
+(248, 1, 0, 'Połączenie z panelem administracyjnym z 172.29.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-14 16:00:17', '2024-11-14 16:00:17'),
+(249, 1, 0, 'Połączenie z panelem administracyjnym z 172.22.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-26 13:34:34', '2024-11-26 13:34:34');
 
 -- --------------------------------------------------------
 
@@ -12369,8 +12372,15 @@ CREATE TABLE `ps_webservice_permission` (
 --
 
 INSERT INTO `ps_webservice_permission` (`id_webservice_permission`, `resource`, `method`, `id_webservice_account`) VALUES
-(3, 'images', 'POST', 1),
-(2, 'products', 'POST', 1);
+(8, 'images', 'GET', 1),
+(7, 'images', 'POST', 1),
+(9, 'images', 'PUT', 1),
+(5, 'products', 'GET', 1),
+(4, 'products', 'POST', 1),
+(6, 'products', 'PUT', 1),
+(11, 'stock_availables', 'GET', 1),
+(10, 'stock_availables', 'POST', 1),
+(12, 'stock_availables', 'PUT', 1);
 
 -- --------------------------------------------------------
 
@@ -14643,7 +14653,7 @@ ALTER TABLE `ps_configuration_kpi`
 -- AUTO_INCREMENT dla tabeli `ps_connections`
 --
 ALTER TABLE `ps_connections`
-  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_connections_source`
@@ -14739,7 +14749,7 @@ ALTER TABLE `ps_employee_account`
 -- AUTO_INCREMENT dla tabeli `ps_employee_session`
 --
 ALTER TABLE `ps_employee_session`
-  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_feature`
@@ -14877,7 +14887,7 @@ ALTER TABLE `ps_link_block_shop`
 -- AUTO_INCREMENT dla tabeli `ps_log`
 --
 ALTER TABLE `ps_log`
-  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=249;
+  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=250;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_mail`
@@ -15357,7 +15367,7 @@ ALTER TABLE `ps_webservice_account`
 -- AUTO_INCREMENT dla tabeli `ps_webservice_permission`
 --
 ALTER TABLE `ps_webservice_permission`
-  MODIFY `id_webservice_permission` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_webservice_permission` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_web_browser`

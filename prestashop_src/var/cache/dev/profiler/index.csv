@@ -44,3 +44,16 @@ b66546,172.29.0.1,POST,https://localhost/admin1337/index.php/common/notification
 002428,172.29.0.1,GET,https://localhost/admin1337/index.php/configure/advanced/webservice-keys/?_token=Cb1b1byLPEq-kkEAKSuGcAteMRA9rGrjxSw52JtJPOI,1731596446,,200
 07f5e2,172.29.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=Cb1b1byLPEq-kkEAKSuGcAteMRA9rGrjxSw52JtJPOI&rand=1731596447271,1731596447,,200
 f4c76b,172.29.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=Cb1b1byLPEq-kkEAKSuGcAteMRA9rGrjxSw52JtJPOI,1731596447,,200
+c34670,172.22.0.1,GET,https://localhost/admin1337/index.php/modules/metrics/api/getShopData?_token=7MKjj6s2rBBrn8FUDR-IhPcQZMQ1tGDbei52DUs7yYI,1732624476,,200
+e566e2,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=7MKjj6s2rBBrn8FUDR-IhPcQZMQ1tGDbei52DUs7yYI&rand=1732624475930,1732624476,,200
+3eb034,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=7MKjj6s2rBBrn8FUDR-IhPcQZMQ1tGDbei52DUs7yYI&rand=1732624475969,1732624477,,200
+a55d75,172.22.0.1,GET,https://localhost/admin1337/index.php/configure/advanced/webservice-keys/?_token=7MKjj6s2rBBrn8FUDR-IhPcQZMQ1tGDbei52DUs7yYI,1732624481,,200
+d1e992,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=7MKjj6s2rBBrn8FUDR-IhPcQZMQ1tGDbei52DUs7yYI&rand=1732624481933,1732624482,,200
+981af0,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=7MKjj6s2rBBrn8FUDR-IhPcQZMQ1tGDbei52DUs7yYI,1732624482,,200
+49fe12,172.22.0.1,GET,https://localhost/admin1337/index.php/configure/advanced/webservice-keys/1/edit?_token=7MKjj6s2rBBrn8FUDR-IhPcQZMQ1tGDbei52DUs7yYI,1732624484,,200
+97a8a6,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=7MKjj6s2rBBrn8FUDR-IhPcQZMQ1tGDbei52DUs7yYI&rand=1732624484957,1732624485,,200
+d1374c,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=7MKjj6s2rBBrn8FUDR-IhPcQZMQ1tGDbei52DUs7yYI,1732624485,,200
+6abaf2,172.22.0.1,POST,https://localhost/admin1337/index.php/configure/advanced/webservice-keys/1/edit?_token=7MKjj6s2rBBrn8FUDR-IhPcQZMQ1tGDbei52DUs7yYI,1732624546,,302
+f9fde9,172.22.0.1,GET,https://localhost/admin1337/index.php/configure/advanced/webservice-keys/?_token=7MKjj6s2rBBrn8FUDR-IhPcQZMQ1tGDbei52DUs7yYI,1732624546,,200
+b6d20d,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=7MKjj6s2rBBrn8FUDR-IhPcQZMQ1tGDbei52DUs7yYI,1732624547,,200
+6f8980,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=7MKjj6s2rBBrn8FUDR-IhPcQZMQ1tGDbei52DUs7yYI&rand=1732624546957,1732624547,,200
