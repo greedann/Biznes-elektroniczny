@@ -2,7 +2,6 @@ This project involves a Python script for scraping product data and a Java appli
 
 
 *Python*
-Install Python dependencies:  <pre>pip install -r requirements.txt </pre>
 
 Run the Python script:  <pre>python main.py </pre>
 
