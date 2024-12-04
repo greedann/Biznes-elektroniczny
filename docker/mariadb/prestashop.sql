@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Czas generowania: 26 Lis 2024, 12:36
+-- Czas generowania: 04 Gru 2024, 15:08
 -- Wersja serwera: 11.5.2-MariaDB-ubu2404
 -- Wersja PHP: 7.4.20
 
@@ -1196,6 +1196,10 @@ INSERT INTO `ps_authorization_role` (`id_authorization_role`, `slug`) VALUES
 (540, 'ROLE_MOD_MODULE_PAGESNOTFOUND_DELETE'),
 (538, 'ROLE_MOD_MODULE_PAGESNOTFOUND_READ'),
 (539, 'ROLE_MOD_MODULE_PAGESNOTFOUND_UPDATE'),
+(893, 'ROLE_MOD_MODULE_PAYU_CREATE'),
+(896, 'ROLE_MOD_MODULE_PAYU_DELETE'),
+(894, 'ROLE_MOD_MODULE_PAYU_READ'),
+(895, 'ROLE_MOD_MODULE_PAYU_UPDATE'),
 (541, 'ROLE_MOD_MODULE_PRODUCTCOMMENTS_CREATE'),
 (544, 'ROLE_MOD_MODULE_PRODUCTCOMMENTS_DELETE'),
 (542, 'ROLE_MOD_MODULE_PRODUCTCOMMENTS_READ'),
@@ -3229,7 +3233,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (437, NULL, NULL, 'PS_SHOP_PHONE', '535 883 874', '2024-10-27 17:12:48', '2024-10-27 17:12:48'),
 (438, NULL, NULL, 'PS_SHOP_FAX', NULL, '2024-10-27 17:12:48', '2024-10-27 17:12:48'),
 (439, NULL, NULL, 'PS_MAINTENANCE_IP', NULL, '2024-10-27 17:24:25', '2024-10-27 17:24:25'),
-(440, NULL, NULL, 'PS_ACCOUNTS_FIREBASE_REFRESH_TOKEN', NULL, '2024-11-05 11:32:59', '2024-11-26 13:34:36'),
+(440, NULL, NULL, 'PS_ACCOUNTS_FIREBASE_REFRESH_TOKEN', NULL, '2024-11-05 11:32:59', '2024-12-04 15:54:49'),
 (441, NULL, NULL, 'PS_SAV_IMAP_URL', 'smtp.gmail.com', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
 (442, NULL, NULL, 'PS_SAV_IMAP_PORT', '587', '2024-11-05 11:46:32', '2024-11-05 11:49:21'),
 (443, NULL, NULL, 'PS_SAV_IMAP_USER', 'noreply.dystryktzero@gmail.com', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
@@ -3257,7 +3261,38 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (465, NULL, NULL, 'PS_CCCJS_VERSION', '1', '2024-11-05 14:57:01', '2024-11-05 14:57:01');
 INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, `name`, `value`, `date_add`, `date_upd`) VALUES
 (466, NULL, NULL, 'PS_CCCCSS_VERSION', '1', '2024-11-05 14:57:01', '2024-11-05 14:57:01'),
-(467, NULL, NULL, 'PS_WEBSERVICE', '1', '2024-11-14 15:14:24', '2024-11-14 15:14:24');
+(467, NULL, NULL, 'PS_WEBSERVICE', '1', '2024-11-14 15:14:24', '2024-11-14 15:14:24'),
+(468, NULL, NULL, 'CONF_PAYU_FIXED', '0.2', '2024-12-04 15:55:04', '2024-12-04 15:55:04'),
+(469, NULL, NULL, 'CONF_PAYU_VAR', '2', '2024-12-04 15:55:04', '2024-12-04 15:55:04'),
+(470, NULL, NULL, 'CONF_PAYU_FIXED_FOREIGN', '0.2', '2024-12-04 15:55:04', '2024-12-04 15:55:04'),
+(471, NULL, NULL, 'CONF_PAYU_VAR_FOREIGN', '2', '2024-12-04 15:55:04', '2024-12-04 15:55:04'),
+(472, NULL, NULL, 'PAYU_MC_POS_ID', 'a:1:{s:3:\"PLN\";s:0:\"\";}', '2024-12-04 15:55:05', '2024-12-04 16:00:40'),
+(473, NULL, NULL, 'PAYU_MC_SIGNATURE_KEY', 'a:1:{s:3:\"PLN\";s:0:\"\";}', '2024-12-04 15:55:05', '2024-12-04 16:00:40'),
+(474, NULL, NULL, 'PAYU_MC_OAUTH_CLIENT_ID', 'a:1:{s:3:\"PLN\";s:0:\"\";}', '2024-12-04 15:55:05', '2024-12-04 16:00:40'),
+(475, NULL, NULL, 'PAYU_MC_OAUTH_CLIENT_SECRET', 'a:1:{s:3:\"PLN\";s:0:\"\";}', '2024-12-04 15:55:05', '2024-12-04 16:00:40'),
+(476, NULL, NULL, 'SANDBOX_PAYU_MC_POS_ID', 'a:1:{s:3:\"PLN\";s:6:\"486135\";}', '2024-12-04 15:55:05', '2024-12-04 16:00:40'),
+(477, NULL, NULL, 'SANDBOX_PAYU_MC_SIGNATURE_KEY', 'a:1:{s:3:\"PLN\";s:32:\"5d98ca1167d0bdb0501505e326ebf7c4\";}', '2024-12-04 15:55:05', '2024-12-04 16:00:40'),
+(478, NULL, NULL, 'SANDBOX_PAYU_MC_OAUTH_CLIENT_ID', 'a:1:{s:3:\"PLN\";s:6:\"486135\";}', '2024-12-04 15:55:05', '2024-12-04 16:00:40'),
+(479, NULL, NULL, 'SANDBOX_PAYU_MC_OAUTH_CLIENT_SECRET', 'a:1:{s:3:\"PLN\";s:32:\"70e4f7c6961a55d455a301b5ac1bb00c\";}', '2024-12-04 15:55:05', '2024-12-04 16:00:40'),
+(480, NULL, NULL, 'PAYU_PAYMENT_STATUS_PENDING', '18', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(481, NULL, NULL, 'PAYU_PAYMENT_STATUS_SENT', '19', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(482, NULL, NULL, 'PAYU_PAYMENT_STATUS_CANCELED', '20', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(483, NULL, NULL, 'PAYU_PAYMENT_STATUS_COMPLETED', '2', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(484, NULL, NULL, 'PAYU_REPAY', '0', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(485, NULL, NULL, 'PAYU_SANDBOX', '1', '2024-12-04 15:55:05', '2024-12-04 16:08:01'),
+(486, NULL, NULL, 'PAYU_LOGGER', '0', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(487, NULL, NULL, 'PAYU_SEPARATE_CARD_PAYMENT', '1', '2024-12-04 15:55:05', '2024-12-04 16:08:01'),
+(488, NULL, NULL, 'PAYU_CARD_PAYMENT_WIDGET', '0', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(489, NULL, NULL, 'PAYU_PAYMENT_METHODS_ORDER', NULL, '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(490, NULL, NULL, 'PAYU_PROMOTE_CREDIT', '1', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(491, NULL, NULL, 'PAYU_PROMOTE_CREDIT_CART', '1', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(492, NULL, NULL, 'PAYU_PROMOTE_CREDIT_SUMMARY', '1', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(493, NULL, NULL, 'PAYU_PROMOTE_CREDIT_PRODUCT', '1', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(494, NULL, NULL, 'PAYU_SEPARATE_PAY_LATER_TWISTO', '0', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(495, NULL, NULL, 'PAYU_SEPARATE_PAY_LATER_KLARNA', '0', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(496, NULL, NULL, 'PAYU_SEPARATE_PAY_LATER_PAYPO', '0', '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(497, NULL, NULL, 'PAYU_SEPARATE_BLIK_PAYMENT', '1', '2024-12-04 15:55:05', '2024-12-04 16:08:01'),
+(498, NULL, NULL, 'PAYU_PAYMENT_METHODS_GRID', '0', '2024-12-04 15:55:05', '2024-12-04 15:55:05');
 
 -- --------------------------------------------------------
 
@@ -3441,7 +3476,9 @@ INSERT INTO `ps_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_
 (15, 1, 1, 7, 1, 2887581697, '2024-11-05 17:23:23', ''),
 (16, 1, 1, 7, 1, 2887188481, '2024-11-13 14:51:19', ''),
 (17, 1, 1, 8, 1, 2887254017, '2024-11-13 15:05:44', ''),
-(18, 1, 1, 9, 1, 2887122945, '2024-11-26 13:34:07', '');
+(18, 1, 1, 9, 1, 2887122945, '2024-11-26 13:34:07', ''),
+(19, 1, 1, 9, 2, 2887057409, '2024-12-04 15:54:25', ''),
+(20, 1, 1, 10, 1, 2887057409, '2024-12-04 15:54:25', '');
 
 -- --------------------------------------------------------
 
@@ -4852,7 +4889,7 @@ CREATE TABLE `ps_employee` (
 --
 
 INSERT INTO `ps_employee` (`id_employee`, `id_profile`, `id_lang`, `lastname`, `firstname`, `email`, `passwd`, `last_passwd_gen`, `stats_date_from`, `stats_date_to`, `stats_compare_from`, `stats_compare_to`, `stats_compare_option`, `preselect_date_range`, `bo_color`, `bo_theme`, `bo_css`, `default_tab`, `bo_width`, `bo_menu`, `active`, `optin`, `id_last_order`, `id_last_customer_message`, `id_last_customer`, `last_connection_date`, `reset_password_token`, `reset_password_validity`, `has_enabled_gravatar`) VALUES
-(1, 1, 1, 'Admin', 'Admin', 'admin@prestashop.com', '$2y$10$flYfD2LxAna2JFPt.V90.uR0Eva7zp6z.d.dyjJ9mIWL5zpXeerrO', '2024-10-25 13:41:27', '2024-09-25', '2024-10-25', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 0, 0, 2, '2024-11-26', NULL, '0000-00-00 00:00:00', 0);
+(1, 1, 1, 'Admin', 'Admin', 'admin@prestashop.com', '$2y$10$flYfD2LxAna2JFPt.V90.uR0Eva7zp6z.d.dyjJ9mIWL5zpXeerrO', '2024-10-25 13:41:27', '2024-09-25', '2024-10-25', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 0, 0, 2, '2024-12-04', NULL, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -4893,7 +4930,8 @@ INSERT INTO `ps_employee_session` (`id_employee_session`, `id_employee`, `token`
 (10, 1, 'a31c9a8e7235de0247a72679bad76c94695958c4'),
 (11, 1, '39475079db1df17554f9fe506169d42fa55f31ec'),
 (12, 1, 'bdb42be7fd8119b133ea16497bc052a3f90d43ca'),
-(13, 1, '9102390dcf3a8cc5faf3558765036043f03a68ee');
+(13, 1, '9102390dcf3a8cc5faf3558765036043f03a68ee'),
+(14, 1, 'f89ccd18010120e369666f3759089cdb66801d50');
 
 -- --------------------------------------------------------
 
@@ -5259,7 +5297,9 @@ INSERT INTO `ps_guest` (`id_guest`, `id_operating_system`, `id_web_browser`, `id
 (5, 8, 11, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
 (6, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
 (7, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
-(8, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0);
+(8, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
+(9, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0),
+(10, 8, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'ru', 0);
 
 -- --------------------------------------------------------
 
@@ -6155,7 +6195,11 @@ INSERT INTO `ps_hook` (`id_hook`, `name`, `title`, `description`, `active`, `pos
 (807, 'actionObjectZoneDeleteAfter', 'actionObjectZoneDeleteAfter', '', 1, 1),
 (808, 'actionObjectZoneUpdateAfter', 'actionObjectZoneUpdateAfter', '', 1, 1),
 (809, 'actionObjectEmployeeAddAfter', 'actionObjectEmployeeAddAfter', '', 1, 1),
-(810, 'actionProductCoverage', 'actionProductCoverage', '', 1, 1);
+(810, 'actionProductCoverage', 'actionProductCoverage', '', 1, 1),
+(811, 'displayProductPriceBlock', 'displayProductPriceBlock', '', 1, 1),
+(812, 'displayCheckoutSubtotalDetails', 'displayCheckoutSubtotalDetails', '', 1, 1),
+(813, 'displayCheckoutSummaryTop', 'displayCheckoutSummaryTop', '', 1, 1),
+(814, 'actionGetExtraMailTemplateVars', 'actionGetExtraMailTemplateVars', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -6471,6 +6515,11 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (65, 1, 65, 1),
 (65, 1, 116, 1),
 (65, 1, 810, 1),
+(66, 1, 36, 1),
+(66, 1, 811, 1),
+(66, 1, 812, 1),
+(66, 1, 813, 1),
+(66, 1, 814, 1),
 (3, 1, 682, 2),
 (4, 1, 688, 2),
 (5, 1, 689, 2),
@@ -6525,6 +6574,7 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (65, 1, 58, 2),
 (65, 1, 75, 2),
 (65, 1, 105, 2),
+(66, 1, 79, 2),
 (4, 1, 682, 3),
 (5, 1, 688, 3),
 (6, 1, 689, 3),
@@ -6558,6 +6608,8 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (57, 1, 683, 4),
 (60, 1, 71, 4),
 (65, 1, 685, 4),
+(66, 1, 7, 4),
+(66, 1, 697, 4),
 (7, 1, 682, 5),
 (39, 1, 55, 5),
 (59, 1, 16, 5),
@@ -6567,9 +6619,11 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (54, 1, 682, 6),
 (60, 1, 16, 6),
 (61, 1, 683, 6),
+(66, 1, 71, 6),
 (41, 1, 55, 7),
 (57, 1, 682, 7),
 (65, 1, 683, 7),
+(66, 1, 16, 7),
 (42, 1, 55, 8),
 (58, 1, 682, 8),
 (43, 1, 55, 9),
@@ -7311,7 +7365,10 @@ INSERT INTO `ps_log` (`id_log`, `severity`, `error_code`, `message`, `object_typ
 (246, 1, 0, 'Połączenie z panelem administracyjnym z 172.27.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-14 15:13:45', '2024-11-14 15:13:45'),
 (247, 1, 0, 'Klucz API został stworzony: 6UKM427HMQ9ZPFLMPGZYJ9MLEWQBI9C3', 'WebserviceKey', 1, 1, NULL, 1, 0, 1, '2024-11-14 15:17:58', '2024-11-14 15:17:58'),
 (248, 1, 0, 'Połączenie z panelem administracyjnym z 172.29.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-14 16:00:17', '2024-11-14 16:00:17'),
-(249, 1, 0, 'Połączenie z panelem administracyjnym z 172.22.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-26 13:34:34', '2024-11-26 13:34:34');
+(249, 1, 0, 'Połączenie z panelem administracyjnym z 172.22.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-26 13:34:34', '2024-11-26 13:34:34'),
+(250, 1, 0, 'Połączenie z panelem administracyjnym z 172.21.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-12-04 15:54:47', '2024-12-04 15:54:47'),
+(251, 1, 0, 'Protect vendor folder in module payu', '', 0, 1, NULL, 1, 0, 1, '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(252, 1, 0, 'Module payu has no vendor folder', '', 0, 1, NULL, 1, 0, 1, '2024-12-04 15:55:05', '2024-12-04 15:55:05');
 
 -- --------------------------------------------------------
 
@@ -7630,7 +7687,8 @@ INSERT INTO `ps_module` (`id_module`, `name`, `active`, `version`) VALUES
 (62, 'ps_accounts', 1, '7.0.8'),
 (63, 'ps_mbo', 1, '3.2.0'),
 (64, 'ps_eventbus', 1, '3.2.0'),
-(65, 'ps_emailalerts', 1, '3.0.0');
+(65, 'ps_emailalerts', 1, '3.0.0'),
+(66, 'payu', 1, '3.2.20');
 
 -- --------------------------------------------------------
 
@@ -7903,7 +7961,11 @@ INSERT INTO `ps_module_access` (`id_profile`, `id_authorization_role`) VALUES
 (1, 889),
 (1, 890),
 (1, 891),
-(1, 892);
+(1, 892),
+(1, 893),
+(1, 894),
+(1, 895),
+(1, 896);
 
 -- --------------------------------------------------------
 
@@ -7930,7 +7992,10 @@ INSERT INTO `ps_module_carrier` (`id_module`, `id_shop`, `id_reference`) VALUES
 (35, 1, 4),
 (57, 1, 1),
 (57, 1, 2),
-(57, 1, 4);
+(57, 1, 4),
+(66, 1, 1),
+(66, 1, 2),
+(66, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -8150,7 +8215,8 @@ INSERT INTO `ps_module_country` (`id_module`, `id_shop`, `id_country`) VALUES
 (57, 1, 234),
 (57, 1, 237),
 (57, 1, 238),
-(57, 1, 239);
+(57, 1, 239),
+(66, 1, 14);
 
 -- --------------------------------------------------------
 
@@ -8171,7 +8237,8 @@ CREATE TABLE `ps_module_currency` (
 INSERT INTO `ps_module_currency` (`id_module`, `id_shop`, `id_currency`) VALUES
 (14, 1, 1),
 (35, 1, 1),
-(57, 1, 1);
+(57, 1, 1),
+(66, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -8381,7 +8448,10 @@ INSERT INTO `ps_module_group` (`id_module`, `id_shop`, `id_group`) VALUES
 (64, 1, 3),
 (65, 1, 1),
 (65, 1, 2),
-(65, 1, 3);
+(65, 1, 3),
+(66, 1, 1),
+(66, 1, 2),
+(66, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -8410,7 +8480,8 @@ INSERT INTO `ps_module_history` (`id`, `id_employee`, `id_module`, `date_add`, `
 (6, 1, 65, '2024-11-05 11:57:38', '2024-11-05 11:57:38'),
 (7, 1, 35, '2024-11-13 14:34:11', '2024-11-13 15:11:42'),
 (8, 1, 14, '2024-11-13 14:35:02', '2024-11-13 15:11:51'),
-(9, 1, 57, '2024-11-13 14:35:16', '2024-11-13 14:35:16');
+(9, 1, 57, '2024-11-13 14:35:16', '2024-11-13 14:35:16'),
+(10, 1, 66, '2024-12-04 15:55:11', '2024-12-04 16:07:20');
 
 -- --------------------------------------------------------
 
@@ -8504,7 +8575,8 @@ INSERT INTO `ps_module_shop` (`id_module`, `id_shop`, `enable_device`) VALUES
 (62, 1, 7),
 (63, 1, 7),
 (64, 1, 7),
-(65, 1, 7);
+(65, 1, 7),
+(66, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -8810,6 +8882,38 @@ CREATE TABLE `ps_order_payment` (
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `ps_order_payu_payments`
+--
+
+CREATE TABLE `ps_order_payu_payments` (
+  `id_payu_payment` int(10) UNSIGNED NOT NULL,
+  `id_order` int(10) UNSIGNED NOT NULL,
+  `id_cart` int(10) UNSIGNED NOT NULL,
+  `id_session` varchar(64) NOT NULL,
+  `ext_order_id` varchar(64) NOT NULL,
+  `method` varchar(64) NOT NULL,
+  `status` varchar(64) NOT NULL,
+  `create_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `ps_order_payu_payments_history`
+--
+
+CREATE TABLE `ps_order_payu_payments_history` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `id_order` int(10) UNSIGNED NOT NULL,
+  `id_session` varchar(64) NOT NULL,
+  `status` varchar(64) NOT NULL,
+  `create_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `ps_order_return`
 --
 
@@ -8967,7 +9071,10 @@ INSERT INTO `ps_order_state` (`id_order_state`, `invoice`, `send_email`, `module
 (14, 0, 0, 'ps_checkout', '#34209E', 1, 0, 0, 0, 0, 0, 0, 0, 0),
 (15, 0, 0, 'ps_checkout', '#01B887', 1, 0, 0, 0, 0, 0, 0, 0, 0),
 (16, 0, 0, 'ps_checkout', '#3498D8', 1, 0, 0, 0, 0, 0, 0, 0, 0),
-(17, 0, 0, 'ps_checkout', '#3498D8', 1, 0, 0, 0, 0, 0, 0, 0, 0);
+(17, 0, 0, 'ps_checkout', '#3498D8', 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(18, 0, 0, 'payu', '#002124', 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(19, 0, 0, 'payu', '#002124', 1, 0, 0, 0, 0, 0, 0, 0, 0),
+(20, 0, 0, 'payu', '#002124', 1, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -9003,7 +9110,10 @@ INSERT INTO `ps_order_state_lang` (`id_order_state`, `id_lang`, `name`, `templat
 (14, 1, 'Oczekiwanie na płatność', ''),
 (15, 1, 'Częściowy zwrot', ''),
 (16, 1, 'Częściowa płatność', ''),
-(17, 1, 'Pomyślna autoryzacja. Transfer do przeprowadzenia przez sklep', '');
+(17, 1, 'Pomyślna autoryzacja. Transfer do przeprowadzenia przez sklep', ''),
+(18, 1, 'Płatność PayU rozpoczęta', ''),
+(19, 1, 'Płatność PayU oczekuje na odbiór', ''),
+(20, 1, 'Płatność PayU anulowana', '');
 
 -- --------------------------------------------------------
 
@@ -13711,6 +13821,18 @@ ALTER TABLE `ps_order_payment`
   ADD KEY `order_reference` (`order_reference`);
 
 --
+-- Indeksy dla tabeli `ps_order_payu_payments`
+--
+ALTER TABLE `ps_order_payu_payments`
+  ADD PRIMARY KEY (`id_payu_payment`);
+
+--
+-- Indeksy dla tabeli `ps_order_payu_payments_history`
+--
+ALTER TABLE `ps_order_payu_payments_history`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksy dla tabeli `ps_order_return`
 --
 ALTER TABLE `ps_order_return`
@@ -14569,7 +14691,7 @@ ALTER TABLE `ps_attribute_impact`
 -- AUTO_INCREMENT dla tabeli `ps_authorization_role`
 --
 ALTER TABLE `ps_authorization_role`
-  MODIFY `id_authorization_role` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=893;
+  MODIFY `id_authorization_role` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=897;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_blockwishlist_statistics`
@@ -14641,7 +14763,7 @@ ALTER TABLE `ps_cms_role`
 -- AUTO_INCREMENT dla tabeli `ps_configuration`
 --
 ALTER TABLE `ps_configuration`
-  MODIFY `id_configuration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=468;
+  MODIFY `id_configuration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=499;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_configuration_kpi`
@@ -14653,7 +14775,7 @@ ALTER TABLE `ps_configuration_kpi`
 -- AUTO_INCREMENT dla tabeli `ps_connections`
 --
 ALTER TABLE `ps_connections`
-  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_connections_source`
@@ -14749,7 +14871,7 @@ ALTER TABLE `ps_employee_account`
 -- AUTO_INCREMENT dla tabeli `ps_employee_session`
 --
 ALTER TABLE `ps_employee_session`
-  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_feature`
@@ -14791,7 +14913,7 @@ ALTER TABLE `ps_group_reduction`
 -- AUTO_INCREMENT dla tabeli `ps_guest`
 --
 ALTER TABLE `ps_guest`
-  MODIFY `id_guest` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_guest` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_homeslider`
@@ -14809,7 +14931,7 @@ ALTER TABLE `ps_homeslider_slides`
 -- AUTO_INCREMENT dla tabeli `ps_hook`
 --
 ALTER TABLE `ps_hook`
-  MODIFY `id_hook` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=811;
+  MODIFY `id_hook` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=815;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_hook_alias`
@@ -14887,7 +15009,7 @@ ALTER TABLE `ps_link_block_shop`
 -- AUTO_INCREMENT dla tabeli `ps_log`
 --
 ALTER TABLE `ps_log`
-  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=250;
+  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_mail`
@@ -14923,13 +15045,13 @@ ALTER TABLE `ps_meta`
 -- AUTO_INCREMENT dla tabeli `ps_module`
 --
 ALTER TABLE `ps_module`
-  MODIFY `id_module` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id_module` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_module_history`
 --
 ALTER TABLE `ps_module_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_module_preference`
@@ -14992,6 +15114,18 @@ ALTER TABLE `ps_order_payment`
   MODIFY `id_order_payment` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT dla tabeli `ps_order_payu_payments`
+--
+ALTER TABLE `ps_order_payu_payments`
+  MODIFY `id_payu_payment` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT dla tabeli `ps_order_payu_payments_history`
+--
+ALTER TABLE `ps_order_payu_payments_history`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT dla tabeli `ps_order_return`
 --
 ALTER TABLE `ps_order_return`
@@ -15013,7 +15147,7 @@ ALTER TABLE `ps_order_slip`
 -- AUTO_INCREMENT dla tabeli `ps_order_state`
 --
 ALTER TABLE `ps_order_state`
-  MODIFY `id_order_state` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_order_state` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_page`
