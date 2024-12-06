@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mariadb
--- Czas generowania: 04 Gru 2024, 15:08
+-- Czas generowania: 06 Gru 2024, 14:11
 -- Wersja serwera: 11.5.2-MariaDB-ubu2404
 -- Wersja PHP: 7.4.20
 
@@ -1007,7 +1007,8 @@ INSERT INTO `ps_admin_filter` (`id`, `employee`, `shop`, `controller`, `action`,
 (17, 1, 1, 'employee', 'index', '{\"limit\":50,\"orderBy\":\"id_employee\",\"sortOrder\":\"asc\",\"filters\":[]}', ''),
 (18, 1, 1, '', '', '{\"limit\":10,\"orderBy\":\"id_request_sql\",\"sortOrder\":\"desc\",\"filters\":[]}', 'sql_request'),
 (19, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_meta\",\"sortOrder\":\"asc\",\"filters\":[]}', 'meta'),
-(20, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_webservice_account\",\"sortOrder\":\"asc\",\"filters\":[]}', 'webservice_key');
+(20, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_webservice_account\",\"sortOrder\":\"asc\",\"filters\":[]}', 'webservice_key'),
+(21, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"id_attachment\",\"sortOrder\":\"asc\",\"filters\":[]}', 'attachment');
 
 -- --------------------------------------------------------
 
@@ -2567,6 +2568,13 @@ CREATE TABLE `ps_category_product` (
   `position` int(10) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
+--
+-- Zrzut danych tabeli `ps_category_product`
+--
+
+INSERT INTO `ps_category_product` (`id_category`, `id_product`, `position`) VALUES
+(2, 2, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -3233,7 +3241,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (437, NULL, NULL, 'PS_SHOP_PHONE', '535 883 874', '2024-10-27 17:12:48', '2024-10-27 17:12:48'),
 (438, NULL, NULL, 'PS_SHOP_FAX', NULL, '2024-10-27 17:12:48', '2024-10-27 17:12:48'),
 (439, NULL, NULL, 'PS_MAINTENANCE_IP', NULL, '2024-10-27 17:24:25', '2024-10-27 17:24:25'),
-(440, NULL, NULL, 'PS_ACCOUNTS_FIREBASE_REFRESH_TOKEN', NULL, '2024-11-05 11:32:59', '2024-12-04 15:54:49'),
+(440, NULL, NULL, 'PS_ACCOUNTS_FIREBASE_REFRESH_TOKEN', NULL, '2024-11-05 11:32:59', '2024-12-06 14:53:22'),
 (441, NULL, NULL, 'PS_SAV_IMAP_URL', 'smtp.gmail.com', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
 (442, NULL, NULL, 'PS_SAV_IMAP_PORT', '587', '2024-11-05 11:46:32', '2024-11-05 11:49:21'),
 (443, NULL, NULL, 'PS_SAV_IMAP_USER', 'noreply.dystryktzero@gmail.com', '2024-11-05 11:46:32', '2024-11-05 11:46:32'),
@@ -4889,7 +4897,7 @@ CREATE TABLE `ps_employee` (
 --
 
 INSERT INTO `ps_employee` (`id_employee`, `id_profile`, `id_lang`, `lastname`, `firstname`, `email`, `passwd`, `last_passwd_gen`, `stats_date_from`, `stats_date_to`, `stats_compare_from`, `stats_compare_to`, `stats_compare_option`, `preselect_date_range`, `bo_color`, `bo_theme`, `bo_css`, `default_tab`, `bo_width`, `bo_menu`, `active`, `optin`, `id_last_order`, `id_last_customer_message`, `id_last_customer`, `last_connection_date`, `reset_password_token`, `reset_password_validity`, `has_enabled_gravatar`) VALUES
-(1, 1, 1, 'Admin', 'Admin', 'admin@prestashop.com', '$2y$10$flYfD2LxAna2JFPt.V90.uR0Eva7zp6z.d.dyjJ9mIWL5zpXeerrO', '2024-10-25 13:41:27', '2024-09-25', '2024-10-25', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 0, 0, 2, '2024-12-04', NULL, '0000-00-00 00:00:00', 0);
+(1, 1, 1, 'Admin', 'Admin', 'admin@prestashop.com', '$2y$10$flYfD2LxAna2JFPt.V90.uR0Eva7zp6z.d.dyjJ9mIWL5zpXeerrO', '2024-10-25 13:41:27', '2024-09-25', '2024-10-25', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 0, 0, 2, '2024-12-06', NULL, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -4931,7 +4939,8 @@ INSERT INTO `ps_employee_session` (`id_employee_session`, `id_employee`, `token`
 (11, 1, '39475079db1df17554f9fe506169d42fa55f31ec'),
 (12, 1, 'bdb42be7fd8119b133ea16497bc052a3f90d43ca'),
 (13, 1, '9102390dcf3a8cc5faf3558765036043f03a68ee'),
-(14, 1, 'f89ccd18010120e369666f3759089cdb66801d50');
+(14, 1, 'f89ccd18010120e369666f3759089cdb66801d50'),
+(15, 1, '8d407e31d5bc5d653739355ee08c9b8027a9a8d8');
 
 -- --------------------------------------------------------
 
@@ -5052,6 +5061,23 @@ CREATE TABLE `ps_feature` (
   `position` int(10) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
+--
+-- Zrzut danych tabeli `ps_feature`
+--
+
+INSERT INTO `ps_feature` (`id_feature`, `position`) VALUES
+(1, 0),
+(2, 1),
+(3, 2),
+(4, 3),
+(5, 4),
+(6, 5),
+(7, 6),
+(8, 7),
+(9, 8),
+(10, 9),
+(11, 10);
+
 -- --------------------------------------------------------
 
 --
@@ -5087,6 +5113,23 @@ CREATE TABLE `ps_feature_lang` (
   `name` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
+--
+-- Zrzut danych tabeli `ps_feature_lang`
+--
+
+INSERT INTO `ps_feature_lang` (`id_feature`, `id_lang`, `name`) VALUES
+(7, 1, 'Akcesoria w zestawie'),
+(2, 1, 'Bohater'),
+(9, 1, 'Materiał'),
+(5, 1, 'Opakowanie'),
+(3, 1, 'Producent'),
+(4, 1, 'Rodzaj produktu'),
+(10, 1, 'Seria'),
+(11, 1, 'Skala'),
+(1, 1, 'Tematyka'),
+(6, 1, 'Wysokość'),
+(8, 1, 'Zakres ruchu');
+
 -- --------------------------------------------------------
 
 --
@@ -5109,6 +5152,23 @@ CREATE TABLE `ps_feature_shop` (
   `id_feature` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
+--
+-- Zrzut danych tabeli `ps_feature_shop`
+--
+
+INSERT INTO `ps_feature_shop` (`id_feature`, `id_shop`) VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1),
+(6, 1),
+(7, 1),
+(8, 1),
+(9, 1),
+(10, 1),
+(11, 1);
 
 -- --------------------------------------------------------
 
@@ -6875,13 +6935,6 @@ CREATE TABLE `ps_layered_filter_block` (
   `data` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
 
---
--- Zrzut danych tabeli `ps_layered_filter_block`
---
-
-INSERT INTO `ps_layered_filter_block` (`hash`, `data`) VALUES
-('d40da7ef44aaf6cc7547b00007e5a04b', 'a:1:{s:7:\"filters\";a:0:{}}');
-
 -- --------------------------------------------------------
 
 --
@@ -6987,7 +7040,8 @@ CREATE TABLE `ps_layered_price_index` (
 --
 
 INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `price_min`, `price_max`, `id_country`) VALUES
-(1, 1, 1, '0.000000', '0.000000', 14);
+(1, 1, 1, '0.000000', '0.000000', 14),
+(2, 1, 1, '0.000000', '0.000000', 14);
 
 -- --------------------------------------------------------
 
@@ -7368,7 +7422,19 @@ INSERT INTO `ps_log` (`id_log`, `severity`, `error_code`, `message`, `object_typ
 (249, 1, 0, 'Połączenie z panelem administracyjnym z 172.22.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-11-26 13:34:34', '2024-11-26 13:34:34'),
 (250, 1, 0, 'Połączenie z panelem administracyjnym z 172.21.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-12-04 15:54:47', '2024-12-04 15:54:47'),
 (251, 1, 0, 'Protect vendor folder in module payu', '', 0, 1, NULL, 1, 0, 1, '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
-(252, 1, 0, 'Module payu has no vendor folder', '', 0, 1, NULL, 1, 0, 1, '2024-12-04 15:55:05', '2024-12-04 15:55:05');
+(252, 1, 0, 'Module payu has no vendor folder', '', 0, 1, NULL, 1, 0, 1, '2024-12-04 15:55:05', '2024-12-04 15:55:05'),
+(253, 1, 0, 'Połączenie z panelem administracyjnym z 172.21.0.1', '', 0, NULL, NULL, 1, 1, 1, '2024-12-06 14:53:19', '2024-12-06 14:53:19'),
+(254, 1, 0, 'dodanie Feature', 'Feature', 1, 1, NULL, 1, 0, 1, '2024-12-06 15:00:24', '2024-12-06 15:00:24'),
+(255, 1, 0, 'dodanie Feature', 'Feature', 2, 1, NULL, 1, 0, 1, '2024-12-06 15:05:07', '2024-12-06 15:05:07'),
+(256, 1, 0, 'dodanie Feature', 'Feature', 3, 1, NULL, 1, 0, 1, '2024-12-06 15:05:31', '2024-12-06 15:05:31'),
+(257, 1, 0, 'dodanie Feature', 'Feature', 4, 1, NULL, 1, 0, 1, '2024-12-06 15:07:47', '2024-12-06 15:07:47'),
+(258, 1, 0, 'dodanie Feature', 'Feature', 5, 1, NULL, 1, 0, 1, '2024-12-06 15:08:00', '2024-12-06 15:08:00'),
+(259, 1, 0, 'dodanie Feature', 'Feature', 6, 1, NULL, 1, 0, 1, '2024-12-06 15:08:09', '2024-12-06 15:08:09'),
+(260, 1, 0, 'dodanie Feature', 'Feature', 7, 1, NULL, 1, 0, 1, '2024-12-06 15:08:19', '2024-12-06 15:08:19'),
+(261, 1, 0, 'dodanie Feature', 'Feature', 8, 1, NULL, 1, 0, 1, '2024-12-06 15:08:32', '2024-12-06 15:08:32'),
+(262, 1, 0, 'dodanie Feature', 'Feature', 9, 1, NULL, 1, 0, 1, '2024-12-06 15:08:41', '2024-12-06 15:08:41'),
+(263, 1, 0, 'dodanie Feature', 'Feature', 10, 1, NULL, 1, 0, 1, '2024-12-06 15:08:50', '2024-12-06 15:08:50'),
+(264, 1, 0, 'dodanie Feature', 'Feature', 11, 1, NULL, 1, 0, 1, '2024-12-06 15:08:58', '2024-12-06 15:08:58');
 
 -- --------------------------------------------------------
 
@@ -9262,6 +9328,13 @@ CREATE TABLE `ps_product` (
   `product_type` enum('standard','pack','virtual','combinations','') NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
+--
+-- Zrzut danych tabeli `ps_product`
+--
+
+INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_category_default`, `id_shop_default`, `id_tax_rules_group`, `on_sale`, `online_only`, `ean13`, `isbn`, `upc`, `mpn`, `ecotax`, `quantity`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `price`, `wholesale_price`, `unity`, `unit_price_ratio`, `additional_shipping_cost`, `reference`, `supplier_reference`, `location`, `width`, `height`, `depth`, `weight`, `out_of_stock`, `additional_delivery_times`, `quantity_discount`, `customizable`, `uploadable_files`, `text_fields`, `active`, `redirect_type`, `id_type_redirected`, `available_for_order`, `available_date`, `show_condition`, `condition`, `show_price`, `indexed`, `visibility`, `cache_is_pack`, `cache_has_attachments`, `is_virtual`, `cache_default_attribute`, `date_add`, `date_upd`, `advanced_stock_management`, `pack_stock_type`, `state`, `product_type`) VALUES
+(2, 0, 0, 2, 1, 0, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '0.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 0, '404', 0, 1, '0000-00-00', 0, 'new', 1, 0, 'both', 0, 0, 0, 0, '2024-12-06 15:10:07', '2024-12-06 15:10:07', 0, 3, 0, '');
+
 -- --------------------------------------------------------
 
 --
@@ -9539,6 +9612,13 @@ CREATE TABLE `ps_product_lang` (
   `delivery_out_stock` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
+--
+-- Zrzut danych tabeli `ps_product_lang`
+--
+
+INSERT INTO `ps_product_lang` (`id_product`, `id_shop`, `id_lang`, `description`, `description_short`, `link_rewrite`, `meta_description`, `meta_keywords`, `meta_title`, `name`, `available_now`, `available_later`, `delivery_in_stock`, `delivery_out_stock`) VALUES
+(2, 1, 1, '', '', '', '', '', '', '', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -9593,6 +9673,13 @@ CREATE TABLE `ps_product_shop` (
   `date_upd` datetime NOT NULL,
   `pack_stock_type` int(11) UNSIGNED NOT NULL DEFAULT 3
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
+--
+-- Zrzut danych tabeli `ps_product_shop`
+--
+
+INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `id_tax_rules_group`, `on_sale`, `online_only`, `ecotax`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `price`, `wholesale_price`, `unity`, `unit_price_ratio`, `additional_shipping_cost`, `customizable`, `uploadable_files`, `text_fields`, `active`, `redirect_type`, `id_type_redirected`, `available_for_order`, `available_date`, `show_condition`, `condition`, `show_price`, `indexed`, `visibility`, `cache_default_attribute`, `advanced_stock_management`, `date_add`, `date_upd`, `pack_stock_type`) VALUES
+(2, 1, 2, 0, 0, 0, '0.000000', 1, NULL, 0, '0.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 0, '404', 0, 1, '0000-00-00', 0, 'new', 1, 0, 'both', 0, 0, '2024-12-06 15:10:07', '2024-12-06 15:10:07', 3);
 
 -- --------------------------------------------------------
 
@@ -10754,6 +10841,13 @@ CREATE TABLE `ps_stock_available` (
   `out_of_stock` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `location` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
+--
+-- Zrzut danych tabeli `ps_stock_available`
+--
+
+INSERT INTO `ps_stock_available` (`id_stock_available`, `id_product`, `id_product_attribute`, `id_shop`, `id_shop_group`, `quantity`, `physical_quantity`, `reserved_quantity`, `depends_on_stock`, `out_of_stock`, `location`) VALUES
+(2, 2, 0, 1, 0, 0, 0, 0, 0, 2, '');
 
 -- --------------------------------------------------------
 
@@ -14649,7 +14743,7 @@ ALTER TABLE `ps_address`
 -- AUTO_INCREMENT dla tabeli `ps_admin_filter`
 --
 ALTER TABLE `ps_admin_filter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_alias`
@@ -14871,13 +14965,13 @@ ALTER TABLE `ps_employee_account`
 -- AUTO_INCREMENT dla tabeli `ps_employee_session`
 --
 ALTER TABLE `ps_employee_session`
-  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_feature`
 --
 ALTER TABLE `ps_feature`
-  MODIFY `id_feature` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_feature` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_feature_flag`
@@ -15009,7 +15103,7 @@ ALTER TABLE `ps_link_block_shop`
 -- AUTO_INCREMENT dla tabeli `ps_log`
 --
 ALTER TABLE `ps_log`
-  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
+  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=265;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_mail`
@@ -15171,7 +15265,7 @@ ALTER TABLE `ps_page_type`
 -- AUTO_INCREMENT dla tabeli `ps_product`
 --
 ALTER TABLE `ps_product`
-  MODIFY `id_product` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_product` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_product_attribute`
@@ -15375,7 +15469,7 @@ ALTER TABLE `ps_stock`
 -- AUTO_INCREMENT dla tabeli `ps_stock_available`
 --
 ALTER TABLE `ps_stock_available`
-  MODIFY `id_stock_available` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_stock_available` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `ps_stock_mvt`
