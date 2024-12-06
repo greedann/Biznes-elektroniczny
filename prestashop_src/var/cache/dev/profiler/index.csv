@@ -143,3 +143,16 @@ f058a7,172.21.0.1,GET,https://localhost/admin1337/index.php/sell/catalog/product
 052ef5,172.21.0.1,GET,https://localhost/admin1337/index.php/sell/catalog/products/attributes/form-images/2?_token=-WID_F5ku9Cu2As5-MU9UpUXu57lWrnnZKuMetFDF_k,1733494208,,200
 d4a163,172.21.0.1,GET,https://localhost/admin1337/index.php/sell/catalog/products/features/1?_token=-WID_F5ku9Cu2As5-MU9UpUXu57lWrnnZKuMetFDF_k,1733494212,,200
 dbd138,172.21.0.1,GET,https://localhost/admin1337/index.php/sell/catalog/products/features/7?_token=-WID_F5ku9Cu2As5-MU9UpUXu57lWrnnZKuMetFDF_k,1733494220,,200
+ad6917,172.22.0.1,GET,https://localhost/admin1337/index.php/modules/metrics/api/getShopData?_token=CI_RHc5eqVR9aiVrgUng9YPygyHEZ0jdBOeaQ1_T6ok,1733496939,,200
+febcf8,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=CI_RHc5eqVR9aiVrgUng9YPygyHEZ0jdBOeaQ1_T6ok&rand=1733496939295,1733496940,,200
+2b3d33,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=CI_RHc5eqVR9aiVrgUng9YPygyHEZ0jdBOeaQ1_T6ok&rand=1733496939332,1733496940,,200
+0aa122,172.22.0.1,GET,https://localhost/admin1337/index.php/configure/advanced/webservice-keys/?_token=CI_RHc5eqVR9aiVrgUng9YPygyHEZ0jdBOeaQ1_T6ok,1733496955,,200
+caeb5b,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=CI_RHc5eqVR9aiVrgUng9YPygyHEZ0jdBOeaQ1_T6ok&rand=1733496956364,1733496956,,200
+07c55e,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=CI_RHc5eqVR9aiVrgUng9YPygyHEZ0jdBOeaQ1_T6ok,1733496956,,200
+e72b5d,172.22.0.1,GET,https://localhost/admin1337/index.php/configure/advanced/webservice-keys/1/edit?_token=CI_RHc5eqVR9aiVrgUng9YPygyHEZ0jdBOeaQ1_T6ok,1733496958,,200
+1ffe36,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=CI_RHc5eqVR9aiVrgUng9YPygyHEZ0jdBOeaQ1_T6ok,1733496959,,200
+ad88f9,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=CI_RHc5eqVR9aiVrgUng9YPygyHEZ0jdBOeaQ1_T6ok&rand=1733496958933,1733496959,,200
+d894ca,172.22.0.1,POST,https://localhost/admin1337/index.php/configure/advanced/webservice-keys/1/edit?_token=CI_RHc5eqVR9aiVrgUng9YPygyHEZ0jdBOeaQ1_T6ok,1733496969,,302
+a2366c,172.22.0.1,GET,https://localhost/admin1337/index.php/configure/advanced/webservice-keys/?_token=CI_RHc5eqVR9aiVrgUng9YPygyHEZ0jdBOeaQ1_T6ok,1733496969,,200
+0733be,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=CI_RHc5eqVR9aiVrgUng9YPygyHEZ0jdBOeaQ1_T6ok,1733496969,,200
+2a2062,172.22.0.1,POST,https://localhost/admin1337/index.php/common/notifications?_token=CI_RHc5eqVR9aiVrgUng9YPygyHEZ0jdBOeaQ1_T6ok&rand=1733496969887,1733496970,,200
