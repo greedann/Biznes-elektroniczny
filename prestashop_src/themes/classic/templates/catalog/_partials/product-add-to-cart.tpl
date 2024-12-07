@@ -27,7 +27,7 @@
     <span class="control-label">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
 
     {block name='product_quantity'}
-      <div class="product-quantity clearfix">
+      <div id="quantity_column">
         <div class="qty">
           <input
             type="number"
@@ -46,22 +46,23 @@
             aria-label="{l s='Quantity' d='Shop.Theme.Actions'}"
           >
         </div>
+        <div class="product-quantity clearfix">
+          <div class="add">
+            <button
+              class="btn btn-primary add-to-cart"
+              data-button-action="add-to-cart"
+              type="submit"
+              {if !$product.add_to_cart_url}
+                disabled
+              {/if}
+            >
+              <i class="material-icons shopping-cart">&#xE547;</i>
+              {l s='Add to cart' d='Shop.Theme.Actions'}
+            </button>
+          </div>
 
-        <div class="add">
-          <button
-            class="btn btn-primary add-to-cart"
-            data-button-action="add-to-cart"
-            type="submit"
-            {if !$product.add_to_cart_url}
-              disabled
-            {/if}
-          >
-            <i class="material-icons shopping-cart">&#xE547;</i>
-            {l s='Add to cart' d='Shop.Theme.Actions'}
-          </button>
+          {hook h='displayProductActions' product=$product}
         </div>
-
-        {hook h='displayProductActions' product=$product}
       </div>
     {/block}
 
