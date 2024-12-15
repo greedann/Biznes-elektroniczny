@@ -15,45 +15,62 @@ public class Main {
     public static String CSV_FILE_PATH = "data/products.csv";
     public static String IMAGE_PATH = "data/images/";
 
-    public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
+    public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException, ClassNotFoundException {
         Adder adder = new Adder();
+        Map<String, Integer> productFeatureMap = new HashMap<>();
+        productFeatureMap.put("manufacturer", 3);
+        productFeatureMap.put("scale", 11);
+        productFeatureMap.put("height", 6);
+        productFeatureMap.put("hero", 2);
+        productFeatureMap.put("theme", 1);
+        productFeatureMap.put("series", 10);
+        productFeatureMap.put("material", 9);
+        productFeatureMap.put("packaging", 5);
+        productFeatureMap.put("accessories", 7);
+        productFeatureMap.put("range_of_motion", 8);
+        productFeatureMap.put("type", 4);
+        productFeatureMap.put("dimensions", 12);
         // CSV file path
 
 
         // Read the CSV file
         List<List<String>> csvData = readCsv(CSV_FILE_PATH);
-
+        HashMap<String, String> attributeMap = HashMapSerializer.loadHashMap("data/attribute_map.ser");
         // Iterate over CSV rows (excluding header)
         for (int i = 1; i < csvData.size(); i++) {
             System.out.println("started " + i + "/" + csvData.size());
             // Start from 1 to skip header
             List<String> product = csvData.get(i);
 
-            // Extract product details
-            String productId = product.get(0);
-            String active = product.get(1);
-            String name = product.get(2);
-            String category = product.get(3);
-            String price = product.get(4);
-            String onSale = product.get(5);
-            String discountAmount = product.get(6);
-            String discountPercent = product.get(7);
-            String manufacturer = product.get(8);
-            String scale = product.get(9);
-            String height = product.get(10);
-            String hero = product.get(11);
-            String theme = product.get(12);
-            String series = product.get(13);
-            String material = product.get(14);
-            String packaging = product.get(15);
-            String accessories = product.get(16);
-            String rangeOfMotion = product.get(17);
-            String type = product.get(18);
-            String code = product.get(19);
+              String productId = product.get(0);
+//            String active = product.get(1);
+//            String name = product.get(2);
+//            String category = product.get(3);
+//            String price = product.get(4);
+//            String onSale = product.get(5);
+//            String discountAmount = product.get(6);
+//            String discountPercent = product.get(7);
+//            String manufacturer = product.get(8);
+//            String scale = product.get(9);
+//            String height = product.get(10);
+//            String hero = product.get(11);
+//            String theme = product.get(12);
+//            String series = product.get(13);
+//            String material = product.get(14);
+//            String packaging = product.get(15);
+//            String accessories = product.get(16);
+//            String rangeOfMotion = product.get(17);
+//            String type = product.get(18);
+//            String code = product.get(19);
+            String shortDescription = "";
             String description = product.get(20);
-            String shortDescription = description.substring(0, 200);
-            String imageUrls = product.get(21); // Comma-separated list of image files
-           // Comma-separated list of image files
+            if(description.length() > 200)
+                shortDescription = description.substring(0, 200);
+            else
+                shortDescription = description;
+            String imageUrls = product.get(21);
+//            String dimensions = product.get(22);
+
 
             // Create XML payload
 //            String xmlPayload = createXmlPayload(productId, active, name, category, price, onSale, discountAmount, discountPercent,
@@ -61,14 +78,19 @@ public class Main {
 //                    rangeOfMotion, type, code, description, imageUrls);
             //String xmlPayload = createDefaultPayload(name, price, description, description);
             // Send the product request
-            String product_id = adder.sendCreateRequest(createDefaultPayload(name, price, description, shortDescription));
-            System.out.println("Product with ID: " + product_id + " created successfully.");
+            String product_id = "";
+            for(int count = 0; count < 2; count++){
+                product_id = adder.sendCreateRequest(createDefaultPayload(product, shortDescription, attributeMap, productFeatureMap));
+                if(product_id != null) {
+                    System.out.println("Product "+ product_id+" successfuly added.");
+                    break;
+                }
+            }
             if(product_id == null) {
                 System.out.println("Product creation failed.");
                 continue;
             }
-
-            adder.sendModifyRequest(createStockPayload("10", product_id), product_id);
+            adder.sendModifyRequest(createStockPayload("100", product_id), product_id);
             System.out.println("Product with ID: " + product_id + " Stock updated successfully.");
             // Upload images for the product
             String[] imageFiles = imageUrls.split(",");
@@ -76,7 +98,9 @@ public class Main {
                 if(imageFile.length() < 2)
                     break;
                 String imagePath = IMAGE_PATH + imageFile.trim();
+
                 adder.uploadImage(product_id, imagePath);
+
             }
             System.out.println("Product with ID: " + product_id + " images added successfully.");
         }
@@ -99,30 +123,64 @@ public class Main {
     }
 
 
-    public static String createDefaultPayload(String name, String price, String description, String descriptionShort) {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+    public static String createDefaultPayload(List<String> product, String shortDescription, HashMap<String, String> attributeMap, Map<String, Integer> productFeatureMap ) {
+        StringBuilder xml = new StringBuilder();
+        xml.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
                 "<prestashop xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n" +
                 "    <product>\n" +
                 "        <name>\n" +
-                "            <language id=\"1\"><![CDATA[" + name + "]]></language> <!-- English -->\n" +
+                "            <language id=\"1\"><![CDATA[" + product.get(2) + "]]></language> <!-- English -->\n" +
                 "        </name>\n" +
-                "        <price><![CDATA["+price+"]]></price>\n" +
-                "        <id_category_default><![CDATA[2]]></id_category_default>\n" +
+                "        <price><![CDATA["+product.get(4)+"]]></price>\n" +
+                "        <id_category_default><![CDATA[" + product.get(3) + "]]></id_category_default>\n" +
                 "        <state><![CDATA[1]]></state>\n" +
                 "        <active><![CDATA[1]]></active>\n" +
                 "        <description>\n" +
                 "            <language id=\"1\">\n" +
-                "                <![CDATA[" + description + "]]>\n" +
+                "                <![CDATA[" + product.get(20) + "]]>\n" +
                 "            </language>\n" +
                 "        </description>\n" +
+                "        <on_sale><![CDATA[" + product.get(5) + "]]></on_sale>\n" +
+                "        <discount_amount><![CDATA[" + product.get(6) + "]]></discount_amount>\n" +
+                "        <discount_percent><![CDATA[" +  product.get(7) + "]]></discount_percent>\n" +
+                "        <show_price><![CDATA[1]]></show_price>\n" +
+                "         <id_tax_rules_group><![CDATA[1]]></id_tax_rules_group>\n" +
+                "        <code><![CDATA[" + product.get(19) + "]]></code>\n" +
                 "        <description_short>\n" +
                 "            <language id=\"1\">\n" +
-                "                <![CDATA[" + descriptionShort + "]]>\n" +
+                "                <![CDATA[" + shortDescription + "]]>\n" +
                 "            </language>\n" +
                 "        </description_short>\n" +
-                "    </product>\n" +
-                "</prestashop>";
+                "        <dimensions><![CDATA[" + product.get(22) + "]]></dimensions>\n" +
+                "        <associations>\n" +
+                "           <categories nodeType=\"category\" api=\"categories\">\n" +
+                "                <category xlink:href=\"https://localhost/api/categories/ "+ product.get(3)+" \">\n" +
+                "                   <id><![CDATA["+ product.get(3)+"]]></id>\n" +
+                "                </category>\n" +
+                "            </categories>\n" +
+                "            <product_features nodeType=\"product_feature\" api=\"product_features\">\n");
+        String[] categories = {
+                "manufacturer", "scale", "height", "hero", "theme",
+                "series", "material", "packaging", "accessories", "range_of_motion", "type", "dimensions"
+        };
+        for (int i = 0; i < categories.length; i++) {
+            String category =categories[i];
+            String productValue = product.get(8+i);
+            if(i +1 == categories.length) productValue = product.get(22);
+            String mapKey = category + ":" + productValue;
+            if (mapKey.endsWith("\n")) {
+                mapKey = mapKey.substring(0, mapKey.length() - 1);
+            }
+            String attributeValue = attributeMap.getOrDefault(mapKey, "0");
+            xml.append("                <product_feature>\n");
+            xml.append("                    <id><![CDATA[").append(productFeatureMap.get(category)).append("]]></id>\n");
+            xml.append("                    <id_feature_value><![CDATA[").append(attributeValue).append("]]></id_feature_value>\n");
+            xml.append("                </product_feature>\n");
+        }
+        xml.append("            </product_features>\n" + "        </associations>\n" + "    </product>\n" + "</prestashop>");
+        return xml.toString();
     }
+
 
     public static String createStockPayload(String quantity, String product_id) {
         return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
@@ -141,41 +199,6 @@ public class Main {
                 "</prestashop>";
     }
 
-    // Function to send the product request
-//    public int sendCreateRequest(String xmlPayload) throws IOException {
-//
-//
-//        OkHttpClient client = new OkHttpClient().newBuilder().build();
-//        MediaType mediaType = MediaType.parse("application/xml");
-//        RequestBody body = RequestBody.create(mediaType, xmlPayload);
-//
-//        Request request = new Request.Builder()
-//                .url("http://localhost/api/products")
-//                .method("POST", body)
-//                .addHeader("Content-Type", "application/xml")
-//                .addHeader("Authorization", "Basic WU9VUktFWUhFUkU6") // Replace with your API credentials
-//                .build();
-//
-//        Response response = client.newCall(request).execute();
-//        System.out.println("Product Response: " + response.code() + " " + response.message());
-//        response.close();
-//        return 1;
-//    }
-//
-//    public static void sendModifyRequest(String xmlPayload) throws IOException {
-//        OkHttpClient client = new OkHttpClient().newBuilder()
-//                .build();
-//        MediaType mediaType = MediaType.parse("application/xml");
-//        RequestBody body = RequestBody.create(mediaType, xmlPayload);
-//                Request request = new Request.Builder()
-//                .url("localhost/api/stock_availables/10")
-//                .method("PUT", body)
-//                .addHeader("Content-Type", "application/xml")
-//                .addHeader("Authorization", "Basic WU9VUktFWUhFUkU6")
-//                .build();
-//        Response response = client.newCall(request).execute();
-//    }
 
-    // Function to upload an image
 
 }

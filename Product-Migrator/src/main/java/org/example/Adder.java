@@ -76,7 +76,7 @@ public class Adder {
         File imageFile = new File(imagePath);
         if (!imageFile.exists()) {
             System.err.println("Image file not found: " + imagePath);
-            return;
+            return
         }
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
@@ -91,7 +91,9 @@ public class Adder {
                 .build();
         Response response = client.newCall(request).execute();
         System.out.println("Image Response for Product " + productId + ": " + response.code() + " " + response.message());
+
         response.close();
+        return;
     }
 
 }
