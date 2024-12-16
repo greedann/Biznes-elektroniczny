@@ -27,6 +27,8 @@ categories = [
     {"name": "zabawki", "id": 13, "url": "https://www.dystryktzero.pl/klocki-i-zabawki/"}
 ]
 
+data_dir = "../data/"
+
 #CATEGORY_ID = 3
 MAX_PAGES = 7
 headers = {
@@ -41,9 +43,9 @@ for category in categories:
     CATEGORY_ID = category['id']
 #url = 'https://www.dystryktzero.pl/komiksy-z-superbohaterami/'
     max_id = 0
-    os.makedirs('data', exist_ok=True)
-    if os.path.exists('data/products.csv'):
-        with open('data/products.csv', mode='r', encoding='utf-8') as file:
+    os.makedirs(data_dir, exist_ok=True)
+    if os.path.exists(data_dir + 'products.csv'):
+        with open(data_dir + 'products.csv', mode='r', encoding='utf-8') as file:
             reader = csv.reader(file)
             next(reader)  # Skip the header row
             for row in reader:
@@ -52,8 +54,8 @@ for category in categories:
                     max_id = product_id
     start_id = max_id + 1
 
-    file_exists = os.path.isfile('data/products.csv')
-    with open('data/products.csv', mode='a', encoding='utf-8') as file:
+    file_exists = os.path.isfile(data_dir + 'products.csv')
+    with open(data_dir + 'products.csv', mode='a', encoding='utf-8') as file:
         writer = csv.writer(file)
         if not file_exists:
             writer.writerow(['product_id', 'active', 'name', 'category',  'price', 'on_sale',
@@ -121,7 +123,7 @@ for category in categories:
                         elif i.next == 'Wymiary:':
                             columns[22] = j.next
 
-                    os.makedirs('data/images', exist_ok=True)
+                    os.makedirs(data_dir + 'images', exist_ok=True)
 
                     image_div = soup.find('div', class_='ty-product-img cm-preview-wrapper')
                     if image_div:
@@ -135,7 +137,7 @@ for category in categories:
 
                                     image_name = os.path.basename(image_url)
 
-                                    with open(os.path.join('data/images', image_name), 'wb') as file:
+                                    with open(os.path.join(data_dir + 'images', image_name), 'wb') as file:
                                         file.write(image_response.content)
                                     print(f'Saved image: {image_name}')
                                     count_image+=1

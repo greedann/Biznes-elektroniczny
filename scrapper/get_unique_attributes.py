@@ -1,7 +1,9 @@
 import csv
 
+data_dir = "../data/"
+
 # Открытие исходного CSV файла
-with open('data/products.csv', 'r', newline='', encoding='utf-8') as infile:
+with open(data_dir + 'products.csv', 'r', newline='', encoding='utf-8') as infile:
     csv_reader = csv.DictReader(infile)
 
     # Множество для хранения уникальных значений по каждому полю
@@ -28,7 +30,7 @@ with open('data/products.csv', 'r', newline='', encoding='utf-8') as infile:
                 unique_values[field].add(value)
 
 # Сохранение уникальных значений в новый файл
-with open('data/unique_values.csv', 'w', newline='', encoding='utf-8') as outfile:
+with open(data_dir + 'unique_values.csv', 'w', newline='', encoding='utf-8') as outfile:
     csv_writer = csv.writer(outfile)
 
     # Записываем заголовок
