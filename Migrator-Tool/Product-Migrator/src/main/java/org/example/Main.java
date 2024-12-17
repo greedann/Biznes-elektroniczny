@@ -99,6 +99,7 @@ public class Main {
                 "        <id_category_default><![CDATA[" + product.get(3) + "]]></id_category_default>\n" +
                 "        <state><![CDATA[1]]></state>\n" +
                 "        <active><![CDATA[1]]></active>\n" +
+                "        <available_for_order><![CDATA[1]]></available_for_order>\n" +
                 "        <description>\n" +
                 "            <language id=\"1\">\n" +
                 "                <![CDATA[" + product.get(20) + "]]>\n" +
