@@ -8,79 +8,90 @@ from selenium.webdriver.common.keys import Keys
 from random import randint, choice
 from time import sleep
 
-#settings for windows
+# settings for windows
+
+
 def setup_driver_chrome():
     chrome_options = Options()
-    chrome_options.add_argument("--ignore-certificate-errors") #ignore certificate errors
-    chrome_options.add_argument("--ignore-ssl-errors")         #ignore ssl errors
-    chrome_options.add_argument('--disable-web-security')      #disable web security
-    service = Service("/usr/local/bin/chromedriver")
+    # ignore certificate errors
+    chrome_options.add_argument("--ignore-certificate-errors")
+    chrome_options.add_argument("--ignore-ssl-errors")  # ignore ssl errors
+    chrome_options.add_argument(
+        '--disable-web-security')  # disable web security
+    service = Service("/home/greedann/Downloads/chromedriver-linux64/chromedriver")
     return webdriver.Chrome(service=service, options=chrome_options)
 
 
 def registration_test(driver, email):
     driver.get("https://localhost/login?create_account=1")
     WebDriverWait(driver, 120).until(EC.title_is("Login"))
-    
+
     gender_mr = driver.find_element(By.ID, "field-id_gender-1")
     gender_mr.click()
-    
+
     first_name = driver.find_element(By.ID, "field-firstname")
     first_name.send_keys("John")
-    
+
     last_name = driver.find_element(By.ID, "field-lastname")
     last_name.send_keys("Pork")
-    
+
     email_name = driver.find_element(By.ID, "field-email")
     email_name.send_keys(email)
-    
+
     password = driver.find_element(By.ID, "field-password")
     password.send_keys("StrongPass123")
-    
+
     birthday = driver.find_element(By.ID, "field-birthday")
     birthday.send_keys("1970-05-31")
-    
-    #first checkbox
+
+    # first checkbox
     newsletter = driver.find_element(By.NAME, "optin")
     newsletter.click()
-    
-    #second checkbox
+
+    # second checkbox
     privacy_policy = driver.find_element(By.NAME, "customer_privacy")
     privacy_policy.click()
-    
-    #third checkbox
+
+    # third checkbox
     psgdpr = driver.find_element(By.NAME, "psgdpr")
     psgdpr.click()
-    
-    button = driver.find_element(By.CSS_SELECTOR, ".btn.btn-primary.form-control-submit.float-xs-right")
+
+    button = driver.find_element(
+        By.CSS_SELECTOR, ".btn.btn-primary.form-control-submit.float-xs-right")
     button.click()
-    
+
     WebDriverWait(driver, 120).until(EC.title_is("Dystryktzero.pl"))
     print("TEST 4!  Registration successful")
 
-        
+
 def add_products_test(driver, category_link, num_products=5):
     driver.get(category_link)
-    WebDriverWait(driver, 120).until(EC.presence_of_element_located((By.XPATH, '//*[contains(@class, "product-list")]')))
+    WebDriverWait(driver, 120).until(EC.presence_of_element_located(
+        (By.XPATH, '//*[contains(@class, "product-list")]')))
 
-    products = driver.find_elements(By.XPATH, '//div[@id="js-product-list"]//a[@class="thumbnail product-thumbnail"]')
+    products = driver.find_elements(
+        By.XPATH, '//div[@id="js-product-list"]//a[@class="thumbnail product-thumbnail"]')
     product_links = [product.get_attribute("href") for product in products]
 
     for link in product_links[:num_products]:
         driver.get(link)
-        WebDriverWait(driver, 120).until(EC.presence_of_element_located((By.CSS_SELECTOR, '.btn.btn-primary.add-to-cart')))
-        
+        WebDriverWait(driver, 120).until(EC.presence_of_element_located(
+            (By.CSS_SELECTOR, '.btn.btn-primary.add-to-cart')))
+
         quantity = driver.find_element(By.ID, 'quantity_wanted')
-        quantity.send_keys(Keys.CONTROL + "a")  #to delete existing number in this fieild
-        quantity.send_keys(Keys.DELETE) 
+        # to delete existing number in this fieild
+        quantity.send_keys(Keys.CONTROL + "a")
+        quantity.send_keys(Keys.DELETE)
         quantity.send_keys(randint(1, 7))
-        
-        add_to_cart = driver.find_element(By.CSS_SELECTOR, '.btn.btn-primary.add-to-cart')
+
+        add_to_cart = driver.find_element(
+            By.CSS_SELECTOR, '.btn.btn-primary.add-to-cart')
         add_to_cart.click()
-        #waiting for "Produkt dodany poprawnie do Twojego koszyka" window to appear
-        WebDriverWait(driver, 120).until(EC.presence_of_element_located((By.CLASS_NAME, "modal-backdrop.fade.in")))
+        # waiting for "Produkt dodany poprawnie do Twojego koszyka" window to appear
+        WebDriverWait(driver, 120).until(EC.presence_of_element_located(
+            (By.CLASS_NAME, "modal-backdrop.fade.in")))
     print("TEST 1!  Products added to cart from category: ", category_link)
-  
+
 
 def find_by_name_test(driver, name_of_product):
     driver.get("https://localhost")
@@ -88,74 +99,82 @@ def find_by_name_test(driver, name_of_product):
     search_bar.click()
     search_bar.send_keys(name_of_product)
     search_bar.send_keys(Keys.ENTER)
-    
+
     WebDriverWait(driver, 120).until(EC.title_is('Search'))
-    
-    products = driver.find_elements(By.XPATH, '//div[@id="js-product-list"]//a[@class="thumbnail product-thumbnail"]')
+
+    products = driver.find_elements(
+        By.XPATH, '//div[@id="js-product-list"]//a[@class="thumbnail product-thumbnail"]')
     product_links = [product.get_attribute("href") for product in products]
     random_link = choice(product_links)
-    
+
     driver.get(random_link)
     WebDriverWait(driver, 120).until(EC.title_contains(name_of_product))
-    
-    add_to_cart = driver.find_element(By.CSS_SELECTOR, '.btn.btn-primary.add-to-cart')
+
+    add_to_cart = driver.find_element(
+        By.CSS_SELECTOR, '.btn.btn-primary.add-to-cart')
     add_to_cart.click()
-    #waiting for "Produkt dodany poprawnie do Twojego koszyka" window to appear
-    WebDriverWait(driver, 120).until(EC.presence_of_element_located((By.CLASS_NAME, "modal-backdrop.fade.in")))
+    # waiting for "Produkt dodany poprawnie do Twojego koszyka" window to appear
+    WebDriverWait(driver, 120).until(EC.presence_of_element_located(
+        (By.CLASS_NAME, "modal-backdrop.fade.in")))
     print("TEST 2!  Product added to cart: ", name_of_product)
 
+
 def remove_from_cart_test(driver):
-    driver.get("https://localhost/cart?action=show")   
+    driver.get("https://localhost/cart?action=show")
     WebDriverWait(driver, 120).until(EC.title_is('Cart'))
-    
+
     for _ in range(3):
         cart_items = driver.find_elements(By.CLASS_NAME, 'cart-item')
         if not cart_items:
             print("Cart is empty")
             break
 
-        remove_button = cart_items[0].find_element(By.CSS_SELECTOR, "i.material-icons.float-xs-left")
+        remove_button = cart_items[0].find_element(
+            By.CSS_SELECTOR, "i.material-icons.float-xs-left")
         remove_button.click()
 
         WebDriverWait(driver, 120).until(EC.staleness_of(cart_items[0]))
     print("TEST 3!  Products removed from cart")
-    
+
 
 def process_of_buying_test(driver):
     driver.get("https://localhost/cart?action=show")
     WebDriverWait(driver, 120).until(EC.title_is('Cart'))
-    
+
     checkout_button = driver.find_element(By.CSS_SELECTOR, 'a.btn.btn-primary')
     checkout_button.click()
-    
+
     address = driver.find_element(By.ID, "field-address1")
     address.send_keys("ul. Kosmonawtow 12")
-    
+
     post_code = driver.find_element(By.ID, "field-postcode")
     post_code.send_keys("12-228")
-    
+
     city = driver.find_element(By.ID, "field-city")
     city.send_keys("Grodno")
-    
+
     next_button = driver.find_element(By.NAME, 'confirm-addresses')
     next_button.click()
-    
+
     delivery_button = driver.find_element(By.ID, "delivery_option_6")
     delivery_button.click()
-    
+
     next_button = driver.find_element(By.NAME, 'confirmDeliveryOption')
     next_button.click()
-    
+
     payment_button = driver.find_element(By.ID, "payment-option-2")
     payment_button.click()
-    
-    conditions = driver.find_element(By.ID, "conditions_to_approve[terms-and-conditions]")
+
+    conditions = driver.find_element(
+        By.ID, "conditions_to_approve[terms-and-conditions]")
     conditions.click()
-    
-    order_button = driver.find_element(By.CSS_SELECTOR, 'button.btn.btn-primary.center-block')
+
+    order_button = driver.find_element(
+        By.CSS_SELECTOR, 'button.btn.btn-primary.center-block')
     order_button.click()
 
-    WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'number-input')))
+    WebDriverWait(driver, 30).until(
+        EC.presence_of_element_located((By.ID, 'number-input')))
     card_number = driver.find_element(By.ID, "number-input")
     card_number.send_keys("4444333322221111")
 
@@ -165,33 +184,33 @@ def process_of_buying_test(driver):
     cvv_number = driver.find_element(By.ID, "cvv-input")
     cvv_number.send_keys("123")
 
-    submit_button = driver.find_element(By.CSS_SELECTOR, "input[name='submit']")
+    submit_button = driver.find_element(
+        By.CSS_SELECTOR, "input[name='submit']")
     submit_button.click()
-    
+
     WebDriverWait(driver, 120).until(EC.title_is('Order confirmation'))
     order_reference = driver.find_element(By.ID, "order-reference-value")
     order_text = order_reference.text
     order_number = order_text.split(":")[-1].strip()
-    
+
     print("TEST 5!  Order number: ", order_number)
     return order_number
 
-def order_tracking_test(driver, tracking_number):
-    account = driver.find_element(By.CSS_SELECTOR, 'span.hidden-sm-down')
-    account.click()
-    WebDriverWait(driver, 120).until(EC.title_is('My account'))
 
-    order_history = driver.find_element(By.ID, 'history-link')
+def order_tracking_test(driver, tracking_number):
+    order_history = driver.find_element(By.XPATH, '//*[@id="footer_account_list"]/li[2]/a')
     order_history.click()
     WebDriverWait(driver, 120).until(EC.title_is('Order history'))
 
     rows = driver.find_elements(By.CSS_SELECTOR, "table tbody tr")
     for row in rows:
         if tracking_number in row.text:
-            fax_button = row.find_element(By.CSS_SELECTOR, "td.text-sm-center.hidden-md-down a i.material-icons")
+            fax_button = row.find_element(
+                By.CSS_SELECTOR, "td.text-sm-center.hidden-md-down a i.material-icons")
             fax_button.click()
             sleep(5)
-            button = row.find_element(By.CSS_SELECTOR, "a[data-link-action='view-order-details']")
+            button = row.find_element(
+                By.CSS_SELECTOR, "a[data-link-action='view-order-details']")
             button.click()
 
     WebDriverWait(driver, 120).until(EC.title_is('Dystryktzero.pl'))
@@ -206,8 +225,8 @@ def run_tests():
         category_link1 = "https://localhost/12-budziki-i-zegarki"
         add_products_test(driver, category_link1, num_products=5)
         category_link2 = "https://localhost/14-figurki-funko-pop"
-        add_products_test(driver, category_link2, num_products=5)
-        name_of_product = "huesos"
+        add_products_test(driver, category_link1, num_products=5)
+        name_of_product = "Figurka"
         find_by_name_test(driver, name_of_product)
         remove_from_cart_test(driver)
         registration_test(driver, email)
@@ -217,12 +236,5 @@ def run_tests():
     finally:
         driver.quit()
 
+
 run_tests()
-    
-    
-    
-    
-    
-    
-    
-    
