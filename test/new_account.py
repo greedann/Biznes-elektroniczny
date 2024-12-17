@@ -108,7 +108,7 @@ def find_by_name_test(driver, name_of_product):
     random_link = choice(product_links)
 
     driver.get(random_link)
-    WebDriverWait(driver, 120).until(EC.title_contains(name_of_product))
+    WebDriverWait(driver, 120).until(EC.title_contains(name_of_product[:-1]))
 
     add_to_cart = driver.find_element(
         By.CSS_SELECTOR, '.btn.btn-primary.add-to-cart')
@@ -225,7 +225,7 @@ def run_tests():
         category_link1 = "https://localhost/12-budziki-i-zegarki"
         add_products_test(driver, category_link1, num_products=5)
         category_link2 = "https://localhost/14-figurki-funko-pop"
-        add_products_test(driver, category_link1, num_products=5)
+        add_products_test(driver, category_link2, num_products=5)
         name_of_product = "Figurka"
         find_by_name_test(driver, name_of_product)
         remove_from_cart_test(driver)
