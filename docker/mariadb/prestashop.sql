@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `ps_access` (
   `id_profile` int(10) UNSIGNED NOT NULL,
   `id_authorization_role` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_access`
@@ -667,7 +667,7 @@ INSERT INTO `ps_access` (`id_profile`, `id_authorization_role`) VALUES
 CREATE TABLE `ps_accessory` (
   `id_product_1` int(10) UNSIGNED NOT NULL,
   `id_product_2` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -700,7 +700,7 @@ CREATE TABLE `ps_address` (
   `date_upd` datetime NOT NULL,
   `active` tinyint(1) UNSIGNED NOT NULL DEFAULT 1,
   `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_address`
@@ -718,7 +718,7 @@ INSERT INTO `ps_address` (`id_address`, `id_country`, `id_state`, `id_customer`,
 CREATE TABLE `ps_address_format` (
   `id_country` int(10) UNSIGNED NOT NULL,
   `format` varchar(255) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_address_format`
@@ -1021,7 +1021,7 @@ CREATE TABLE `ps_alias` (
   `alias` varchar(191) NOT NULL,
   `search` varchar(255) NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -1035,7 +1035,7 @@ CREATE TABLE `ps_attachment` (
   `file_name` varchar(128) NOT NULL,
   `file_size` bigint(10) UNSIGNED NOT NULL DEFAULT 0,
   `mime` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -1048,7 +1048,7 @@ CREATE TABLE `ps_attachment_lang` (
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(32) DEFAULT NULL,
   `description` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -1112,7 +1112,7 @@ CREATE TABLE `ps_attribute_impact` (
   `id_attribute` int(11) UNSIGNED NOT NULL,
   `weight` decimal(20,6) NOT NULL,
   `price` decimal(20,6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -1146,7 +1146,7 @@ CREATE TABLE `ps_attribute_shop` (
 CREATE TABLE `ps_authorization_role` (
   `id_authorization_role` int(10) UNSIGNED NOT NULL,
   `slug` varchar(191) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_authorization_role`
@@ -2039,7 +2039,7 @@ CREATE TABLE `ps_blockwishlist_statistics` (
   `id_product_attribute` int(10) UNSIGNED NOT NULL,
   `date_add` datetime NOT NULL,
   `id_shop` int(10) UNSIGNED DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2069,7 +2069,7 @@ CREATE TABLE `ps_carrier` (
   `max_depth` int(10) DEFAULT 0,
   `max_weight` decimal(20,6) DEFAULT 0.000000,
   `grade` int(10) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_carrier`
@@ -2093,7 +2093,7 @@ INSERT INTO `ps_carrier` (`id_carrier`, `id_reference`, `id_tax_rules_group`, `n
 CREATE TABLE `ps_carrier_group` (
   `id_carrier` int(10) UNSIGNED NOT NULL,
   `id_group` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_carrier_group`
@@ -2133,7 +2133,7 @@ CREATE TABLE `ps_carrier_lang` (
   `id_shop` int(11) UNSIGNED NOT NULL DEFAULT 1,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `delay` varchar(512) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_carrier_lang`
@@ -2157,7 +2157,7 @@ INSERT INTO `ps_carrier_lang` (`id_carrier`, `id_shop`, `id_lang`, `delay`) VALU
 CREATE TABLE `ps_carrier_shop` (
   `id_carrier` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_carrier_shop`
@@ -2182,7 +2182,7 @@ CREATE TABLE `ps_carrier_tax_rules_group_shop` (
   `id_carrier` int(11) UNSIGNED NOT NULL,
   `id_tax_rules_group` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_carrier_tax_rules_group_shop`
@@ -2206,7 +2206,7 @@ INSERT INTO `ps_carrier_tax_rules_group_shop` (`id_carrier`, `id_tax_rules_group
 CREATE TABLE `ps_carrier_zone` (
   `id_carrier` int(10) UNSIGNED NOT NULL,
   `id_zone` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_carrier_zone`
@@ -2248,7 +2248,7 @@ CREATE TABLE `ps_cart` (
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
   `checkout_session_data` mediumtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2259,7 +2259,7 @@ CREATE TABLE `ps_cart` (
 CREATE TABLE `ps_cart_cart_rule` (
   `id_cart` int(10) UNSIGNED NOT NULL,
   `id_cart_rule` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2276,7 +2276,7 @@ CREATE TABLE `ps_cart_product` (
   `id_customization` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `quantity` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2318,7 +2318,7 @@ CREATE TABLE `ps_cart_rule` (
   `active` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2329,7 +2329,7 @@ CREATE TABLE `ps_cart_rule` (
 CREATE TABLE `ps_cart_rule_carrier` (
   `id_cart_rule` int(10) UNSIGNED NOT NULL,
   `id_carrier` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2340,7 +2340,7 @@ CREATE TABLE `ps_cart_rule_carrier` (
 CREATE TABLE `ps_cart_rule_combination` (
   `id_cart_rule_1` int(10) UNSIGNED NOT NULL,
   `id_cart_rule_2` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2351,7 +2351,7 @@ CREATE TABLE `ps_cart_rule_combination` (
 CREATE TABLE `ps_cart_rule_country` (
   `id_cart_rule` int(10) UNSIGNED NOT NULL,
   `id_country` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2362,7 +2362,7 @@ CREATE TABLE `ps_cart_rule_country` (
 CREATE TABLE `ps_cart_rule_group` (
   `id_cart_rule` int(10) UNSIGNED NOT NULL,
   `id_group` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2374,7 +2374,7 @@ CREATE TABLE `ps_cart_rule_lang` (
   `id_cart_rule` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(254) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2386,7 +2386,7 @@ CREATE TABLE `ps_cart_rule_product_rule` (
   `id_product_rule` int(10) UNSIGNED NOT NULL,
   `id_product_rule_group` int(10) UNSIGNED NOT NULL,
   `type` enum('products','categories','attributes','manufacturers','suppliers') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2398,7 +2398,7 @@ CREATE TABLE `ps_cart_rule_product_rule_group` (
   `id_product_rule_group` int(10) UNSIGNED NOT NULL,
   `id_cart_rule` int(10) UNSIGNED NOT NULL,
   `quantity` int(10) UNSIGNED NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2409,7 +2409,7 @@ CREATE TABLE `ps_cart_rule_product_rule_group` (
 CREATE TABLE `ps_cart_rule_product_rule_value` (
   `id_product_rule` int(10) UNSIGNED NOT NULL,
   `id_item` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2420,7 +2420,7 @@ CREATE TABLE `ps_cart_rule_product_rule_value` (
 CREATE TABLE `ps_cart_rule_shop` (
   `id_cart_rule` int(10) UNSIGNED NOT NULL,
   `id_shop` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2440,7 +2440,7 @@ CREATE TABLE `ps_category` (
   `date_upd` datetime NOT NULL,
   `position` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `is_root_category` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_category`
@@ -2471,7 +2471,7 @@ INSERT INTO `ps_category` (`id_category`, `id_parent`, `id_shop_default`, `level
 CREATE TABLE `ps_category_group` (
   `id_category` int(10) UNSIGNED NOT NULL,
   `id_group` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_category_group`
@@ -2534,7 +2534,7 @@ CREATE TABLE `ps_category_lang` (
   `meta_title` varchar(255) DEFAULT NULL,
   `meta_keywords` varchar(255) DEFAULT NULL,
   `meta_description` varchar(512) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_category_lang`
@@ -2566,7 +2566,7 @@ CREATE TABLE `ps_category_product` (
   `id_category` int(10) UNSIGNED NOT NULL,
   `id_product` int(10) UNSIGNED NOT NULL,
   `position` int(10) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_category_product`
@@ -2585,7 +2585,7 @@ CREATE TABLE `ps_category_shop` (
   `id_category` int(11) NOT NULL,
   `id_shop` int(11) NOT NULL,
   `position` int(10) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_category_shop`
@@ -2619,7 +2619,7 @@ CREATE TABLE `ps_cms` (
   `position` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `active` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `indexation` tinyint(1) UNSIGNED NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_cms`
@@ -2646,7 +2646,7 @@ CREATE TABLE `ps_cms_category` (
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
   `position` int(10) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_cms_category`
@@ -2671,7 +2671,7 @@ CREATE TABLE `ps_cms_category_lang` (
   `meta_title` varchar(255) DEFAULT NULL,
   `meta_keywords` varchar(255) DEFAULT NULL,
   `meta_description` varchar(512) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_cms_category_lang`
@@ -2689,7 +2689,7 @@ INSERT INTO `ps_cms_category_lang` (`id_cms_category`, `id_lang`, `id_shop`, `na
 CREATE TABLE `ps_cms_category_shop` (
   `id_cms_category` int(10) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_cms_category_shop`
@@ -2714,7 +2714,7 @@ CREATE TABLE `ps_cms_lang` (
   `meta_keywords` varchar(255) DEFAULT NULL,
   `content` longtext DEFAULT NULL,
   `link_rewrite` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_cms_lang`
@@ -2737,7 +2737,7 @@ CREATE TABLE `ps_cms_role` (
   `id_cms_role` int(11) UNSIGNED NOT NULL,
   `name` varchar(50) NOT NULL,
   `id_cms` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_cms_role`
@@ -2758,7 +2758,7 @@ CREATE TABLE `ps_cms_role_lang` (
   `id_lang` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL,
   `name` varchar(128) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2769,7 +2769,7 @@ CREATE TABLE `ps_cms_role_lang` (
 CREATE TABLE `ps_cms_shop` (
   `id_cms` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_cms_shop`
@@ -2796,7 +2796,7 @@ CREATE TABLE `ps_configuration` (
   `value` text DEFAULT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_configuration`
@@ -3316,7 +3316,7 @@ CREATE TABLE `ps_configuration_kpi` (
   `value` text DEFAULT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_configuration_kpi`
@@ -3393,7 +3393,7 @@ CREATE TABLE `ps_configuration_kpi_lang` (
   `id_lang` int(10) UNSIGNED NOT NULL,
   `value` text DEFAULT NULL,
   `date_upd` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_configuration_kpi_lang`
@@ -3418,7 +3418,7 @@ CREATE TABLE `ps_configuration_lang` (
   `id_lang` int(10) UNSIGNED NOT NULL,
   `value` text DEFAULT NULL,
   `date_upd` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_configuration_lang`
@@ -3460,7 +3460,7 @@ CREATE TABLE `ps_connections` (
   `ip_address` bigint(20) DEFAULT NULL,
   `date_add` datetime NOT NULL,
   `http_referer` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_connections`
@@ -3499,7 +3499,7 @@ CREATE TABLE `ps_connections_page` (
   `id_page` int(10) UNSIGNED NOT NULL,
   `time_start` datetime NOT NULL,
   `time_end` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -3514,7 +3514,7 @@ CREATE TABLE `ps_connections_source` (
   `request_uri` varchar(255) DEFAULT NULL,
   `keywords` varchar(255) DEFAULT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_connections_source`
@@ -3696,7 +3696,7 @@ CREATE TABLE `ps_contact` (
   `email` varchar(255) NOT NULL,
   `customer_service` tinyint(1) NOT NULL DEFAULT 0,
   `position` tinyint(2) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_contact`
@@ -3717,7 +3717,7 @@ CREATE TABLE `ps_contact_lang` (
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_contact_lang`
@@ -3736,7 +3736,7 @@ INSERT INTO `ps_contact_lang` (`id_contact`, `id_lang`, `name`, `description`) V
 CREATE TABLE `ps_contact_shop` (
   `id_contact` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_contact_shop`
@@ -3764,7 +3764,7 @@ CREATE TABLE `ps_country` (
   `need_zip_code` tinyint(1) NOT NULL DEFAULT 1,
   `zip_code_format` varchar(12) NOT NULL DEFAULT '',
   `display_tax_label` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_country`
@@ -4023,7 +4023,7 @@ CREATE TABLE `ps_country_lang` (
   `id_country` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_country_lang`
@@ -4281,7 +4281,7 @@ INSERT INTO `ps_country_lang` (`id_country`, `id_lang`, `name`) VALUES
 CREATE TABLE `ps_country_shop` (
   `id_country` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_country_shop`
@@ -4547,7 +4547,7 @@ CREATE TABLE `ps_currency` (
   `active` tinyint(1) UNSIGNED NOT NULL DEFAULT 1,
   `unofficial` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `modified` tinyint(1) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_currency`
@@ -4568,7 +4568,7 @@ CREATE TABLE `ps_currency_lang` (
   `name` varchar(255) NOT NULL,
   `symbol` varchar(255) NOT NULL,
   `pattern` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_currency_lang`
@@ -4587,7 +4587,7 @@ CREATE TABLE `ps_currency_shop` (
   `id_currency` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL,
   `conversion_rate` decimal(13,6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_currency_shop`
@@ -4636,7 +4636,7 @@ CREATE TABLE `ps_customer` (
   `date_upd` datetime NOT NULL,
   `reset_password_token` varchar(40) DEFAULT NULL,
   `reset_password_validity` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_customer`
@@ -4654,7 +4654,7 @@ INSERT INTO `ps_customer` (`id_customer`, `id_shop_group`, `id_shop`, `id_gender
 CREATE TABLE `ps_customer_group` (
   `id_customer` int(10) UNSIGNED NOT NULL,
   `id_group` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_customer_group`
@@ -4681,7 +4681,7 @@ CREATE TABLE `ps_customer_message` (
   `date_upd` datetime NOT NULL,
   `private` tinyint(4) NOT NULL DEFAULT 0,
   `read` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -4691,7 +4691,7 @@ CREATE TABLE `ps_customer_message` (
 
 CREATE TABLE `ps_customer_message_sync_imap` (
   `md5_header` varbinary(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -4703,7 +4703,7 @@ CREATE TABLE `ps_customer_session` (
   `id_customer_session` int(11) UNSIGNED NOT NULL,
   `id_customer` int(10) UNSIGNED DEFAULT NULL,
   `token` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -4724,7 +4724,7 @@ CREATE TABLE `ps_customer_thread` (
   `token` varchar(12) DEFAULT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -4742,7 +4742,7 @@ CREATE TABLE `ps_customization` (
   `quantity_refunded` int(11) NOT NULL DEFAULT 0,
   `quantity_returned` int(11) NOT NULL DEFAULT 0,
   `in_cart` tinyint(1) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -4757,7 +4757,7 @@ CREATE TABLE `ps_customization_field` (
   `required` tinyint(1) NOT NULL,
   `is_module` tinyint(1) NOT NULL DEFAULT 0,
   `is_deleted` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -4770,7 +4770,7 @@ CREATE TABLE `ps_customization_field_lang` (
   `id_lang` int(10) UNSIGNED NOT NULL,
   `id_shop` int(10) UNSIGNED NOT NULL DEFAULT 1,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -4786,7 +4786,7 @@ CREATE TABLE `ps_customized_data` (
   `id_module` int(10) NOT NULL DEFAULT 0,
   `price` decimal(20,6) NOT NULL DEFAULT 0.000000,
   `weight` decimal(20,6) NOT NULL DEFAULT 0.000000
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -4798,7 +4798,7 @@ CREATE TABLE `ps_date_range` (
   `id_date_range` int(10) UNSIGNED NOT NULL,
   `time_start` datetime NOT NULL,
   `time_end` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -4815,7 +4815,7 @@ CREATE TABLE `ps_delivery` (
   `id_range_weight` int(10) UNSIGNED DEFAULT NULL,
   `id_zone` int(10) UNSIGNED NOT NULL,
   `price` decimal(20,6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_delivery`
@@ -4852,7 +4852,7 @@ CREATE TABLE `ps_emailsubscription` (
   `http_referer` varchar(255) DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 0,
   `id_lang` int(10) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -4890,7 +4890,7 @@ CREATE TABLE `ps_employee` (
   `reset_password_token` varchar(40) DEFAULT NULL,
   `reset_password_validity` datetime DEFAULT NULL,
   `has_enabled_gravatar` tinyint(3) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_employee`
@@ -4924,7 +4924,7 @@ CREATE TABLE `ps_employee_session` (
   `id_employee_session` int(11) UNSIGNED NOT NULL,
   `id_employee` int(10) UNSIGNED DEFAULT NULL,
   `token` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_employee_session`
@@ -4951,7 +4951,7 @@ INSERT INTO `ps_employee_session` (`id_employee_session`, `id_employee`, `token`
 CREATE TABLE `ps_employee_shop` (
   `id_employee` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_employee_shop`
@@ -4971,7 +4971,7 @@ CREATE TABLE `ps_eventbus_deleted_objects` (
   `id_object` int(10) UNSIGNED NOT NULL,
   `id_shop` int(10) UNSIGNED NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_eventbus_deleted_objects`
@@ -4995,7 +4995,7 @@ CREATE TABLE `ps_eventbus_incremental_sync` (
   `id_shop` int(10) UNSIGNED NOT NULL,
   `lang_iso` varchar(3) NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -5006,7 +5006,7 @@ CREATE TABLE `ps_eventbus_incremental_sync` (
 CREATE TABLE `ps_eventbus_job` (
   `job_id` varchar(200) NOT NULL,
   `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -5017,7 +5017,7 @@ CREATE TABLE `ps_eventbus_job` (
 CREATE TABLE `ps_eventbus_live_sync` (
   `shop_content` varchar(50) NOT NULL,
   `last_change_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -5032,7 +5032,7 @@ CREATE TABLE `ps_eventbus_type_sync` (
   `lang_iso` varchar(3) DEFAULT NULL,
   `full_sync_finished` tinyint(1) NOT NULL DEFAULT 0,
   `last_sync_date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -5048,7 +5048,7 @@ CREATE TABLE `ps_fb_category_match` (
   `google_category_parent_name` varchar(255) NOT NULL,
   `is_parent_category` tinyint(1) DEFAULT NULL,
   `id_shop` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -5059,7 +5059,7 @@ CREATE TABLE `ps_fb_category_match` (
 CREATE TABLE `ps_feature` (
   `id_feature` int(10) UNSIGNED NOT NULL,
   `position` int(10) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_feature`
@@ -5111,7 +5111,7 @@ CREATE TABLE `ps_feature_lang` (
   `id_feature` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(128) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_feature_lang`
@@ -5140,7 +5140,7 @@ CREATE TABLE `ps_feature_product` (
   `id_feature` int(10) UNSIGNED NOT NULL,
   `id_product` int(10) UNSIGNED NOT NULL,
   `id_feature_value` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -5151,7 +5151,7 @@ CREATE TABLE `ps_feature_product` (
 CREATE TABLE `ps_feature_shop` (
   `id_feature` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_feature_shop`
@@ -5180,7 +5180,7 @@ CREATE TABLE `ps_feature_value` (
   `id_feature_value` int(10) UNSIGNED NOT NULL,
   `id_feature` int(10) UNSIGNED NOT NULL,
   `custom` tinyint(3) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -5192,7 +5192,7 @@ CREATE TABLE `ps_feature_value_lang` (
   `id_feature_value` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `value` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -5203,7 +5203,7 @@ CREATE TABLE `ps_feature_value_lang` (
 CREATE TABLE `ps_gender` (
   `id_gender` int(11) NOT NULL,
   `type` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_gender`
@@ -5223,7 +5223,7 @@ CREATE TABLE `ps_gender_lang` (
   `id_gender` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_gender_lang`
@@ -5246,7 +5246,7 @@ CREATE TABLE `ps_group` (
   `show_prices` tinyint(1) UNSIGNED NOT NULL DEFAULT 1,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_group`
@@ -5267,7 +5267,7 @@ CREATE TABLE `ps_group_lang` (
   `id_group` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_group_lang`
@@ -5289,7 +5289,7 @@ CREATE TABLE `ps_group_reduction` (
   `id_group` int(10) UNSIGNED NOT NULL,
   `id_category` int(10) UNSIGNED NOT NULL,
   `reduction` decimal(5,4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -5300,7 +5300,7 @@ CREATE TABLE `ps_group_reduction` (
 CREATE TABLE `ps_group_shop` (
   `id_group` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_group_shop`
@@ -5320,7 +5320,7 @@ INSERT INTO `ps_group_shop` (`id_group`, `id_shop`) VALUES
 CREATE TABLE `ps_gsitemap_sitemap` (
   `link` varchar(255) DEFAULT NULL,
   `id_shop` int(11) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -5345,7 +5345,7 @@ CREATE TABLE `ps_guest` (
   `windows_media` tinyint(1) DEFAULT NULL,
   `accept_language` varchar(8) DEFAULT NULL,
   `mobile_theme` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_guest`
@@ -5370,7 +5370,7 @@ INSERT INTO `ps_guest` (`id_guest`, `id_operating_system`, `id_web_browser`, `id
 CREATE TABLE `ps_homeslider` (
   `id_homeslider_slides` int(10) UNSIGNED NOT NULL,
   `id_shop` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_homeslider`
@@ -5391,7 +5391,7 @@ CREATE TABLE `ps_homeslider_slides` (
   `id_homeslider_slides` int(10) UNSIGNED NOT NULL,
   `position` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `active` tinyint(1) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_homeslider_slides`
@@ -5416,7 +5416,7 @@ CREATE TABLE `ps_homeslider_slides_lang` (
   `legend` varchar(255) NOT NULL,
   `url` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_homeslider_slides_lang`
@@ -5440,7 +5440,7 @@ CREATE TABLE `ps_hook` (
   `description` text DEFAULT NULL,
   `active` tinyint(1) UNSIGNED NOT NULL DEFAULT 1,
   `position` tinyint(1) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_hook`
@@ -6271,7 +6271,7 @@ CREATE TABLE `ps_hook_alias` (
   `id_hook_alias` int(10) UNSIGNED NOT NULL,
   `alias` varchar(191) NOT NULL,
   `name` varchar(191) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_hook_alias`
@@ -6378,7 +6378,7 @@ CREATE TABLE `ps_hook_module` (
   `id_shop` int(11) UNSIGNED NOT NULL DEFAULT 1,
   `id_hook` int(10) UNSIGNED NOT NULL,
   `position` tinyint(2) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_hook_module`
@@ -6710,7 +6710,7 @@ CREATE TABLE `ps_hook_module_exceptions` (
   `id_module` int(10) UNSIGNED NOT NULL,
   `id_hook` int(10) UNSIGNED NOT NULL,
   `file_name` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -6723,7 +6723,7 @@ CREATE TABLE `ps_image` (
   `id_product` int(10) UNSIGNED NOT NULL,
   `position` smallint(2) UNSIGNED NOT NULL DEFAULT 0,
   `cover` tinyint(1) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -6735,7 +6735,7 @@ CREATE TABLE `ps_image_lang` (
   `id_image` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `legend` varchar(128) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -6748,7 +6748,7 @@ CREATE TABLE `ps_image_shop` (
   `id_image` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL,
   `cover` tinyint(1) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -6766,7 +6766,7 @@ CREATE TABLE `ps_image_type` (
   `manufacturers` tinyint(1) NOT NULL DEFAULT 1,
   `suppliers` tinyint(1) NOT NULL DEFAULT 1,
   `stores` tinyint(1) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_image_type`
@@ -6792,7 +6792,7 @@ CREATE TABLE `ps_import_match` (
   `name` varchar(32) NOT NULL,
   `match` text NOT NULL,
   `skip` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -6802,7 +6802,7 @@ CREATE TABLE `ps_import_match` (
 
 CREATE TABLE `ps_info` (
   `id_info` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_info`
@@ -6822,7 +6822,7 @@ CREATE TABLE `ps_info_lang` (
   `id_shop` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `text` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_info_lang`
@@ -6840,7 +6840,7 @@ INSERT INTO `ps_info_lang` (`id_info`, `id_shop`, `id_lang`, `text`) VALUES
 CREATE TABLE `ps_info_shop` (
   `id_info` int(10) UNSIGNED NOT NULL,
   `id_shop` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_info_shop`
@@ -6908,7 +6908,7 @@ CREATE TABLE `ps_layered_category` (
   `position` int(10) UNSIGNED NOT NULL,
   `filter_type` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `filter_show_limit` int(10) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -6922,7 +6922,7 @@ CREATE TABLE `ps_layered_filter` (
   `filters` longtext DEFAULT NULL,
   `n_categories` int(10) UNSIGNED NOT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -6933,7 +6933,7 @@ CREATE TABLE `ps_layered_filter` (
 CREATE TABLE `ps_layered_filter_block` (
   `hash` char(32) NOT NULL DEFAULT '',
   `data` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -6944,7 +6944,7 @@ CREATE TABLE `ps_layered_filter_block` (
 CREATE TABLE `ps_layered_filter_shop` (
   `id_layered_filter` int(10) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -6955,7 +6955,7 @@ CREATE TABLE `ps_layered_filter_shop` (
 CREATE TABLE `ps_layered_indexable_attribute_group` (
   `id_attribute_group` int(11) NOT NULL,
   `indexable` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -6968,7 +6968,7 @@ CREATE TABLE `ps_layered_indexable_attribute_group_lang_value` (
   `id_lang` int(11) NOT NULL,
   `url_name` varchar(128) DEFAULT NULL,
   `meta_title` varchar(128) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -6981,7 +6981,7 @@ CREATE TABLE `ps_layered_indexable_attribute_lang_value` (
   `id_lang` int(11) NOT NULL,
   `url_name` varchar(128) DEFAULT NULL,
   `meta_title` varchar(128) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -6992,7 +6992,7 @@ CREATE TABLE `ps_layered_indexable_attribute_lang_value` (
 CREATE TABLE `ps_layered_indexable_feature` (
   `id_feature` int(11) NOT NULL,
   `indexable` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -7005,7 +7005,7 @@ CREATE TABLE `ps_layered_indexable_feature_lang_value` (
   `id_lang` int(11) NOT NULL,
   `url_name` varchar(128) NOT NULL,
   `meta_title` varchar(128) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -7018,7 +7018,7 @@ CREATE TABLE `ps_layered_indexable_feature_value_lang_value` (
   `id_lang` int(11) NOT NULL,
   `url_name` varchar(128) DEFAULT NULL,
   `meta_title` varchar(128) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -7033,7 +7033,7 @@ CREATE TABLE `ps_layered_price_index` (
   `price_min` decimal(20,6) NOT NULL,
   `price_max` decimal(20,6) NOT NULL,
   `id_country` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_layered_price_index`
@@ -7054,7 +7054,7 @@ CREATE TABLE `ps_layered_product_attribute` (
   `id_product` int(10) UNSIGNED NOT NULL,
   `id_attribute_group` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `id_shop` int(10) UNSIGNED NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -7066,7 +7066,7 @@ CREATE TABLE `ps_linksmenutop` (
   `id_linksmenutop` int(10) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL,
   `new_window` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -7080,7 +7080,7 @@ CREATE TABLE `ps_linksmenutop_lang` (
   `id_shop` int(11) UNSIGNED NOT NULL,
   `label` varchar(128) NOT NULL,
   `link` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -7093,7 +7093,7 @@ CREATE TABLE `ps_link_block` (
   `id_hook` int(1) UNSIGNED DEFAULT NULL,
   `position` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `content` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_link_block`
@@ -7114,7 +7114,7 @@ CREATE TABLE `ps_link_block_lang` (
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(40) NOT NULL DEFAULT '',
   `custom_content` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_link_block_lang`
@@ -7134,7 +7134,7 @@ CREATE TABLE `ps_link_block_shop` (
   `id_link_block` int(10) UNSIGNED NOT NULL,
   `id_shop` int(10) UNSIGNED NOT NULL,
   `position` int(10) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_link_block_shop`
@@ -7164,7 +7164,7 @@ CREATE TABLE `ps_log` (
   `id_employee` int(10) UNSIGNED DEFAULT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_log`
@@ -7450,7 +7450,7 @@ CREATE TABLE `ps_mail` (
   `subject` varchar(254) NOT NULL,
   `id_lang` int(11) UNSIGNED NOT NULL,
   `date_add` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_mail`
@@ -7488,7 +7488,7 @@ CREATE TABLE `ps_manufacturer` (
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -7504,7 +7504,7 @@ CREATE TABLE `ps_manufacturer_lang` (
   `meta_title` varchar(255) DEFAULT NULL,
   `meta_keywords` varchar(255) DEFAULT NULL,
   `meta_description` varchar(512) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -7515,7 +7515,7 @@ CREATE TABLE `ps_manufacturer_lang` (
 CREATE TABLE `ps_manufacturer_shop` (
   `id_manufacturer` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -7528,7 +7528,7 @@ CREATE TABLE `ps_memcached_servers` (
   `ip` varchar(254) NOT NULL,
   `port` int(11) UNSIGNED NOT NULL,
   `weight` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -7545,7 +7545,7 @@ CREATE TABLE `ps_message` (
   `message` text NOT NULL,
   `private` tinyint(1) UNSIGNED NOT NULL DEFAULT 1,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -7557,7 +7557,7 @@ CREATE TABLE `ps_message_readed` (
   `id_message` int(10) UNSIGNED NOT NULL,
   `id_employee` int(10) UNSIGNED NOT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -7569,7 +7569,7 @@ CREATE TABLE `ps_meta` (
   `id_meta` int(10) UNSIGNED NOT NULL,
   `page` varchar(64) NOT NULL,
   `configurable` tinyint(1) UNSIGNED NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_meta`
@@ -7632,7 +7632,7 @@ CREATE TABLE `ps_meta_lang` (
   `description` varchar(255) DEFAULT NULL,
   `keywords` varchar(255) DEFAULT NULL,
   `url_rewrite` varchar(254) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_meta_lang`
@@ -7684,7 +7684,7 @@ CREATE TABLE `ps_module` (
   `name` varchar(64) NOT NULL,
   `active` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `version` varchar(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_module`
@@ -7766,7 +7766,7 @@ INSERT INTO `ps_module` (`id_module`, `name`, `active`, `version`) VALUES
 CREATE TABLE `ps_module_access` (
   `id_profile` int(10) UNSIGNED NOT NULL,
   `id_authorization_role` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_module_access`
@@ -8044,7 +8044,7 @@ CREATE TABLE `ps_module_carrier` (
   `id_module` int(10) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL DEFAULT 1,
   `id_reference` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_module_carrier`
@@ -8074,7 +8074,7 @@ CREATE TABLE `ps_module_country` (
   `id_module` int(10) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL DEFAULT 1,
   `id_country` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_module_country`
@@ -8295,7 +8295,7 @@ CREATE TABLE `ps_module_currency` (
   `id_module` int(10) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL DEFAULT 1,
   `id_currency` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_module_currency`
@@ -8317,7 +8317,7 @@ CREATE TABLE `ps_module_group` (
   `id_module` int(10) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL DEFAULT 1,
   `id_group` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_module_group`
@@ -8562,7 +8562,7 @@ CREATE TABLE `ps_module_preference` (
   `module` varchar(191) NOT NULL,
   `interest` tinyint(1) DEFAULT NULL,
   `favorite` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8574,7 +8574,7 @@ CREATE TABLE `ps_module_shop` (
   `id_module` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL,
   `enable_device` tinyint(1) NOT NULL DEFAULT 7
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_module_shop`
@@ -8654,7 +8654,7 @@ INSERT INTO `ps_module_shop` (`id_module`, `id_shop`, `enable_device`) VALUES
 CREATE TABLE `ps_operating_system` (
   `id_operating_system` int(10) UNSIGNED NOT NULL,
   `name` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_operating_system`
@@ -8725,7 +8725,7 @@ CREATE TABLE `ps_orders` (
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
   `note` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8743,7 +8743,7 @@ CREATE TABLE `ps_order_carrier` (
   `shipping_cost_tax_incl` decimal(20,6) DEFAULT NULL,
   `tracking_number` varchar(64) DEFAULT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8761,7 +8761,7 @@ CREATE TABLE `ps_order_cart_rule` (
   `value_tax_excl` decimal(20,6) NOT NULL DEFAULT 0.000000,
   `free_shipping` tinyint(1) NOT NULL DEFAULT 0,
   `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8819,7 +8819,7 @@ CREATE TABLE `ps_order_detail` (
   `original_wholesale_price` decimal(20,6) NOT NULL DEFAULT 0.000000,
   `total_refunded_tax_excl` decimal(20,6) NOT NULL DEFAULT 0.000000,
   `total_refunded_tax_incl` decimal(20,6) NOT NULL DEFAULT 0.000000
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8832,7 +8832,7 @@ CREATE TABLE `ps_order_detail_tax` (
   `id_tax` int(11) NOT NULL,
   `unit_amount` decimal(16,6) NOT NULL DEFAULT 0.000000,
   `total_amount` decimal(16,6) NOT NULL DEFAULT 0.000000
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8846,7 +8846,7 @@ CREATE TABLE `ps_order_history` (
   `id_order` int(10) UNSIGNED NOT NULL,
   `id_order_state` int(10) UNSIGNED NOT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8874,7 +8874,7 @@ CREATE TABLE `ps_order_invoice` (
   `shop_address` text DEFAULT NULL,
   `note` text DEFAULT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8886,7 +8886,7 @@ CREATE TABLE `ps_order_invoice_payment` (
   `id_order_invoice` int(11) UNSIGNED NOT NULL,
   `id_order_payment` int(11) UNSIGNED NOT NULL,
   `id_order` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8899,7 +8899,7 @@ CREATE TABLE `ps_order_invoice_tax` (
   `type` varchar(15) NOT NULL,
   `id_tax` int(11) NOT NULL,
   `amount` decimal(10,6) NOT NULL DEFAULT 0.000000
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8910,7 +8910,7 @@ CREATE TABLE `ps_order_invoice_tax` (
 CREATE TABLE `ps_order_message` (
   `id_order_message` int(10) UNSIGNED NOT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8923,7 +8923,7 @@ CREATE TABLE `ps_order_message_lang` (
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(128) NOT NULL,
   `message` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8944,7 +8944,7 @@ CREATE TABLE `ps_order_payment` (
   `card_expiration` char(7) DEFAULT NULL,
   `card_holder` varchar(254) DEFAULT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8962,7 +8962,7 @@ CREATE TABLE `ps_order_payu_payments` (
   `status` varchar(64) NOT NULL,
   `create_at` datetime DEFAULT NULL,
   `update_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8976,7 +8976,7 @@ CREATE TABLE `ps_order_payu_payments_history` (
   `id_session` varchar(64) NOT NULL,
   `status` varchar(64) NOT NULL,
   `create_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -8992,7 +8992,7 @@ CREATE TABLE `ps_order_return` (
   `question` text NOT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9005,7 +9005,7 @@ CREATE TABLE `ps_order_return_detail` (
   `id_order_detail` int(10) UNSIGNED NOT NULL,
   `id_customization` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `product_quantity` int(10) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9016,7 +9016,7 @@ CREATE TABLE `ps_order_return_detail` (
 CREATE TABLE `ps_order_return_state` (
   `id_order_return_state` int(10) UNSIGNED NOT NULL,
   `color` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_order_return_state`
@@ -9039,7 +9039,7 @@ CREATE TABLE `ps_order_return_state_lang` (
   `id_order_return_state` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_order_return_state_lang`
@@ -9074,7 +9074,7 @@ CREATE TABLE `ps_order_slip` (
   `order_slip_type` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9092,7 +9092,7 @@ CREATE TABLE `ps_order_slip_detail` (
   `total_price_tax_incl` decimal(20,6) DEFAULT NULL,
   `amount_tax_excl` decimal(20,6) DEFAULT NULL,
   `amount_tax_incl` decimal(20,6) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9115,7 +9115,7 @@ CREATE TABLE `ps_order_state` (
   `pdf_invoice` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `pdf_delivery` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_order_state`
@@ -9154,7 +9154,7 @@ CREATE TABLE `ps_order_state_lang` (
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(64) NOT NULL,
   `template` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_order_state_lang`
@@ -9193,7 +9193,7 @@ CREATE TABLE `ps_pack` (
   `id_product_item` int(10) UNSIGNED NOT NULL,
   `id_product_attribute_item` int(10) UNSIGNED NOT NULL,
   `quantity` int(10) UNSIGNED NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9205,7 +9205,7 @@ CREATE TABLE `ps_page` (
   `id_page` int(10) UNSIGNED NOT NULL,
   `id_page_type` int(10) UNSIGNED NOT NULL,
   `id_object` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_page`
@@ -9229,7 +9229,7 @@ CREATE TABLE `ps_pagenotfound` (
   `request_uri` varchar(256) NOT NULL,
   `http_referer` varchar(256) NOT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9240,7 +9240,7 @@ CREATE TABLE `ps_pagenotfound` (
 CREATE TABLE `ps_page_type` (
   `id_page_type` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_page_type`
@@ -9263,7 +9263,7 @@ CREATE TABLE `ps_page_viewed` (
   `id_shop` int(10) UNSIGNED NOT NULL DEFAULT 1,
   `id_date_range` int(10) UNSIGNED NOT NULL,
   `counter` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9327,7 +9327,7 @@ CREATE TABLE `ps_product` (
   `pack_stock_type` int(11) UNSIGNED NOT NULL DEFAULT 3,
   `state` int(11) UNSIGNED NOT NULL DEFAULT 1,
   `product_type` enum('standard','pack','virtual','combinations','') NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_product`
@@ -9345,7 +9345,7 @@ INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_ca
 CREATE TABLE `ps_product_attachment` (
   `id_product` int(10) UNSIGNED NOT NULL,
   `id_attachment` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9374,7 +9374,7 @@ CREATE TABLE `ps_product_attribute` (
   `low_stock_threshold` int(10) DEFAULT NULL,
   `low_stock_alert` tinyint(1) NOT NULL DEFAULT 0,
   `available_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9385,7 +9385,7 @@ CREATE TABLE `ps_product_attribute` (
 CREATE TABLE `ps_product_attribute_combination` (
   `id_attribute` int(10) UNSIGNED NOT NULL,
   `id_product_attribute` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9396,7 +9396,7 @@ CREATE TABLE `ps_product_attribute_combination` (
 CREATE TABLE `ps_product_attribute_image` (
   `id_product_attribute` int(10) UNSIGNED NOT NULL,
   `id_image` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9418,7 +9418,7 @@ CREATE TABLE `ps_product_attribute_shop` (
   `low_stock_threshold` int(10) DEFAULT NULL,
   `low_stock_alert` tinyint(1) NOT NULL DEFAULT 0,
   `available_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9430,7 +9430,7 @@ CREATE TABLE `ps_product_carrier` (
   `id_product` int(10) UNSIGNED NOT NULL,
   `id_carrier_reference` int(10) UNSIGNED NOT NULL,
   `id_shop` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9480,7 +9480,7 @@ INSERT INTO `ps_product_comment_criterion` (`id_product_comment_criterion`, `id_
 CREATE TABLE `ps_product_comment_criterion_category` (
   `id_product_comment_criterion` int(10) UNSIGNED NOT NULL,
   `id_category` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9492,7 +9492,7 @@ CREATE TABLE `ps_product_comment_criterion_lang` (
   `id_product_comment_criterion` int(11) UNSIGNED NOT NULL,
   `id_lang` int(11) UNSIGNED NOT NULL,
   `name` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_product_comment_criterion_lang`
@@ -9510,7 +9510,7 @@ INSERT INTO `ps_product_comment_criterion_lang` (`id_product_comment_criterion`,
 CREATE TABLE `ps_product_comment_criterion_product` (
   `id_product` int(10) UNSIGNED NOT NULL,
   `id_product_comment_criterion` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9557,7 +9557,7 @@ CREATE TABLE `ps_product_country_tax` (
   `id_product` int(11) NOT NULL,
   `id_country` int(11) NOT NULL,
   `id_tax` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9576,7 +9576,7 @@ CREATE TABLE `ps_product_download` (
   `nb_downloadable` int(10) UNSIGNED DEFAULT 1,
   `active` tinyint(1) UNSIGNED NOT NULL DEFAULT 1,
   `is_shareable` tinyint(1) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9588,7 +9588,7 @@ CREATE TABLE `ps_product_group_reduction_cache` (
   `id_product` int(10) UNSIGNED NOT NULL,
   `id_group` int(10) UNSIGNED NOT NULL,
   `reduction` decimal(5,4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9611,7 +9611,7 @@ CREATE TABLE `ps_product_lang` (
   `available_later` varchar(255) DEFAULT NULL,
   `delivery_in_stock` varchar(255) DEFAULT NULL,
   `delivery_out_stock` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_product_lang`
@@ -9631,7 +9631,7 @@ CREATE TABLE `ps_product_sale` (
   `quantity` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `sale_nbr` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `date_upd` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9673,7 +9673,7 @@ CREATE TABLE `ps_product_shop` (
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
   `pack_stock_type` int(11) UNSIGNED NOT NULL DEFAULT 3
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_product_shop`
@@ -9696,7 +9696,7 @@ CREATE TABLE `ps_product_supplier` (
   `product_supplier_reference` varchar(64) DEFAULT NULL,
   `product_supplier_price_te` decimal(20,6) NOT NULL DEFAULT 0.000000,
   `id_currency` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9708,7 +9708,7 @@ CREATE TABLE `ps_product_tag` (
   `id_product` int(10) UNSIGNED NOT NULL,
   `id_tag` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9718,7 +9718,7 @@ CREATE TABLE `ps_product_tag` (
 
 CREATE TABLE `ps_profile` (
   `id_profile` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_profile`
@@ -9737,7 +9737,7 @@ CREATE TABLE `ps_profile_lang` (
   `id_lang` int(10) UNSIGNED NOT NULL,
   `id_profile` int(10) UNSIGNED NOT NULL,
   `name` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_profile_lang`
@@ -9767,7 +9767,7 @@ CREATE TABLE `ps_pscheckout_cart` (
   `isHostedFields` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9780,7 +9780,7 @@ CREATE TABLE `ps_pscheckout_funding_source` (
   `active` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `position` tinyint(2) UNSIGNED NOT NULL,
   `id_shop` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_pscheckout_funding_source`
@@ -9808,7 +9808,7 @@ CREATE TABLE `ps_pscheckout_order_matrice` (
   `id_order_matrice` int(10) UNSIGNED NOT NULL,
   `id_order_prestashop` int(10) UNSIGNED NOT NULL,
   `id_order_paypal` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9824,7 +9824,7 @@ CREATE TABLE `ps_psgdpr_consent` (
   `error_message` text DEFAULT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9837,7 +9837,7 @@ CREATE TABLE `ps_psgdpr_consent_lang` (
   `id_lang` int(10) UNSIGNED NOT NULL,
   `message` text DEFAULT NULL,
   `id_shop` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -9854,7 +9854,7 @@ CREATE TABLE `ps_psgdpr_log` (
   `request_type` int(10) NOT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_psgdpr_log`
@@ -9880,7 +9880,7 @@ CREATE TABLE `ps_psreassurance` (
   `id_cms` int(10) UNSIGNED DEFAULT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_psreassurance`
@@ -9903,7 +9903,7 @@ CREATE TABLE `ps_psreassurance_lang` (
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `link` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_psreassurance_lang`
@@ -9924,7 +9924,7 @@ CREATE TABLE `ps_quick_access` (
   `id_quick_access` int(10) UNSIGNED NOT NULL,
   `new_window` tinyint(1) NOT NULL DEFAULT 0,
   `link` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_quick_access`
@@ -9948,7 +9948,7 @@ CREATE TABLE `ps_quick_access_lang` (
   `id_quick_access` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_quick_access_lang`
@@ -9973,7 +9973,7 @@ CREATE TABLE `ps_range_price` (
   `id_carrier` int(10) UNSIGNED NOT NULL,
   `delimiter1` decimal(20,6) NOT NULL,
   `delimiter2` decimal(20,6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_range_price`
@@ -9993,7 +9993,7 @@ CREATE TABLE `ps_range_weight` (
   `id_carrier` int(10) UNSIGNED NOT NULL,
   `delimiter1` decimal(20,6) NOT NULL,
   `delimiter2` decimal(20,6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_range_weight`
@@ -10028,7 +10028,7 @@ CREATE TABLE `ps_referrer` (
   `percent_fee` decimal(5,2) NOT NULL DEFAULT 0.00,
   `click_fee` decimal(5,2) NOT NULL DEFAULT 0.00,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10039,7 +10039,7 @@ CREATE TABLE `ps_referrer` (
 CREATE TABLE `ps_referrer_cache` (
   `id_connections_source` int(11) UNSIGNED NOT NULL,
   `id_referrer` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10058,7 +10058,7 @@ CREATE TABLE `ps_referrer_shop` (
   `cache_sales` decimal(17,2) DEFAULT NULL,
   `cache_reg_rate` decimal(5,4) DEFAULT NULL,
   `cache_order_rate` decimal(5,4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10070,7 +10070,7 @@ CREATE TABLE `ps_request_sql` (
   `id_request_sql` int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
   `sql` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10082,7 +10082,7 @@ CREATE TABLE `ps_required_field` (
   `id_required_field` int(11) NOT NULL,
   `object_name` varchar(32) NOT NULL,
   `field_name` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10094,7 +10094,7 @@ CREATE TABLE `ps_risk` (
   `id_risk` int(11) UNSIGNED NOT NULL,
   `percent` tinyint(3) NOT NULL,
   `color` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_risk`
@@ -10116,7 +10116,7 @@ CREATE TABLE `ps_risk_lang` (
   `id_risk` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_risk_lang`
@@ -10138,7 +10138,7 @@ CREATE TABLE `ps_search_engine` (
   `id_search_engine` int(10) UNSIGNED NOT NULL,
   `server` varchar(64) NOT NULL,
   `getvar` varchar(16) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_search_engine`
@@ -10194,7 +10194,7 @@ CREATE TABLE `ps_search_index` (
   `id_product` int(11) UNSIGNED NOT NULL,
   `id_word` int(11) UNSIGNED NOT NULL,
   `weight` smallint(4) UNSIGNED NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10207,7 +10207,7 @@ CREATE TABLE `ps_search_word` (
   `id_shop` int(11) UNSIGNED NOT NULL DEFAULT 1,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `word` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10272,7 +10272,7 @@ CREATE TABLE `ps_shop_url` (
   `virtual_uri` varchar(64) NOT NULL,
   `main` tinyint(1) NOT NULL,
   `active` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_shop_url`
@@ -10293,7 +10293,7 @@ CREATE TABLE `ps_smarty_cache` (
   `cache_id` varchar(254) DEFAULT NULL,
   `modified` timestamp NOT NULL DEFAULT current_timestamp(),
   `content` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10304,7 +10304,7 @@ CREATE TABLE `ps_smarty_cache` (
 CREATE TABLE `ps_smarty_last_flush` (
   `type` enum('compile','template') NOT NULL,
   `last_flush` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10318,7 +10318,7 @@ CREATE TABLE `ps_smarty_lazy_cache` (
   `compile_id` varchar(32) NOT NULL DEFAULT '',
   `filepath` varchar(255) NOT NULL DEFAULT '',
   `last_update` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10345,7 +10345,7 @@ CREATE TABLE `ps_specific_price` (
   `reduction_type` enum('amount','percentage') NOT NULL,
   `from` datetime NOT NULL,
   `to` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10357,7 +10357,7 @@ CREATE TABLE `ps_specific_price_priority` (
   `id_specific_price_priority` int(11) NOT NULL,
   `id_product` int(11) NOT NULL,
   `priority` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10379,7 +10379,7 @@ CREATE TABLE `ps_specific_price_rule` (
   `reduction_type` enum('amount','percentage') NOT NULL,
   `from` datetime NOT NULL,
   `to` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10392,7 +10392,7 @@ CREATE TABLE `ps_specific_price_rule_condition` (
   `id_specific_price_rule_condition_group` int(11) UNSIGNED NOT NULL,
   `type` varchar(255) NOT NULL,
   `value` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10403,7 +10403,7 @@ CREATE TABLE `ps_specific_price_rule_condition` (
 CREATE TABLE `ps_specific_price_rule_condition_group` (
   `id_specific_price_rule_condition_group` int(11) UNSIGNED NOT NULL,
   `id_specific_price_rule` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10419,7 +10419,7 @@ CREATE TABLE `ps_state` (
   `iso_code` varchar(7) NOT NULL,
   `tax_behavior` smallint(1) NOT NULL DEFAULT 0,
   `active` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_state`
@@ -10792,7 +10792,7 @@ CREATE TABLE `ps_statssearch` (
   `keywords` varchar(255) NOT NULL,
   `results` int(6) NOT NULL DEFAULT 0,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_statssearch`
@@ -10821,7 +10821,7 @@ CREATE TABLE `ps_stock` (
   `physical_quantity` int(11) UNSIGNED NOT NULL,
   `usable_quantity` int(11) UNSIGNED NOT NULL,
   `price_te` decimal(20,6) DEFAULT 0.000000
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10841,7 +10841,7 @@ CREATE TABLE `ps_stock_available` (
   `depends_on_stock` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `out_of_stock` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `location` varchar(255) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_stock_available`
@@ -10886,7 +10886,7 @@ CREATE TABLE `ps_stock_mvt_reason` (
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
   `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_stock_mvt_reason`
@@ -10915,8 +10915,8 @@ INSERT INTO `ps_stock_mvt_reason` (`id_stock_mvt_reason`, `sign`, `date_add`, `d
 CREATE TABLE `ps_stock_mvt_reason_lang` (
   `id_stock_mvt_reason` int(11) UNSIGNED NOT NULL,
   `id_lang` int(11) UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_uca1400_ai_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_stock_mvt_reason_lang`
@@ -10956,7 +10956,7 @@ CREATE TABLE `ps_store` (
   `active` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10972,7 +10972,7 @@ CREATE TABLE `ps_store_lang` (
   `address2` varchar(255) DEFAULT NULL,
   `hours` text DEFAULT NULL,
   `note` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10983,7 +10983,7 @@ CREATE TABLE `ps_store_lang` (
 CREATE TABLE `ps_store_shop` (
   `id_store` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -10997,7 +10997,7 @@ CREATE TABLE `ps_supplier` (
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -11012,7 +11012,7 @@ CREATE TABLE `ps_supplier_lang` (
   `meta_title` varchar(255) DEFAULT NULL,
   `meta_keywords` varchar(255) DEFAULT NULL,
   `meta_description` varchar(512) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -11023,7 +11023,7 @@ CREATE TABLE `ps_supplier_lang` (
 CREATE TABLE `ps_supplier_shop` (
   `id_supplier` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -11051,7 +11051,7 @@ CREATE TABLE `ps_supply_order` (
   `discount_rate` decimal(20,6) DEFAULT 0.000000,
   `discount_value_te` decimal(20,6) DEFAULT 0.000000,
   `is_template` tinyint(1) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -11085,7 +11085,7 @@ CREATE TABLE `ps_supply_order_detail` (
   `price_ti` decimal(20,6) DEFAULT 0.000000,
   `tax_value_with_order_discount` decimal(20,6) DEFAULT 0.000000,
   `price_with_order_discount_te` decimal(20,6) DEFAULT 0.000000
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -11101,7 +11101,7 @@ CREATE TABLE `ps_supply_order_history` (
   `employee_firstname` varchar(255) DEFAULT '',
   `id_state` int(11) UNSIGNED NOT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -11118,7 +11118,7 @@ CREATE TABLE `ps_supply_order_receipt_history` (
   `id_supply_order_state` int(11) UNSIGNED NOT NULL,
   `quantity` int(11) UNSIGNED NOT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -11134,7 +11134,7 @@ CREATE TABLE `ps_supply_order_state` (
   `pending_receipt` tinyint(1) NOT NULL DEFAULT 0,
   `enclosed` tinyint(1) NOT NULL DEFAULT 0,
   `color` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_supply_order_state`
@@ -11158,7 +11158,7 @@ CREATE TABLE `ps_supply_order_state_lang` (
   `id_supply_order_state` int(11) UNSIGNED NOT NULL,
   `id_lang` int(11) UNSIGNED NOT NULL,
   `name` varchar(128) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_supply_order_state_lang`
@@ -11536,7 +11536,7 @@ CREATE TABLE `ps_tab_module_preference` (
   `id_employee` int(11) NOT NULL,
   `id_tab` int(11) NOT NULL,
   `module` varchar(191) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -11548,7 +11548,7 @@ CREATE TABLE `ps_tag` (
   `id_tag` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -11562,7 +11562,7 @@ CREATE TABLE `ps_tag_count` (
   `id_lang` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `id_shop` int(11) UNSIGNED NOT NULL DEFAULT 0,
   `counter` int(10) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -11575,7 +11575,7 @@ CREATE TABLE `ps_tax` (
   `rate` decimal(10,3) NOT NULL,
   `active` tinyint(1) UNSIGNED NOT NULL DEFAULT 1,
   `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_tax`
@@ -11624,7 +11624,7 @@ CREATE TABLE `ps_tax_lang` (
   `id_tax` int(10) UNSIGNED NOT NULL,
   `id_lang` int(10) UNSIGNED NOT NULL,
   `name` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_tax_lang`
@@ -11679,7 +11679,7 @@ CREATE TABLE `ps_tax_rule` (
   `id_tax` int(11) NOT NULL,
   `behavior` int(11) NOT NULL,
   `description` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_tax_rule`
@@ -11838,7 +11838,7 @@ CREATE TABLE `ps_tax_rules_group` (
   `deleted` tinyint(1) UNSIGNED NOT NULL,
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_tax_rules_group`
@@ -11860,7 +11860,7 @@ INSERT INTO `ps_tax_rules_group` (`id_tax_rules_group`, `name`, `active`, `delet
 CREATE TABLE `ps_tax_rules_group_shop` (
   `id_tax_rules_group` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_tax_rules_group_shop`
@@ -11882,7 +11882,7 @@ INSERT INTO `ps_tax_rules_group_shop` (`id_tax_rules_group`, `id_shop`) VALUES
 CREATE TABLE `ps_timezone` (
   `id_timezone` int(10) UNSIGNED NOT NULL,
   `name` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_timezone`
@@ -12480,7 +12480,7 @@ CREATE TABLE `ps_warehouse` (
   `name` varchar(45) NOT NULL,
   `management_type` enum('WA','FIFO','LIFO') NOT NULL DEFAULT 'WA',
   `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -12491,7 +12491,7 @@ CREATE TABLE `ps_warehouse` (
 CREATE TABLE `ps_warehouse_carrier` (
   `id_carrier` int(11) UNSIGNED NOT NULL,
   `id_warehouse` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -12505,7 +12505,7 @@ CREATE TABLE `ps_warehouse_product_location` (
   `id_product_attribute` int(11) UNSIGNED NOT NULL,
   `id_warehouse` int(11) UNSIGNED NOT NULL,
   `location` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -12516,7 +12516,7 @@ CREATE TABLE `ps_warehouse_product_location` (
 CREATE TABLE `ps_warehouse_shop` (
   `id_shop` int(11) UNSIGNED NOT NULL,
   `id_warehouse` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -12532,7 +12532,7 @@ CREATE TABLE `ps_webservice_account` (
   `is_module` tinyint(2) NOT NULL DEFAULT 0,
   `module_name` varchar(50) DEFAULT NULL,
   `active` tinyint(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_webservice_account`
@@ -12550,7 +12550,7 @@ INSERT INTO `ps_webservice_account` (`id_webservice_account`, `key`, `descriptio
 CREATE TABLE `ps_webservice_account_shop` (
   `id_webservice_account` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_webservice_account_shop`
@@ -12570,7 +12570,7 @@ CREATE TABLE `ps_webservice_permission` (
   `resource` varchar(50) NOT NULL,
   `method` enum('GET','POST','PUT','DELETE','HEAD') NOT NULL,
   `id_webservice_account` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_webservice_permission`
@@ -12932,7 +12932,7 @@ INSERT INTO `ps_webservice_permission` (`id_webservice_permission`, `resource`, 
 CREATE TABLE `ps_web_browser` (
   `id_web_browser` int(10) UNSIGNED NOT NULL,
   `name` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_web_browser`
@@ -12968,7 +12968,7 @@ CREATE TABLE `ps_wishlist` (
   `date_add` datetime NOT NULL,
   `date_upd` datetime NOT NULL,
   `default` int(10) UNSIGNED DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_wishlist`
@@ -12991,7 +12991,7 @@ CREATE TABLE `ps_wishlist_product` (
   `id_product_attribute` int(10) UNSIGNED NOT NULL,
   `quantity` int(10) UNSIGNED NOT NULL,
   `priority` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -13004,7 +13004,7 @@ CREATE TABLE `ps_wishlist_product_cart` (
   `id_cart` int(10) UNSIGNED NOT NULL,
   `quantity` int(10) UNSIGNED NOT NULL,
   `date_add` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -13016,7 +13016,7 @@ CREATE TABLE `ps_zone` (
   `id_zone` int(10) UNSIGNED NOT NULL,
   `name` varchar(64) NOT NULL,
   `active` tinyint(1) UNSIGNED NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_zone`
@@ -13041,7 +13041,7 @@ INSERT INTO `ps_zone` (`id_zone`, `name`, `active`) VALUES
 CREATE TABLE `ps_zone_shop` (
   `id_zone` int(11) UNSIGNED NOT NULL,
   `id_shop` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `ps_zone_shop`
