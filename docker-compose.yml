@@ -16,7 +16,7 @@ services:
   prestashop:
     platform: linux/x86_64
     container_name: prestashop
-    image: prestashop-ssl:1
+    image: greedann/prestashop
     restart: unless-stopped
     ports:
       - 80:80
@@ -29,7 +29,7 @@ services:
       # those parameters ignored by prestashop so must be set manually in app/config/parameters.php
 
       PS_DOMAIN: localhost
-      PS_INSTALL_AUTO: 1
+      PS_INSTALL_AUTO: 0
       PS_FOLDER_ADMIN: admin1337
       PS_DEV_MODE: 1
       # set admin email

@@ -2,7 +2,7 @@
   'parameters' => 
   array (
     'database_host' => 'admin-mysql_db',
-    'database_port' => '',
+    'database_port' => '3306',
     'database_name' => 'BE_196643',
     'database_user' => 'root',
     'database_password' => 'student',
