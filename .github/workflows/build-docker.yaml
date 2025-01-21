@@ -1,0 +1,26 @@
+name: Build and push Docker image
+
+on:
+  push:
+    branches: ["main"]
+  path:
+    - "docker/**"
+    - "prestashop_src/**"
+    - "Dockerfile"
+
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build the Docker image
+        run: docker build . -t ${{ secrets.DOCKER_HUB_TOKEN }}/prestashop:latest
+
+      - name: Log in to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Push the Docker image
+        run: docker push ${{ secrets.DOCKER_HUB_TOKEN }}/prestashop:latest
