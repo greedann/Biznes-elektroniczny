@@ -22,4 +22,6 @@ COPY ./prestashop_src/ /var/www/html/
 
 RUN a2enmod ssl
 
-RUN service apache2 restart
+RUN apt-get update && apt-get install -y libmemcached-dev zlib1g-dev
+RUN pecl install memcached
+RUN docker-php-ext-enable memcached

@@ -6,12 +6,9 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: student
-      MYSQL_DATABASE: BE_196643
       MYSQL_PASSWORD: student
     networks:
       - prestashop_network
-    volumes:
-      - ./docker/mariadb:/docker-entrypoint-initdb.d
 
   prestashop:
     platform: linux/x86_64
@@ -40,7 +37,29 @@ services:
       - prestashop_network
     volumes:
       - ./prestashop_src:/var/www/html
+      - ./scripts:/var/www/html/scripts
+    # start script to init database
+    command: bash -c "chmod +x /var/www/html/scripts/init.sh && sh /var/www/html/scripts/init.sh"
+
+  memcached:
+    image: memcached:1.6-alpine
+    container_name: BE_196643_memcached
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 64M
+        reservations:
+          cpus: '0.25'
+          memory: 32M
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 180s
+    networks:
+      - prestashop_network
 
 networks:
-    prestashop_network:
+  prestashop_network:
 
