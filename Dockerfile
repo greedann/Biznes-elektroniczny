@@ -26,3 +26,4 @@ RUN apt-get update && apt-get install -y libmemcached-dev zlib1g-dev
 RUN pecl install memcached
 RUN docker-php-ext-enable memcached
 
+
