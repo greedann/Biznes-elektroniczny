@@ -1,11 +1,11 @@
 <?php return array (
   'parameters' => 
   array (
-    'database_host' => 'mariadb',
-    'database_port' => '',
-    'database_name' => 'prestashop',
-    'database_user' => 'admin',
-    'database_password' => 'admin',
+    'database_host' => 'admin-mysql_db',
+    'database_port' => '3306',
+    'database_name' => 'BE_196643',
+    'database_user' => 'root',
+    'database_password' => 'student',
     'database_prefix' => 'ps_',
     'database_engine' => 'InnoDB',
     'mailer_transport' => 'smtp',
@@ -13,8 +13,8 @@
     'mailer_user' => NULL,
     'mailer_password' => NULL,
     'secret' => 'GiufuKAU707AsuT3GW5FSoSg6tMCRsR33TerFPprMXBAbpZZ4Bbny1ZjNZRJL0ua',
-    'ps_caching' => 'CacheMemcache',
-    'ps_cache_enable' => false,
+    'ps_caching' => 'CacheMemcached',
+    'ps_cache_enable' => true,
     'ps_creation_date' => '2024-10-25',
     'locale' => 'pl-PL',
     'use_debug_toolbar' => true,
