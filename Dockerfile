@@ -16,9 +16,9 @@ COPY ./docker/ssl/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 RUN rm -rf /var/www/html/*
 
-RUN chmod -R 777 /var/www/html
-
 COPY ./prestashop_src/ /var/www/html/
+
+RUN chmod -R 777 /var/www/html/
 
 RUN a2enmod ssl
 
