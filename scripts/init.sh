@@ -41,5 +41,7 @@ else
   fi
 fi
 
+chmod -R 777 /var/www/html/
+
 echo "Starting Apache server..."
 apachectl -D FOREGROUND
