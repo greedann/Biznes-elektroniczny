@@ -48,12 +48,11 @@ public class AttributeSender {
 
     private static String sendRequest(String url, String xml)
             throws IOException, ParserConfigurationException, SAXException {
-        OkHttpClient client = new OkHttpClient().newBuilder()
-                .build();
+        OkHttpClient client = UnsafeOkHttpClient.getUnsafeOkHttpClient();
         MediaType mediaType = MediaType.parse("application/xml");
         RequestBody body = RequestBody.create(mediaType, xml);
         Request request = new Request.Builder()
-                .url("http://localhost/api/product_feature_values")
+                .url("https://localhost/api/product_feature_values")
                 .method("POST", body)
                 .addHeader("Content-Type", "application/xml")
                 .addHeader("Authorization", "Basic NlVLTTQyN0hNUTlaUEZMTVBHWllKOU1MRVdRQkk5QzM6")

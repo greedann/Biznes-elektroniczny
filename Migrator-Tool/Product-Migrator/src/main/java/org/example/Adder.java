@@ -21,11 +21,12 @@ public class Adder {
 
     public String sendCreateRequest(String xmlPayload) throws IOException, ParserConfigurationException, SAXException {
 
-        OkHttpClient client = new OkHttpClient().newBuilder().build();
+//        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        OkHttpClient client = UnsafeOkHttpClient.getUnsafeOkHttpClient();
         MediaType mediaType = MediaType.parse("application/xml");
         RequestBody body = RequestBody.create(mediaType, xmlPayload);
         Request request = new Request.Builder()
-                .url("http://localhost/api/products")
+                .url("https://localhost/api/products")
                 .method("POST", body)
                 .addHeader("Content-Type", "application/xml")
                 .addHeader("Authorization", "Basic NlVLTTQyN0hNUTlaUEZMTVBHWllKOU1MRVdRQkk5QzM6")
@@ -53,12 +54,13 @@ public class Adder {
     }
 
     public void sendModifyRequest(String xmlPayload, String product_id) throws IOException {
-        OkHttpClient client = new OkHttpClient().newBuilder()
-                .build();
+//        OkHttpClient client = new OkHttpClient().newBuilder()
+//                .build();
+        OkHttpClient client = UnsafeOkHttpClient.getUnsafeOkHttpClient();
         MediaType mediaType = MediaType.parse("application/xml");
         RequestBody body = RequestBody.create(mediaType, xmlPayload);
         Request request = new Request.Builder()
-                .url("http://localhost/api/stock_availables/" + product_id)
+                .url("https://localhost/api/stock_availables/" + product_id)
                 .method("PUT", body)
                 .addHeader("Authorization", "Basic NlVLTTQyN0hNUTlaUEZMTVBHWllKOU1MRVdRQkk5QzM6")
                 .addHeader("Cookie",
@@ -73,13 +75,13 @@ public class Adder {
             System.err.println("Image file not found: " + imagePath);
             return;
         }
-        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        OkHttpClient client = UnsafeOkHttpClient.getUnsafeOkHttpClient();
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("image", imageFile.getName(),
                         RequestBody.create(MediaType.parse("application/octet-stream"), imageFile))
                 .build();
         Request request = new Request.Builder()
-                .url("http://localhost/api/images/products/" + productId)
+                .url("https://localhost/api/images/products/" + productId)
                 .method("POST", body)
                 .addHeader("Authorization", "Basic NlVLTTQyN0hNUTlaUEZMTVBHWllKOU1MRVdRQkk5QzM6")
                 .addHeader("Cookie",
